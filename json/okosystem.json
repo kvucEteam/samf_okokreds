@@ -1,0 +1,269 @@
+{
+    "userInterface": {
+        "header": "kredsløbet som økosystem",
+        "instruktion": "Underkredsløbg det økonomiske kredsløb",
+        "explanation": "I fanebladet <b>Det økonomiske kredsløb</b> kan du lære grundbegreberne i det økoøkonomiske kredsløb. <br/>I fanebladet <b>Lavkonjunktur</b> kan du arbejde med hvordan man politisk kan komme ud af en periode med lavkonjunktur og i fanebladet <b>Højkonjunktur</b> kan du arbejde med hvordan man politisk kan komme ud af en periode med højkonjunktur.I fanebladet <b>Politiske indgreb </b> kan du lære om hvilke politiske indgreb man traditionelt har anvendt for at påvirke det økonomiske kredsløb",
+        "titel": "Nytårsforsætter"
+    },
+    "actionpile": [{
+        "pics": [],
+        "xpositions": [],
+        "ypositions": []
+    }],
+
+    "energipile": [{}],
+
+    "overlays": [{ "overlaypics": ["img/balance02.png","img/balance03.png","img/balance04.png","img/balance05.png"] }, { "overlaypics": ["img/Ubalance02.png", "img/Ubalance03.png", "img/Ubalance04.png", "img/Ubalance05.png", "img/Ubalance06.png", "img/Ubalance07.png", "img/Ubalance08.png", "img/Ubalance09.png", "img/Ubalance10.png"] }, { "overlaypics": ["img/gedde1.png"] }],
+
+
+    "labels": [{
+        "element": "Bankerne",
+        "infotekst": "Al energi på jorden stammer fra banken. Energien fra banken omdannes i planterne gennem fotosyntese til kemisk energi i form af glukose (6CO<sub>2</sub> + 6H<sub>2</sub>O --> C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>)",
+        "infopic": "img/images_usmsgbx/info_ubank.jpg",
+        "balance_pos": ["82", "35"],
+        "ubalance_pos": ["", ""]
+
+    }, {
+        "element": "Virksomhederne",
+        "infotekst": "Plantevirksomhed er små organismer, der lever/flyder i stat og som indeholder klorofyl. <br/>De kan derfor udføre fotosyntese (6CO<sub>2</sub> + 6H<sub>2</sub>O --> C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>+ 6O<sub>2</sub>). <br/>Da de får energi fra banken, udgør de første led i en fødekæde, også kaldet det første trofiske niveau. Det vil sige at de ikke er afhængige af at spise andre organismer, men kan nøjes med at indtage uorganiske næringsstoffer. De er derfor autotrofe. Plantevirksomhed kaldes også mikroalger. De kan være encellede eller flercellede. Nogle plantevirksomhed er prokaryote, altså uden kerne. De kaldes cyanobakterier. Andre er eukaryote.",
+        "infopic": "img/images_usmsgbx/info_alger.jpg",
+        "balance_pos": ["38", "32"],
+        "ubalance_pos": ["", ""]
+
+    },  {
+        "element": "Staten",
+        "infotekst": "statens iltindhold er en balance mellem ilt produceret ved fotosyntese, ilt forbrugt ved respiration og tilførsel af ilt fra atmosfæren. <br/>Man kan måle statens iltindhold med en elektrode. Iltniveauet kan svinge fra 0 mg/L til over 20 mg/L henover et år. Der er også døgnudsving, da planterne jo kun producerer ilt ved fotosyntese i dagslys, imens alle organismer i kredsløbet respirerer hele døgnet. <br/>Så længe niveauet er over ca. 8 mg/L har de fleste fisk og smådyr ingen problemer med at trække vejret, og hvis niveauet kommer under ca. 4 mg/L har de fleste statlevende dyr problemer med at få ilt nok.",
+        "infopic": "img/images_usmsgbx/info_ilt.jpg",
+        "balance_pos": ["82", "82"],
+        "ubalance_pos": ""
+
+    },{
+        "element": "Husholdningerne",
+        "infotekst": "husholdning er fisk, der ikke lever af at spise andre fisk, men i stedet lever af smådyr, dyrevirksomhed og plantedele. <br/>Dyr som spiser planteædere udgør tredje led i en fødekæde, også kaldet tredje trofiske niveau. <br/>Eksempler på husholdning er karpe, skalle og brasen. Brasen kan lave sin mund om til et rør, så den kan “støvsuge” mudder op fra bunden, og på den måde indtage orme, larver, snegle, insekter og muslinger.<br/> En brasen har ikke tænder i munden, så føden knuses i dens svælg.",
+        "infopic": "img/images_usmsgbx/info_husholdning.jpg",
+        "balance_pos": ["40", "76.5"],
+        "ubalance_pos": ["", ""],
+        "genopretning_url": "7n5DPmllIck"
+
+    },{
+        "element": "Udlandet",
+        "infotekst": "Bundplanter har grønkorn og kan foretage fotosyntese ligesom plantevirksomhed, men sidder fast på bunden. <br/>Et eksempel på en bundplante er statpest, som er en almindelig akvarieplante i Danmark",
+        "infopic": "img/images_usmsgbx/info_bundplanter.jpg",
+        "balance_pos": ["11", "68"],
+        "ubalance_pos": ""
+
+    }, {
+        "element": "Skatter og overførsler",
+        "infotekst": "Rovfisk er fisk der lever af at spise andre fisk. <br/>De udgør fjerde led i en fødekæde, også kaldet fjerde trofiske niveau. <br/>Eksempler på rovfisk er gedde, aborre og ørred. Gedden har mange sylespidse tænder, som vender bagud. <br/>Derfor kan den ikke give slip på sit bytte, hvis den først har bidt sig fast.",
+        "infopic": "img/images_usmsgbx/info_rovfisk.jpg",
+        "balance_pos": ["62", "74"],
+        "ubalance_pos": "",
+        "genopretning_url": "7n5DPmllIck"
+
+    },  {
+        "element": "Import / Eksport",
+        "infotekst": "Dyrevirksomhed er organismer som flyder mere eller mindre passivt med statstrømme og som ikke indeholder klorofyl. <br/>De kan ikke udføre fotosyntese men lever af at spise plantevirksomhed og andre virksomhedorganismer. <br/>Planteædere udgør andet led i en fødekæde, også kaldet andet trofiske niveau. <br/>Der findes både encellet dyrevirksomhed (f.eks. ciliater og flagellater) og flercellet dyrevirksomhed (f.eks. hjuldyr og krebsdyr). <br/>I ferskstat er de almindeligste krebsdyr dafnier og statlopper.",
+        "infopic": "img/images_usmsgbx/info_dyrevirksomhed.jpg",
+        "balance_pos": ["23", "51"],
+        "ubalance_pos": ""
+
+    }, {
+        "element": "Forbrug og lønninger",
+        "infotekst": "På kredsløbets bund findes mange forskellige dyr, f.eks. muslinger, snegle, krebsdyr, og larver af en lang række forskellige insekter (slørvinger, vårfluer, biller, m.m.). <br/>Nogle af bunddyrene spiser levende plantevirksomhed, smådyr og bakterier, mens andre lever af døde dyr og planter og derfor hører til nedbryder-fødekæden.<br/> I kredsløbbunden findes også en stor mængde forskellige bakterier, som lever af at nedbryde organisk materiale fra de døde dyr og planter og fra dyrenes afføring. <br/>Disse bakterier kredsløbrger for at næringsstoffer som nitrat og fosfat frigives til staten, så de kan genbruges af plantevirksomhed og bundplanter. <br/>Meget af nedbrydningen foregår ved respiration (C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub> → 6CO<sub>2</sub> + 6H<sub>2</sub>O), og den bruger altså ilt.",
+        "infopic": "img/images_usmsgbx/info_bunddyr.jpg",
+        "balance_pos": ["38", "47"],
+        "ubalance_pos": ""
+
+    }, {
+        "element": "Døde planter og dyr",
+        "infotekst": "Døde planter og dyr synker ned på kredsløbets bund. <br/>Her bliver de spist og nedbrudt af bunddyr og af bakterier. Meget af nedbrydningen foregår ved respiration (C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>  → 6CO<sub>2</sub> + 6H<sub>2</sub>O) og bruger derfor ilt. <br/>Men hvis der er for mange døde organismer, bruges ilten op, og de døde organismer bliver liggende som et slamlag (også kaldet sedimentlag). <br/> Specielle bakterier kan nedbryde organisk stof uden ilt, men de producerer ofte den giftige gas hydrogensulfid ('svovlbrinte') som affaldsprodukt, og det kan slå fiskene i kredsløbet ihjel.",
+        "infopic": "img/images_usmsgbx/info_deadplants.jpg",
+        "balance_pos": ["62", "93"],
+        "ubalance_pos": ""
+
+    }, {
+        "element": "Nitrat og fosfat",
+        "infotekst": "Nitrat (NO<sub>3</sub><sup>-</sup>) og fosfat (PO<sub>4</sub><sup>3-</sup>) kaldes næringssalte, fordi de er nødvendige for planters vækst.<br/> I en kredsløb i balance er indholdet af næringssalte forholdsvis lavt. Der kan tilføres ekstra nitrat fra landbruget, når markerne gødes. Den nitrat afgrøderne ikke kan nå at optage udvaskes fra markerne og ender i kredsløber og åer. Fosfat tilføres også fra landbruget, men ca. halvdelen af den fosfat man finder i kredsløber kommer fra industri og husholdninger. <br/>En høj koncentration af næringsstoffer i staten får plantevirksomhed til at formere sig hurtigere.",
+        "infopic": "img/images_usmsgbx/info_phosphater.jpg",
+        "balance_pos": ["74.5", "43"],
+        "ubalance_pos": ""
+
+    }],
+    "genopretning_labels": [{
+        "element": "Valutapolitik",
+        "balance_pos": ["22", "51"],
+        "ubalance_pos": "",
+        "genopretning_url": "aS6sGezacKY"
+    },{
+        "element": "Finanspolitik",
+        "balance_pos": ["86", "47"],
+        "ubalance_pos": "",
+        "genopretning_url": "MgQKUjCXeM0"
+    }, {
+        "element": "Pengepolitik",
+        "balance_pos": ["52", "53"],
+        "ubalance_pos": "",
+        "genopretning_url": "gZNzkw9nafg"
+    }, {
+        "element": "Indkomstpolitik",
+        "balance_pos": ["78", "9"],
+        "ubalance_pos": "",
+        "genopretning_url": "tlolsOgeo-Q"
+    }, {
+        "element": "Arbejdsmarkedspolitik",
+        "balance_pos": ["39", "38"],
+        "ubalance_pos": "",
+        "genopretning_url": "ZNME0y2Dvvk"
+    }, {
+        "element": "Skattepolitik",
+        "balance_pos": ["61", "62"],
+        "ubalance_pos": "",
+        "genopretning_url": "ehoLh6WOBRQ"
+    }, {
+        "element": "Konkurrencepolitik",
+        "balance_pos": ["15", "31"],
+        "ubalance_pos": "",
+        "genopretning_url": "1V-DKm23gX0"
+    }, {
+        "element": "Strukturpolitik",
+        "balance_pos": ["34", "47"],
+        "ubalance_pos": "",
+        "genopretning_url": "1V-DKm23gX0"
+    }],
+    "balance_spm": [{
+        "spm": "Hvordan påvirker oliekrisen virksomhederne?",
+        "svar": "Det bliver dyrere at producere varer pga. stigende oliepriser",
+        "forkerte_svar": ["Det påvirker ikke virksomhederne umiddelbart", "Virksomhederne får en gevinst ved stigende oliepriser pga. deres investeringer."],
+        "feedback_true": "Stigende oliepriser betyder at virksomhederne får øgede omkostninger både til råvarer, transport og energi til produktionen. Dermed bliver produktionsprisen større med mindre virksomheden formår at effektivisere.",
+        "feedback_false": ["", ""]
+    }, {
+        "spm": "Hvilke organismer bliver plantevirksomhed spist af (2. trofiske niveau)",
+        "svar": ["Dyrevirksomhed"],
+        "forkerte_svar": ["Bundplanter", "Rovfisk"],
+        "feedback_true": "Dyrevirksomhed spiser plantevirksomhed, og er derfor andet trofiske niveau i fødekæden.",
+        "feedback_false": ["", ""]
+    }, {
+        "spm": "Hvilke  organismer bliver dyrevirksomhed spist af (3. trofiske niveau) ",
+        "svar": "husholdning",
+        "forkerte_svar": ["Rovfisk", "Plantevirksomhed"],
+        "feedback_true": "husholdning  spiser dyrevirksomhed som spiser plantevirksomhed, og er derfor tredje trofiske niveau i fødekæden.",
+        "feedback_false": ["", ""]
+    }, {
+        "spm": "Hvilke  organismer bliver husholdning spist af (4. trofiske niveau)?",
+        "svar": "Rovfisk",
+        "forkerte_svar": ["Andre husholdning", "Plantevirksomhed og dyrevirksomhed"],
+        "feedback_true": "Rovfisk spiser husholdning, som  spiser dyrevirksomhed som spiser plantevirksomhed, og er derfor fjerde trofiske niveau i fødekæden.",
+        "feedback_false": ["", ""]
+    }, {
+        "spm": "Når dyr og planter dør, falder de til bunds og bliver nedbrudt, så de næringsstoffer de består af kan genbruges. Hvilke organismer fungerer som nedbrydere?",
+        "svar": "Bunddyr og bakterier",
+        "forkerte_svar": ["husholdning", "Dyrevirksomhed"],
+        "feedback_true": "Bakterier og mange bunddyr lever af dødt organisk materiale, og kaldes derfor “nedbrydere”.",
+        "feedback_false": ["", ""]
+    }, {
+        "spm": "Hvilke organismer udfører fotosyntese?",
+        "svar": "Bundplanter og plantevirksomhed",
+        "forkerte_svar": ["Dyrevirksomhed", "Bundplanter"],
+        "feedback_true": "Både bundplanter og plantevirksomhed kan udføre fotosyntese, og er derfor første trofiske niveau i fødekæden.",
+        "feedback_false": ["Klik på de enkelte elementer og læs om dem", "Bundplanter er ikke de eneste organismer i kredsløbet, som kan udføre fotosyntese"]
+    }, {
+        "spm": "Udpeg fotosyntese-reaktionen",
+        "svar": "6CO<sub>2</sub> + 6H<sub>2</sub>O → C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>",
+        "forkerte_svar": ["C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> →  2CH<sub>3</sub>CH<sub>2</sub>OH + 2CO<sub>2</sub>", "C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>  → 6CO<sub>2</sub> + 6H<sub>2</sub>O"],
+        "feedback_true": "Dette reaktionsskema viser fotosyntesen, hvor kuldioxid og stat omdannes til glukose og ilt ved hjælp af bankenergi.",
+        "feedback_false": ["Dette reaktionsskema viser en gæringsreaktion, hvor glukose omdannes til ethanol og kuldioxid.", "Det er forkert. Dette reaktionsskema viser respiration, hvor glukose under forbrug af ilt nedbrydes til kuldioxid og stat."]
+    }, {
+        "spm": "Hvilke organismer udfører respiration?",
+        "svar": "Alle levende organismer",
+        "forkerte_svar": ["Plantevirksomhed og bundplanter", "Dyrevirksomhed, husholdning og rovfisk"],
+        "feedback_true": "Alle levende organismer udfører respiration",
+        "feedback_false": ["Plantevirksomhed og bundplanter er ikke de eneste som udfører respiration", "Dyrevirksomhed, husholdning og rovfisk er ikke de eneste som udfører respiration"]
+    }, {
+        "spm": "Udpeg respirations-reaktionen",
+        "svar": "C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>  → 6CO<sub>2</sub> + 6H<sub>2</sub>O",
+        "forkerte_svar": ["C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + O<sub>2</sub>  → CO<sub>2</sub> + H<sub>2</sub>O", "6CO<sub>2</sub> + 6H<sub>2</sub>O → C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>"],
+        "feedback_true": "Dette reaktionsskema viser respiration, hvor glukose under forbrug af ilt nedbrydes til kuldioxid og stat.",
+        "feedback_false": ["Dette reaktionsskema viser elementerne i respiration, men reaktionen er ikke rigtigt afstemt.", "Dette reaktionsskema viser fotosyntesen, hvor kuldioxid og stat omdannes til glukose og ilt ved hjælp af bankenergi"]
+    }, {
+        "spm": "Hvad er kilden til al energi i fødekæden?",
+        "svar": "banken",
+        "forkerte_svar": ["Nitrat og fosfat", "Ilt"],
+        "feedback_true": "bankenergi omdannes til kemisk energi ved fotosyntese, og bringes på den måde videre ned gennem fødekæderne.",
+        "feedback_false": ["", ""]
+    }],
+    "ubalance_spm": [{
+        "spm": "Hvor kan tilførsel af næringsstoffer som nitrat og fosfat komme fra?",
+        "svar": ["Både fra spildestat og fra landbruget"],
+        "forkerte_svar": ["Udledning af urenset spildestat", "Udvaskning af gødningsstoffer fra landbruget"],
+        "konsekvens": ["", ""],
+
+        "konsekvens_pics": ["", ""],
+        "feedback": "Der er flere kilder til udledning af næringssalte",
+        "feedback_false": ["Der er flere kilder til udledning af næringssalte.", "Der er flere kilder til udledning af næringssalte."]
+    }, {
+        "spm": "Når kredsløbet tilføres ekstra nitrat og fosfat, hvad sker der så med mængden af plantevirksomhed?",
+        "svar": ["Mængden øges, fordi plantevirksomhed vokser og formerer sig hurtigere"],
+        "forkerte_svar": ["Ingen ændring", "Mængden mindskes, fordi plantevirksomhed vokser og formerer sig langsommere"],
+        "konsekvens": ["", ""],
+        "konsekvens_pics": ["", ""],
+        "feedback": "",
+        "feedback_false": ["Gå på opdagelse i kredsløbet i balance.", "Gå på opdagelse i kredsløbet i balance."]
+    }, {
+        "spm": "Hvad betyder den store mængde plantevirksomhed for antallet af husholdning i kredsløbet?",
+        "svar": ["Der bliver flere husholdning, fordi rovfiskene ikke kan se og fange dem i det plantevirksomhed-grumsede stat."],
+        "forkerte_svar": ["Ingen ændring", "Der bliver færre husholdning, fordi de foræder sig i den store mængde plantevirksomhed"],
+        "konsekvens": ["", ""],
+        "konsekvens_pics": ["", ""],
+        "feedback": "Antallet af husholdning holdes normalt nede af rovfiskene, men rovfiskene har svært ved at jage når staten bliver uklart af plantevirksomhed.",
+        "feedback_false": ["Antallet af husholdning holdes normalt nede af rovfiskene, men rovfiskene har svært ved at jage når staten bliver uklart af plantevirksomhed.", "Antallet af husholdning holdes normalt nede af rovfiskene, men rovfiskene har svært ved at jage når staten bliver uklart af plantevirksomhed."]
+    }, {
+        "spm": "Hvad betyder de mange husholdning for mængden af dyrevirksomhed i kredsløbet?",
+        "svar": ["Der bliver mindre dyrevirksomhed, fordi husholdningene æder dem"],
+        "forkerte_svar": ["Der bliver mere dyrevirksomhed, fordi rovfiskene ikke kan se og fange dem", "Der bliver mere dyrevirksomhed, fordi de formerer sig hurtigere"],
+        "konsekvens": ["", ""],
+        "konsekvens_pics": ["", ""],
+        "feedback": "Når der er så mange husholdning vil de æde det meste dyrevirksomhed, også selvom dyrevirksomhed formerer sig hurtigt når der er meget plantevirksomhed.",
+        "feedback_false": ["Gå på opdagelse i kredsløbet i balance.", "Når der er så mange husholdning vil de æde det meste dyrevirksomhed, også selvom dyrevirksomhed formerer sig hurtigt når der er meget plantevirksomhed."]
+    }, {
+        "spm": "Hvad betyder den mindre mængde dyrevirksomhed for mængden af plantevirksomhed?",
+        "svar": ["Mængden af plantevirksomhed stiger endnu mere, fordi de ikke bliver ædt"],
+        "forkerte_svar": ["Mængden af plantevirksomhed falder, fordi der ikke er så meget dyrevirksomhed der respirerer og producerer CO<sub>2</sub>","Ingen ændring"],
+        "konsekvens": ["", ""],
+        "konsekvens_pics": ["", ""],
+        "feedback": "Der er rigeligt CO<sub>2</sub> i staten. Men når der er mindre dyrevirksomhed bliver der ikke ædt så meget plantevirksomhed.",
+        "feedback_false": ["Der er rigeligt CO<sub>2</sub> i staten", "Når der er mindre dyrevirksomhed bliver der ikke ædt så meget plantevirksomhed."]
+
+    }, {
+        "spm": "Hvad betyder den store mængde plantevirksomhed for bundplanterne i kredsløbet?",
+        "svar": ["Bundplanterne dør, fordi plantevirksomhed skygger for banklyset, som de skal bruge til fotosyntese"],
+        "forkerte_svar": ["Bundplanterne vokser hurtigere, fordi de kan optage næring direkte fra plantevirksomhed", "Ingenting"],
+        "konsekvens": ["", ""],
+        "konsekvens_pics": ["", ""],
+        "feedback": "",
+        "feedback_false": ["", ""]
+    }, {
+        "spm": " Den store mængde plantevirksomhed, som ikke bliver ædt, dør efterhånden og synker til bunds. Hvad sker der med det døde plantevirksomhed?",
+        "svar": ["Bakterier og dyr på kredsløbbunden nedbryder det ved respiration, processen bruger ilt."],
+        "forkerte_svar": ["Det foretager fotosyntese og producerer ilt", "Det begraves i bund-laget og omdannes til olie og kul. Processen frigiver ilt."],
+        "konsekvens": ["", ""],
+        "konsekvens_pics": ["", ""],
+        "feedback": "Dødt plantevirksomhed kan ikke foretage fotosyntese. Dannelse af kul og olie tager mange millioner år, så den proces har ingen betydning i denne sammenhæng.",
+        "feedback_false": ["Dødt plantevirksomhed kan ikke foretage fotosyntese", "Dannelsen af kul og olie tager mange millioner år, så den proces har ingen betydning i denne sammenhæng."]
+    }, {
+        "spm": "Der skal bruges meget ilt til at nedbryde den store mængde dødt plantevirksomhed, så der opstår iltmangel ved kredsløbbunden. Hvilke organismer dør først af iltmangel?",
+        "svar": ["Bunddyrene (muslinger, snegle osv)"],
+        "forkerte_svar": ["Bakterierne", "Dyrevirksomhed"],
+        "konsekvens": ["", ""],
+        "konsekvens_pics": ["", ""],
+        "feedback": "Bakterierne er ikke de mest følsomme for iltmangel. Dyrevirksomhed befinder sig mest i de øverste statlag, hvor iltniveauet er højere end ved bunden.",
+        "feedback_false": ["Bakterierne er ikke de mest følsomme for iltmangel.", "Dyrevirksomhed befinder sig mest i de øverste statlag, hvor iltniveauet er højere end ved bunden."]
+    }, {
+        "spm": "Hvor ender de nitrat- og fosfat-ioner, som startede hele processen?",
+        "svar": ["De frigives igen til staten, når de døde organismer nedbrydes, og holder dermed væksten af plantevirksomhed i gang."],
+        "forkerte_svar": ["De lægger sig på kredsløbbunden som tungt-opløselige salte.", "De fordamper efterhånden til atmosfæren."],
+        "konsekvens": ["", ""],
+        "konsekvens_pics": ["", ""],
+        "feedback": "En del af fosfaten kan fælde ud som tungtopløselige salte. Men alle nitrat-salte er letopløselige, så de danner aldrig bundfald i en kredsløb. Salte fordamper kun ved meget høje temperaturer (over 600॰C).",
+        "feedback_false": ["En del af fosfaten kan fælde ud som tungtopløselige salte. Men alle nitrat-salte er letopløselige, så de danner aldrig bundfald i en kredsløb.", "Salte fordamper kun ved meget høje temperaturer (over 600<sup>o</sup>C)."]
+    }]
+}

@@ -1,0 +1,1024 @@
+
+<!DOCTYPE html>
+<html lang="da">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+	<meta name="keywords" content="Engelsk, grammatik, s&aelig;tning, led, frase, funktion, ord, monotransitiv, ditransitiv, udvidet tid, progressiv, nutid, f&oslash;rnutid, f&oslash;rdatid, m&aring;deudsagnsord, modalitet, datid, grundled, udsagnsled, subjekt, objekt, generator, generativ, morfologi, syntaks" />
+	<meta name="description" content="Denne side kan lave simple engelske s&aelig;tninger. Det skulle gerne give et godt indblik i den engelske s&aelig;tnings grammatiske opgbygning. Siden er lavet i javascript og vil derfor stadig fungere hvis man downloader den, da alt koden afvikles lokalt i browseren."/>
+	<meta name="author" content="Tobias Bindslet" />
+
+	<title>Engelsk s&aelig;tningsgenerator</title>
+
+	<style type="text/css">
+		body {cursor: default; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
+		.tooltip { border-bottom: 1px dotted #aaa; position: relative; }  
+		.tooltip:hover { text-decoration: underline;}  
+		.tooltip:hover:after { z-index: 1; content: attr(data-tooltip); position: absolute; white-space: nowrap; background: rgba(0, 0, 0, 0.85); padding: 3px 7px; color: #FFF; border-radius: 3px;margin-left: 7px; margin-top: -3px; font-size: 1em; font-family: sans-serif;}
+		.phrase { position: relative; }
+		.phrase:hover { text-decoration: underline;}
+		.phrase:hover:after { content: attr(data-phrase); position: absolute; white-space: nowrap; background: rgba(0, 0, 0, 0.85); padding: 3px 7px; color: #FFF; border-radius: 3px; margin-left: -0px; margin-top: 40px; font-size: .75em; font-family: sans-serif;}
+		a:link.discreet {color: #000; }
+		a:visited.discreet {color: #000; }
+		a:hover.discreet {color: blue; }
+		a:active.discreet {color: #000; }
+		input {font-size: 1em;}
+		.emphasis {font-weight: bold;}
+		.output {float: none; padding: 3px; margin: 1em; font-size: 200%; font-family: 'Courier New', Monospace; color: #FFF; background-color: green; }
+		.output_error {float: none; padding: 3px; margin: 1em; font-size: 200%; font-family: 'Courier New', Monospace; color: #FFF; background-color: red; }
+	</style>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		//function $(e){return document.getElementById(e);} //deprecated - now replaced by jQuery functions
+
+		function rnd(minv, maxv){
+			if (maxv < minv) return 0;
+			return Math.floor(Math.random()*(maxv-minv+1)) + minv;
+		}
+
+		function rndnounPhrase() {
+			switch(rnd(1,4)) {
+				/*
+				case 1:
+					return "an apple";
+					break;
+				case 2:
+					return "a message";
+					break;
+				*/
+				default:
+					return "a book";
+			}
+		}
+
+        
+		function rndAdverbialPhrase(past) {
+			switch(past) {
+				case true:
+					return "yesterday";
+					break;
+				default:
+					return "now";
+			}
+		}
+
+		function rnd3rdPersPronoun(){
+			//switch(rnd(1, 3)) {
+			switch(2) {
+				case 1:
+					return "he";
+					break;
+				case 2:
+					return "she";
+					break;
+				default:
+					return "it";
+			}
+		}
+
+		function selectedObject() {
+		  var oType = $('#objecttype').val();
+		  var oPerson = $('#objectPerson').val();
+			var pluralis = $('#objPlural').prop("checked");
+		  var O = "";
+		  if (oType == "pNoun") {
+				O = "Anna";
+			} else if (oType == "count") {
+				//switch (rnd(1, 2)) {
+				switch (2) {
+					case 1:
+						O = "robots";
+						break;
+					default:
+						if (pluralis == true) {
+						  if ($('#objDefArticle').prop("checked")){
+						    O = "the cats";
+						  } else {
+						    O = "cats";
+						  }
+						} else {
+						  if ($('#objDefArticle').prop("checked")){
+						    O = "the cat";
+						  } else {
+						    O = "a cat";
+						  }
+						}
+				}
+			} else if (oType == "uncount") {
+				//switch (rnd(1, 3)) {
+				switch (1) {
+					case 1:
+						O = "time";
+						break;
+					case 2:
+						O = "hope";
+						break;
+					default:
+						O = "money"
+				}
+			} else if (oType == "pronoun") {
+				switch (oPerson) {
+					case "2nd":
+						if (pluralis == true) {
+						  O = "you";
+						} else {
+						  O = "you";
+						}
+						break;
+					case "3rd":
+						if (pluralis == true) {
+						  O = "them";
+						} else {
+						  O = "her";
+						}
+						break;
+					case "1st":
+						if (pluralis == true) {
+						  O = "us";
+						} else {
+						  O = "me";
+						}
+						break;
+					default:
+						O = "me";
+				}
+			}
+			return O;
+		}
+		
+		function rndObject(r){
+			if (r === undefined) {
+			  r = "bird";
+			}
+			if ($('#objPlural').prop("checked")) {
+			  r += "s";
+			}
+			if ($('#objDefArticle').prop("checked")) {
+			  r = "the " + r;
+			} else {
+			  if ($('#objPlural').prop("checked")) {
+			  } else {
+			    r = "a " + r;
+			  }
+			}
+			return r;
+		}
+		
+		function rndIndirectObject(r){
+			if (r === undefined) {
+			  r = "friend";
+			}
+			if ($('#IOPlural').prop("checked")) {
+			  r += "s";
+			}
+			if ($('#IODefArticle').prop("checked")) {
+			  r = "the " + r;
+			} else {
+			  if ($('#IOPlural').prop("checked")) {
+			  } else {
+			    r = "a " + r;
+			  }
+			}
+			return r;
+		}
+
+    function rndOC(r) {
+      if (r === undefined) {
+			  r = "happy";
+			}
+			return r;
+    }
+    
+    function rndSC(r) {
+      if (r === undefined) {
+			  r = "happy";
+			}
+			return r;
+    }
+
+		function rndAdjective() {
+			switch (rnd(1, 2)) {
+				/*
+				case 1:
+					if ($('#adjAdvfejl').prop("checked")) {
+						return "nicely";
+					} else {
+						return "nice";
+					}
+					break;
+				*/
+				default:
+					if ($('#adjAdvfejl').prop("checked")) {
+						return "proudly";
+					} else {
+						return "proud";
+					}
+			}
+		}
+
+		function rndModal() {
+			//switch (rnd(1, 5)) {
+			switch (modalVerb.selectedIndex) {
+			case 0:
+			  if ($('#past').prop("checked")) {
+				return "could";
+			  } else {
+			    return "can";
+			  }
+			  break;
+			case 1:
+			  if ($('#past').prop("checked")) {
+				return "might";
+			  } else {
+			    return "may";
+			  }
+			case 2:
+			  if ($('#past').prop("checked")) {
+				return "had to";
+			  } else {
+			    return "must";
+			  }
+		  	case 3:
+			  if ($('#past').prop("checked")) {
+				return "would";
+			  } else {
+			    return "will";
+			  }
+			default:
+			  if ($('#past').prop("checked")) {
+				return "should";
+			  } else {
+			    return "shall";
+			  }
+			}
+		}
+
+		function conjugateHave(modal, _ppt, _preterite, person, pluralis, kongruensfejl) {
+			if (kongruensfejl == true) {
+				if (modal == true) {
+					return "had";
+				} else if (_preterite == true) {
+					return "have";
+				} else if (_ppt == true) {
+					return "has";
+			  } else {
+			   	if ((person == "3rd") && (pluralis == false)) {
+			   		return "has";
+					} else {
+						return "have";	
+					}
+			  }
+			}
+			if (modal == true) {
+				return "have";
+			} else if (_preterite == true) {
+				return "had";
+			} else if (_ppt == true) {
+				return "had";
+		  } else {
+  		  if ((person == "3rd") && (pluralis == false)) {
+  		  	return "has";
+  			} else {
+  				return "have";	
+  			}
+		  }
+		}
+
+		function conjugateBe(progressive, perfect, modal, past, person, pluralis, kongruensfejl) {
+			if (kongruensfejl == true) {
+				if (progressive == true) {
+					return "being";
+				} else if (perfect == true)  {
+					return "been";
+			  	} else if (modal == true) {
+			  		return "be";
+			  	} else if (past == true) {
+			  		if ((person == "3rd") && (pluralis == true)) {
+			  			return "wew";
+			  		} else { 
+			  			return "was";
+			  		}
+			  	} else if ((person == "2nd") || (pluralis == true)) {
+					return "are";
+				} else if ((person == "1st") && (pluralis == false)) {
+					return "am";
+				} else {
+					return "is";	
+				}
+			} else {
+				if (progressive == true) {
+					return "being";
+				} else if (perfect == true)  {
+					return "been";
+			  	} else if (modal == true) {
+			  		return "be";
+			  	} else if (past == true) {
+			  		if (((person == "3rd") || (person == "1st")) && (pluralis == false)) {
+			  			return "was";
+			  		} else { 
+			  			return "were";
+			  		}
+			  	} else if ((person == "1st") && (pluralis == false)) {
+					return "am";
+				} else if ((person == "3rd") && (pluralis == false)) {
+					return "is";
+				} else {
+					return "are";	
+				}
+			}
+		}
+
+    function disablePassive(disable, check) {
+			$('#passive').prop("disabled", disable);
+      if (check !== undefined) {
+        $('#passive').prop("checked", check);
+      }
+      if (disable) {
+	      $('LI#passiveLI').hide("100");
+      } else {
+        $('LI#passiveLI').show("100");
+      }
+    }
+
+    function disableObject(disable, check) {
+			$('#directobject').prop("disabled", disable);
+      $('#directobject').prop("checked", check);
+      if (check) {
+        $('#objDefArticle').attr("disabled", false);
+			  $('#objPlural').attr("disabled", false);
+			  $('.OSection').show("100");
+      } else {
+        $('#objDefArticle').attr("disabled", true);
+	      $('#objPlural').attr("disabled", true);
+	      $('.OSection').hide("100");
+      }
+    }
+    
+    function disableIO(disable, check) {
+			$('#indirectobject').prop("disabled", disable);
+      $('#indirectobject').prop("checked", check);
+      if (check) {
+        $('#IODefArticle').attr("disabled", false);
+			  $('#IOPlural').attr("disabled", false);
+			  $('.IOSection').show("100");
+      } else {
+        $('#IODefArticle').attr("disabled", true);
+			  $('#IOPlural').attr("disabled", true);
+			  $('.IOSection').hide("100");
+      }
+    }
+    
+    function disableOP(disable, check) {
+			$('#objectComplement').prop("disabled", disable);
+      $('#objectComplement').prop("checked", check);
+      if (check) {
+        $('.OPSection').show("100");
+      } else {
+        $('.OPSection').hide("100");
+      }
+    }
+    
+    function disableSP(disable, check) {
+			$('#subjectComplement').prop("disabled", disable);
+      $('#subjectComplement').prop("checked", check);
+      if (check) {
+        $('.SPSection').show("100");
+      } else {
+        $('.SPSection').hide("100");
+      }
+    }
+
+		function randomizeSentence() {
+			//regularity.selectedIndex = (rnd(0, 2));
+			if (rnd(1,3) == 1) {$('#past').prop("checked", true); } else {$('#past').prop("checked", false); }
+			if (rnd(1,3) == 1) {$('#modal').prop("checked", true); } else {$('#modal').prop("checked", false);}
+			if (rnd(1,3) == 1) {$('#perfect').prop("checked", true); } else {$('#perfect').prop("checked", false);}
+			if (rnd(1,3) == 1) {$('#progressive').prop("checked", true); } else {$('#progressive').prop("checked", false);}
+			if (rnd(1,3) == 1) {$('#passive').prop("checked", true); } else {$('#passive').prop("checked", false);}
+			transitivity.selectedIndex = (rnd(0, 4));
+			if (rnd(1,3) == 1) {$('#defArticle').prop("checked", true); } else {$('#defArticle').prop("checked", false);}
+			if (rnd(1,2) == 1) {$('#pluralis').prop("checked", true); } else {$('#pluralis').prop("checked", false);}
+			if (rnd(1,2) == 1) {$('#genitive').prop("checked", true); } else {$('#genitive').prop("checked", false);}
+			if (rnd(1,3) == 1) {$('#adjPremodifier').prop("checked", true); } else {$('#adjPremodifier').prop("checked", false);}
+			subjectPerson.selectedIndex = (rnd(0, 5));
+			subjtype.selectedIndex = (rnd(0, 3));
+			if (rnd(1,3) == 1) {$('#adverbialphrase').prop("checked", true); } else {$('#adverbialphrase').prop("checked", false);}
+			//fejl?
+			generate();
+		}
+
+		function generate(){
+			var trans = transitivity.options[transitivity.selectedIndex].value;
+
+			/*var reg = regularity.options[regularity.selectedIndex].value;
+			switch (reg) {
+				case "irregular":
+					var V_inf = "sing";
+					var V_preterite = "sung";
+					var V_ppt = "sang";
+					var V_ing = "singing";
+					var V_3rdps = "sings";
+					break;
+				case "be":
+					var V_inf = "be";
+					var V_preterite = "been";
+					var V_ppt = "was/were";
+					var V_ing = "being";
+					var V_3rdps = "is";
+					break;
+				default:
+			*/
+				$('#passive').attr("disabled", false);
+				var SC = ""; //subject complement
+				var O = "";	//(direct) object
+				var IO = ""; //indirect object
+				var OC = ""; //object complement
+				var AdvP = ""; //Adverbial phrase
+				if (trans == "monotransitive") {
+					//if (rnd(1,2) == 1) {
+						var V_inf = "love";
+						var V_preterite = "loved";
+						var V_ppt = "loved";
+						var V_ing = "loving";
+						var V_3rdps = "loves";	
+					/*
+					} else {
+						var V_inf = "hate";
+						var V_preterite = "hated";
+						var V_ppt = "hated";
+						var V_ing = "hating";
+						var V_3rdps = "hates";	
+					}
+					*/
+          disablePassive(false)
+          disableObject(true, true);
+          disableIO(true, false);
+					disableSP(true, false);
+					disableOP(true, false);
+					var O = selectedObject();
+				} else if (trans == "intransitive") {
+					//if (rnd(1,2) == 1) {
+					if (false) {
+						var V_inf = "walk";
+						var V_preterite = "walked";
+						var V_ppt = "walked";
+						var V_ing = "walking";
+						var V_3rdps = "walks";
+					} else {
+						var V_inf = "dance";
+						var V_preterite = "danced";
+						var V_ppt = "danced";
+						var V_ing = "dancing";
+						var V_3rdps = "dances";
+					}
+					disablePassive(true, false)
+					disableObject(true, false);
+					disableIO(true, false);
+					disableSP(true, false);
+					disableOP(true, false);
+				} else if (trans == "ditransitive") {
+					//if (rnd(1,2) == 1) {
+					if (false) {
+						var V_inf = "show"; //NB: irregular
+						var V_preterite = "showed";
+						var V_ppt = "shown";
+						var V_ing = "showing";
+						var V_3rdps = "shows";
+					} else {
+						var V_inf = "give"; //NB: irregular
+						var V_preterite = "gave";
+						var V_ppt = "given";
+						var V_ing = "giving";
+						var V_3rdps = "gives";
+					}
+					disablePassive(true, false)
+          disableObject(true, true);
+					disableIO(true, true);
+					disableSP(true, false);
+					disableOP(true, false);
+					O = selectedObject();
+					IO = rndIndirectObject();
+				} else if (trans == "complex") {
+					//if (rnd(1,2) == 1) {
+					if (true) {
+					  var V_inf = "make";
+						var V_preterite = "made";
+						var V_ppt = "made";
+						var V_ing = "making";
+						var V_3rdps = "makes";
+						/*
+						var V_inf = "consider";
+						var V_preterite = "considered";
+						var V_ppt = "considered";
+						var V_ing = "considering";
+						var V_3rdps = "considers";
+						*/
+					} else {
+						var V_inf = "call";
+						var V_preterite = "called";
+						var V_ppt = "called";
+						var V_ing = "calling";
+						var V_3rdps = "calls";
+					}
+					disablePassive(true, false)
+          disableObject(true, true);
+					disableIO(true, false);
+					disableSP(true, false);
+					disableOP(true, true);
+					O = selectedObject();
+					OC = rndOC();
+				} else if (trans == "copular") {
+					//if (rnd(1,2) == 1) {
+						var V_inf = "seem";
+						var V_preterite = "seemed";
+						var V_ppt = "seemed";
+						var V_ing = "seeming";
+						var V_3rdps = "seems";
+					/*
+					} else {
+						var V_inf = "look";
+						var V_preterite = "looked";
+						var V_ppt = "looked";
+						var V_ing = "looking";
+						var V_3rdps = "looks";
+					}
+					*/
+					disablePassive(true, false)
+          disableObject(true, false);
+					disableIO(true, false);
+					disableSP(true, true);;
+					disableOP(true, false);
+					SC = rndSC();
+				}			
+			//}	
+
+			var sType = subjtype.options[subjtype.selectedIndex].value;
+			subjectPerson.disabled = false;
+			$('#defArticle').attr("disabled", false);
+			$('#pluralis').attr("disabled", false);
+			$('#genitive').attr("disabled", true);
+			$('#adjPremodifier').attr("disabled", false);
+			if (sType == "pNoun") {
+				subjectPerson.selectedIndex = 2;
+				subjectPerson.disabled = true;
+				$('#defArticle').attr("disabled", true);
+				$('#defArticle').prop("checked", false);
+				$('#pluralis').attr("disabled", true);
+				$('#pluralis').prop("checked", false);
+			} else if (sType == "count") {
+				subjectPerson.selectedIndex = 2;
+				subjectPerson.disabled = true;
+        if ($('#pluralis').prop("checked") == false) {
+				  $('#defArticle').attr("disabled", true);
+				  $('#defArticle').prop("checked", true);
+        }
+			} else if (sType == "uncount") {
+				subjectPerson.selectedIndex = 2;
+				subjectPerson.disabled = true;
+				$('#defArticle').attr("disabled", true);
+				$('#defArticle').prop("checked", false);
+				$('#pluralis').attr("disabled", true);
+				$('#pluralis').prop("checked", false);
+			} else if (sType == "pronoun") {
+				$('#adjPremodifier').attr("disabled", true);
+				$('#adjPremodifier').prop("checked", false);
+				$('#defArticle').attr("disabled", true);
+				$('#defArticle').prop("checked", false);
+			} else {
+			}
+			var oType = $('#objecttype').val();
+			if (oType == "pNoun") {
+				objectPerson.selectedIndex = 2;
+				objectPerson.disabled = true;
+				$('#objDefArticle').attr("disabled", true);
+				$('#objDefArticle').prop("checked", false);
+				$('#objPlural').attr("disabled", true);
+				$('#objPlural').prop("checked", false);
+			} else if (oType == "count") {
+				objectPerson.selectedIndex = 2;
+				objectPerson.disabled = true;
+			} else if (oType == "uncount") {
+				objectPerson.selectedIndex = 2;
+				objectPerson.disabled = true;
+				$('#objDefArticle').attr("disabled", true);
+				$('#objDefArticle').prop("checked", false);
+				$('#objPlural').attr("disabled", true);
+				$('#objPlural').prop("checked", false);
+			} else if (oType == "pronoun") {
+				objectPerson.disabled = false;
+				$('#objAdjPremodifier').attr("disabled", true);
+				$('#objAdjPremodifier').prop("checked", false);
+				$('#objDefArticle').attr("disabled", true);
+				$('#objDefArticle').prop("checked", false);
+			} else {
+			}
+
+			var person = subjectPerson.options[subjectPerson.selectedIndex].value;
+			var pluralis = $('#pluralis').prop("checked");
+			if (sType == "pNoun") {
+				S = "Christian";
+			} else if (sType == "count") {
+				//switch (rnd(1, 2)) {
+				switch (2) {
+					case 1:
+						S = "robots";
+						break;
+					default:
+						if (pluralis == true) {
+						  S = "cats";
+						} else {
+						  S = "cat";
+						}
+				}
+			} else if (sType == "uncount") {
+				//switch (rnd(1, 3)) {
+				switch (1) {
+					case 1:
+						S = "time";
+						break;
+					case 2:
+						S = "hope";
+						break;
+					default:
+						S = "money"
+				}
+			} else if (sType == "pronoun") {
+				switch (person) {
+					case "2nd":
+						if (pluralis == true) {
+						  var S = "you";
+						} else {
+						  var S = "you";
+						}
+						break;
+					case "3rd":
+						if (pluralis == true) {
+						  var S = "they";
+						} else {
+						  var S = rnd3rdPersPronoun();
+						}
+						break;
+					case "1st":
+						if (pluralis == true) {
+						  var S = "we";
+						} else {
+						  var S = "I";
+						}
+						break;
+					default:
+						var S = "I";
+				}
+			}
+
+			if ($('#adjPremodifier').prop("checked") || trans == "complex" || trans == "copular") {
+				$('#adjAdvfejl').attr("disabled", false);
+			} else {
+				$('#adjAdvfejl').attr("disabled", true);
+				$('#adjAdvfejl').prop("checked", false);
+			}
+
+			var adjPreM = "";
+			if ($('#adjPremodifier').prop("checked")) {
+				adjPreM = rndAdjective();
+			}
+
+      var A = "";
+			if ($('#defArticle').prop("checked")) {
+				A = "the";
+			}
+
+			
+			var VP_modal = "";
+			var VP_perfect = "";
+			var VP_progressive = "";
+			var VP_passive = "";
+			var VP_past = "";
+
+			var _ppt = false; //past participle (kort tillægsform) "yesterday I was /given/ the apple"
+			var _preterite = false; //preterite (datidsform - ofte ens med ved regelmæssige verber kort tillægsform) "yesterday I /gave/ him the apple"
+			var _ing = false; //gerund (lang tillægsform)
+
+			/******
+			* Logic for introducing grammatical errors
+			******/
+
+			var gramError = false;
+
+			if ($('#kongruens').prop("checked")){
+				gramError = true;
+				var V_temp = V_inf;
+				V_inf = V_3rdps;
+				V_3rdps = V_temp;
+			}
+
+			if ($('#adjAdvfejl').prop("checked")){
+				gramError = true;
+			}
+
+			if (gramError == true) {
+				$('#output').addClass("output_error");
+				$('#output').removeClass("output");
+			} else {
+				$('#output').addClass("output");
+				$('#output').removeClass("output_error");
+			}
+
+			/******
+			* Logic for generating extra phrases/clauses 
+			******/
+			if ($('#adverbialphrase').prop("checked")){
+				AdvP = rndAdverbialPhrase($('#past').prop("checked"));
+			}
+			/******
+			* Main logic for forming the verb phrase 
+			******/
+
+			if ($('#past').prop("checked")){
+				_preterite = true;
+			}
+		  
+			if ($('#modal').prop("checked")){
+				VP_modal = rndModal();
+				_preterite = false;
+				$('#modalVerb').show("100");
+			} else {
+			  $('#modalVerb').hide("100");
+			}
+
+			if ($('#perfect').prop("checked")){
+				VP_perfect = conjugateHave($('#modal').prop("checked"), _ppt, _preterite, person, pluralis, $('#kongruens').prop("checked"));
+				_ppt = true;
+			} 
+
+			if ($('#progressive').prop("checked")){
+				VP_progressive = conjugateBe(false, $('#perfect').prop("checked"), $('#modal').prop("checked"), $('#past').prop("checked"), person, pluralis, $('#kongruens').prop("checked"));
+				_ing = true;	
+				_ppt = false;
+			} 
+
+			if ($('#passive').prop("checked")){
+				VP_passive = conjugateBe($('#progressive').prop("checked"), $('#perfect').prop("checked"), $('#modal').prop("checked"), $('#past').prop("checked"), person, pluralis, $('#kongruens').prop("checked"));
+				if ($('#progressive').prop("checked")) {
+					_ing = false;
+				}
+				_ppt = true;
+			} 
+
+
+			var V = V_inf;
+
+			if (((person == "3rd") && (pluralis == false)) && $('#modal').prop("checked") == false) {
+				V = V_3rdps;
+			} 
+
+			if (_ppt) {
+				VP_main = V_ppt;
+			} else if (_ing) {
+				VP_main = V_ing;		
+			} else if (_preterite) {
+				VP_main = V_preterite;
+			} else {
+				VP_main = V;
+			}
+
+
+			VP_modal = '<span data-phrase="m&aring;deudsagnsord (modalverbum)" class="phrase">' + VP_modal + '</span>';
+			if ($('#past').prop("checked")) {
+				VP_perfect = '<span data-phrase="hj&aelig;lpeudsagnsord der danner f&oslash;r datid (pluskvamperfektum)" class="phrase">' + VP_perfect + '</span>';
+				VP_progressive = '<span data-phrase="hj&aelig;lpeudsagnsord der danner udvidet datid (progressiv pr&aelig;teritum): b&oslash;jet [to be] + -ing form" class="phrase">' + VP_progressive + '</span>';
+				VP_passive = '<span data-phrase="hj&aelig;lpeudsagnsord der danner datids lideform (passiv pr&aelig;teritum): b&oslash;jet [to be] + -ed form" class="phrase">' + VP_passive + '</span>';
+			} else {
+				VP_perfect = '<span data-phrase="hj&aelig;lpeudsagnsord der danner f&oslash;r nutid (perfektum)" class="phrase">' + VP_perfect + '</span>';
+				VP_progressive = '<span data-phrase="hj&aelig;lpeudsagnsord der danner udvidet nutid (progressiv pr&aelig;sens): b&oslash;jet [to be] + -ing form" class="phrase">' + VP_progressive + '</span>';
+				VP_passive = '<span data-phrase="hj&aelig;lpeudsagnsord der danner nutids lideform (passiv pr&aelig;sens): b&oslash;jet [to be] + -ed form" class="phrase">' + VP_passive + '</span>';
+			}
+
+			var adjPreM_space = " ";
+			if (adjPreM == "") {adjPreM_space = "";}
+
+			var AdvP_space = ", ";
+			if (AdvP == "") {AdvP_space = "";}
+			
+			var A_space = " ";
+			if (A == "") {A_space = "";}
+
+			var IO_space = " ";
+			if (IO == "") {IO_space = "";}
+			
+			var O_space = " ";
+			if (O == "") {O_space = "";}
+			if ($('#passive').prop("checked") == true && trans == "monotransitive") {O_space = '<span data-phrase="forholdsord (pr&aelig;position) der viser objektets agens" class="phrase">' + " by " + '</span>';}
+
+			var SC_space = " ";
+			if (SC == "") {SC_space = "";}
+
+			var OC_space = " ";
+			if (OC == "") {OC_space = "";}
+
+			if ($('#adverbialphrase').prop("checked")) {
+				AdvP = AdvP.charAt(0).toUpperCase() + AdvP.slice(1); //capitalize first letter of adverbial phrase
+			} else if ($('#defArticle').prop("checked")) {
+			  A = A.charAt(0).toUpperCase() + A.slice(1); //capitalize first letter of definite article
+			} else if ($('#adjPremodifier').prop("checked")) {
+				adjPreM = adjPreM.charAt(0).toUpperCase() + adjPreM.slice(1); //capitalize first letter of adjective premodifier
+			} else {
+				S = S.charAt(0).toUpperCase() + S.slice(1); //capitalize first letter of subject
+			}
+
+			AdvP = '<span data-phrase="Adverbialfrase der fungerer som adverbielt led " class="phrase">' + AdvP + '</span>';
+			VP_main = '<span data-phrase="udsagnsord (verbum): [to ' + V_inf + '] - der fungerer som kerne i udsagnsled (verballed)" class="phrase">' + VP_main + '</span>';
+
+			adjPreM = '<span data-phrase="tillægsord (adjektiv) der beskriver grundled (subjekt) " class="phrase">' + adjPreM + '</span>';
+
+			switch (sType) {
+				case "pNoun":
+					S = '<span data-phrase="egenavn (proprium) der fungerer som grundled (subjekt) " class="phrase">' + S + '</span>';
+					break;
+				case "count":
+					S = '<span data-phrase="tælleligt navneord (substantiv) der fungerer som grundled (subjekt) " class="phrase">' + S + '</span>';
+					break;
+				case "uncount":
+					S = '<span data-phrase="utælleligt navneord (substantiv) der fungerer som grundled (subjekt) " class="phrase">' + S + '</span>';
+					break;
+				default: // case "pronoun"	
+					S = '<span data-phrase="stedord (pronomin) der fungerer som grundled (subjekt) " class="phrase">' + S + '</span>';
+			}
+			
+
+			IO = '<span data-phrase="navneord (substantiv) der fungerer som hensynsled (indirekte objekt) " class="phrase">' + IO + '</span>';
+
+			O = '<span data-phrase="navneord (substantiv) der fungerer som genstandsled (objekt) " class="phrase">' + O + '</span>';
+
+			SC = '<span data-phrase="tillægsord (adjektiv) der fungerer som omsagnsled til grundled (subjektsprædikat) " class="phrase">' + SC + '</span>';
+
+			OC = '<span data-phrase="tillægsord (adjektiv) der fungerer som omsagnsled til genstandsled (objektsprædikat) " class="phrase">' + OC + '</span>';
+			
+			A = '<span data-phrase="kendeord (artikel) der gør grundleddet (subjektet) bestemt " class="phrase">' + A + '</span>';
+
+			var period = '<span data-phrase="punktum der markerer s&aelig;tningens afslutning" class="phrase">.</span>';;
+
+			var ErrorAsterisk = "";
+			if (gramError == true) { ErrorAsterisk = '<span data-phrase="asterisk der markerer at sætningen ikke er grammatisk korrekt)" class="phrase">' + "*" + '</span>'; }
+			$('#output').html(ErrorAsterisk + AdvP + AdvP_space + A + A_space+ adjPreM + adjPreM_space + S + " " + VP_modal + " " + VP_perfect + " " + VP_progressive + " " + VP_passive + " " + VP_main + IO_space + IO + O_space + O + OC_space + OC + SC_space + SC + period);
+			return false;
+		}
+
+	</script>
+
+</head>
+
+<body style="border: 1px solid #ccc; margin: 1em; padding: 1em; font-family: arial, helvetica, sans-serif; color: #333;" onload="generate();">
+
+<section>
+	
+	<!--<section><input value="Lav en tilfældig engelsk s&aelig;tning:" type=button onclick="javascript:randomizeSentence();"></section>-->
+	
+	<section id="output" class="output"><noscript><b>Please activate JavaScript in your browser.</b></noscript></section>
+
+	<section class="VSection">
+	<ul><li><span data-tooltip="der skal altid være et udsagnsled i en sætning" class="tooltip"><input disabled checked type="checkbox" id="verbPhrase" onclick="javascript:generate();" /></span> <label for="verbPhrase">med et <span class="emphasis"><span data-tooltip="verballed (V)" class="tooltip">udsagnsled</span></span></label>, hvor hoved<span data-tooltip="verbet" class="tooltip">udsagnsordet</span> er
+	<!--
+	<select disabled name="regularity" id="regularity" onchange="javascript:generate();">
+		<option value="regular">regelm&aelig;ssigt b&oslash;jet  </option>
+		<option value="irregular">uregelm&aelig;ssigt verbum</option>
+		<option value="be">to be (mest uregelm&aelig;ssige verbum)</option>
+	</select>
+	
+	og
+	-->
+
+	<select name="transitivity" id="transitivity" onchange="javascript:generate();">
+		<option value="monotransitive"> 1) S + V + O (monotransitivt hovedudsagnsord)</option>
+		<option value="ditransitive"> 1.1) S + V + IO + O (ditransitivt hovedudsagnsord [~give])</option>
+		<option value="complex"> 1.2) S + V + O + OP (komplekst hovedudsagnsord)</option>
+		<option value="copular"> 2) S + V + SP (kopul&aelig;rt  hovedudsagnsord [~be])</option>
+		<option value="intransitive"> 3) S + V (intransitivt hovedudsagnsord)</option>		
+	</select>
+
+	<!--i-->
+	<ul>
+	<li><input type="checkbox" id="modal" onclick="javascript:generate();" /> <label for="modal"><span data-tooltip="modalitet (danner fremtid hvis modalverbet er [will])" class="tooltip">m&aring;deudsagnsord</span></label>
+	<select name="modalVerb" id="modalVerb" onchange="javascript:generate();">
+		<option>can</option>	
+		<option>may</option>
+		<option>must</option>
+		<option>willl</option>
+		<option>shall</option>
+	</select> 
+	<li><input type="checkbox" id="perfect" onclick="javascript:generate();" /> <label for="perfect"><span data-tooltip="perfektum" class="tooltip">f&oslash;r-tid</span></label><br />
+	<li><input type="checkbox" id="progressive" onclick="javascript:generate();"/> <label for="progressive"><span data-tooltip="progressiv" class="tooltip">udvidet tid</span></label><br />
+	<li id="passiveLI"><input type="checkbox" id="passive" onclick="javascript:generate();" /> <label for="passive"><span data-tooltip="passiv" class="tooltip">lideform</span></label><br /></li>
+	<li><input type="checkbox" id="past" onclick="javascript:generate();"/> <label for="past"><span data-tooltip="pr&aelig;teritum" class="tooltip">datid</span></label>
+	</ul>	<br />
+	</section>
+
+  <section class="SSection">
+	<ul><li><input disabled checked type="checkbox" id="subjectPhrase" onclick="javascript:generate();" /> <label for="subjectPhrase">med et <span class="emphasis"><span data-tooltip="subjekt (S)" class="tooltip">grundled</span></span></label>, der er et 
+	<select name="subjtype" id="subjtype" onchange="javascript:generate();">
+		<option value="pNoun">egenavn (proprium)</option>	
+		<option value="count">tælleligt navneord (substantiv)</option>
+		<option value="uncount">utælleligt navneord (substantiv)</option>
+		<option value="pronoun">stedord (pronomin)</option>
+	</select> 
+	<span data-tooltip="Todo: udvid med verber i infinitiv og ledsætninger som subjekter" class="tooltip">(...)</span>
+	i
+	<select name="subjectPerson" id="subjectPerson" onchange="javascript:generate();">
+		<option value="1st">1. person: [I/we]</option>	
+		<option value="2nd">2. person: [you]</option>
+		<option value="3rd">3. person: [She/they]</option>
+	</select>
+	<ul>
+	<li><input disabled type="checkbox" id="defArticle" onclick="javascript:generate();"/> <label for="defArticle"><span data-tooltip="med den bestemte artikel 'the' foran" class="tooltip">i bestemt form</span></label></li>
+	<li><input disabled type="checkbox" id="pluralis" onclick="javascript:generate();"/> <label for="pluralis"><span data-tooltip="i flertal" class="tooltip">i flertal</span></label></li>
+	<li><span data-tooltip='virker ikke endnu' class="tooltip">*</span><input disabled type="checkbox" id="genitive" onclick="javascript:generate();"/> <label for="genitive"><span data-tooltip="*virker ikke endnu*" class="tooltip">i genitiv</span></label></li>
+	<li><input disabled type="checkbox" id="adjPremodifier" onclick="javascript:generate();"/><label for="adjPremodifier"> med foranstillet <span data-tooltip="adjektiv" class="tooltip">till&aelig;gsord</span></label></li>
+	</ul>
+	</ul>
+	</section>
+
+	<section class="IOSection">
+	<ul>
+	<li><span data-tooltip="hovedudsagnsordet bestemmer om der skal være et hensynsled" class="tooltip"><input type="checkbox" id="indirectobject" onclick="javascript:generate();" /></span> med et <span class="emphasis"><span data-tooltip='indirekte objekt (IO)' class="tooltip">hensynsled</span></span><span data-tooltip="Todo: udvid med pronominer" class="tooltip">(...)</span>
+		<ul>
+	  <li><input disabled type="checkbox" id="IODefArticle" onclick="javascript:generate();"/> <label for="IODefArticle"><span data-tooltip="med den bestemte artikel 'the' foran hensynsleddet" class="tooltip">i bestemt form</span></label></li>
+	  <li><input disabled type="checkbox" id="IOPlural" onclick="javascript:generate();"/> <label for="IOPlural"><span data-tooltip="med hensynsleddet i pluralis" class="tooltip">i flertal</span></label></li>
+	  </ul>
+	</ul>
+	</section>
+
+	<section class="OSection">
+	<ul>
+	<li><span data-tooltip="hovedudsagnsordet bestemmer om der skal være et genstandsled" class="tooltip"><input type="checkbox" id="directobject" onclick="javascript:generate();" /></span> med et <span class="emphasis"><span data-tooltip='direkte objekt (O eller DO)' class="tooltip">genstandsled</span></span>, der er et 
+	<select name="objecttype" id="objecttype" onchange="javascript:generate();">
+		<option value="pNoun">egenavn (proprium)</option>	
+		<option value="count">tælleligt navneord (substantiv)</option>
+		<option value="uncount">utælleligt navneord (substantiv)</option>
+		<option value="pronoun">stedord (pronomin)</option>
+	</select> 
+	<span data-tooltip="Todo: udvid med verber i infinitiv og ledsætninger som objekter" class="tooltip">(...)</span>
+	i
+	<select name="objectPerson" id="objectPerson" onchange="javascript:generate();">
+		<option value="1st">1. person: [me/us]</option>	
+		<option value="2nd">2. person: [you]</option>
+		<option value="3rd">3. person: [her/them]</option>
+	</select>
+	<div class="objDetails">
+	<ul>
+	  <li><input disabled type="checkbox" id="objDefArticle" onclick="javascript:generate();"/> <label for="objDefArticle"><span data-tooltip="med den bestemte artikel 'the' foran genstandsleddet" class="tooltip">i bestemt form</span></label></li>
+	  <li><input disabled type="checkbox" id="objPlural" onclick="javascript:generate();"/> <label for="objPlural"><span data-tooltip="med genstandsleddet i pluralis" class="tooltip">i flertal</span></label></li>
+	  </ul>
+	</ul>
+	</div>
+	</section>
+	
+	<section class="SPSection">
+	<ul>
+	<li><span data-tooltip="hovedudsagnsordet bestemmer om der skal være et omsagnsled til grundled" class="tooltip"><input type="checkbox" id="subjectComplement" onclick="javascript:generate();" /></span> med et <span class="emphasis"><span data-tooltip='subjektsprædikat (SP)' class="tooltip">omsagnsled til grundled</span></span><span data-tooltip="Todo: udvid med substantiver og verber i infinitiv" class="tooltip">(...)</span>
+	</ul>
+	</section>
+	
+	<section class="OPSection">
+	<ul>
+	<li><span data-tooltip="hovedudsagnsordet bestemmer om der skal være et omsagnsled til genstandsled" class="tooltip"><input type="checkbox" id="objectComplement" onclick="javascript:generate();" /></span> med et <span class="emphasis"><span data-tooltip='objektsprædikat (OP)' class="tooltip">omsagnsled til genstandsled</span></span><span data-tooltip="Todo: udvid med substantiver" class="tooltip">(...)</span>
+	</ul>
+	</section>
+
+	<section class="ASection">
+	<ul>
+	<li><input type="checkbox" id="adverbialphrase" onclick="javascript:generate();" /><label for="adverbialphrase"> med et <span class="emphasis"><span data-tooltip='adverbialled (A)' class="tooltip">biled (frit led)</span></span></label><span data-tooltip="Todo: udvid med valg af position for adverbialleddet, samt mulighed for præpositionsforbindelser og adverbielle ledsætninger" class="tooltip">(...)</span>
+	</ul>
+	</section>
+	
+	<section>
+	<ul>
+	<li><span data-tooltip="Todo: konjunktionaler og ledsætinger" class="tooltip">(...)</span>
+	<ul>
+	<li><span data-tooltip='virker ikke endnu' class="tooltip">*</span><input disabled type="checkbox" id="relativeclause" onclick="javascript:generate();" /> <span data-tooltip='=relativ leds&aelig;tning fx: "(...), which was good"' class="tooltip">henf&oslash;rende leds&aelig;tning (relative clause)</span><br /><br />
+	<li><span data-tooltip='virker ikke endnu' class="tooltip">*</span><input disabled type="checkbox" id="thatclause" onclick="javascript:generate();" /> <span data-tooltip='=that-s&aelig;tning fx: "(...), that he liked"' class="tooltip">that-s&aelig;tning (that-clause)</span><br />
+	</ul>
+	</ul><br />
+	</section>
+
+	<section>
+	Tilf&oslash;j grammatiske <span data-tooltip="~afvigelser fra standardengelsk" class="tooltip">fejl</span>
+	<ul>
+	<li><input type="checkbox" id="kongruens" onclick="javascript:generate();" /><label for="kongruens"><span data-tooltip="Når grundled (	subjekt) og udsagnsled (verballed) ikke stemmer overens i person og tal" class="tooltip">kongruensfejl</span></label><br />
+	<li><input type="checkbox" id="adjAdvfejl" onclick="javascript:generate();" /><label for="adjAdvFejl">fejl i brug af <span data-tooltip="adjektiv/adverbium" class="tooltip">tillægsord/biord</span></span><br />
+	<li><span data-tooltip='virker ikke endnu' class="tooltip">*</span><input disabled type="checkbox" id="fejl" onclick="javascript:generate();" />Genitivfejl</span><br />
+	<li><span data-tooltip='virker ikke endnu' class="tooltip">*</span><input disabled type="checkbox" id="fejl" onclick="javascript:generate();" />Forkert valg af relativt pronomin</span><br />
+	<li><span data-tooltip='virker ikke endnu' class="tooltip">*</span><input disabled type="checkbox" id="fejl" onclick="javascript:generate();" />Ordstillingsfejl (syntaks) efter adverbialled</span><br />
+	<li><span data-tooltip='virker ikke endnu' class="tooltip">*</span><input disabled type="checkbox" id="fejl" onclick="javascript:generate();" />bøjningsfejl i verballed</span><br />
+	<li><span data-tooltip="Todo: tilføje flere muligheder her" class="tooltip">(...)</span>
+	</ul><br />
+	</section>
+</section>
+
+
+<footer style="font-size: 80%; color: #555; margin: 1em 0;">
+<hr />
+This work is licensed by <a class="discreet" href="http://tobias.bindslet.dk/">Tobias Bindslet</a> 2013-2014 under a <a class="discreet" href="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons License</a> for attributed, non-commercial use. The javascript was loosely based on the <a class="discreet" href="http://leapon.net/files/namegen.html">javascript name generator</a>.
+</footer>
+</body>
+</html>

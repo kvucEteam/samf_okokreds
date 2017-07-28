@@ -1,0 +1,210 @@
+.png_container {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.lake_container {
+    position: relative;
+    margin-top: 0px;
+    background-color: white;
+}
+
+.balance_labels_container {
+    z-index: 200;
+}
+
+.gui_container {
+    position: absolute;
+    background-color: rgba(248, 248, 246, 0.8);
+    width: 30%;
+    /* height: 240px; */
+    margin-top: 0px;
+    margin-left: 0px;
+    border-radius: 0px 0px 4px 0px;
+    padding: 10px;
+    z-index: 1;
+    max-height: 84%;
+    overflow: auto;
+    min-height: 5%;
+}
+
+.exp_container {
+    position: relative;
+}
+
+.gif,
+.balance_detalje_label,
+.genopretning_detalje_label {
+    position: absolute;
+    z-index: 10;
+}
+
+.gif {
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+.detalje_label {
+    z-index: 3;
+}
+
+.fane {
+    font-size: 1.5vw;
+    color: red;
+}
+
+.nav-tabs>li>a {
+    background-color: #eee;
+    color: #999;
+    cursor: pointer;
+}
+
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.answerChoice input {
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+.rdo_label {
+    cursor: pointer;
+    font-weight: normal;
+    padding: 0px 4px 0px 4px;
+    border-radius: 4px;
+}
+
+.rdo_label:hover {
+    background-color: white;
+    width: 100%;
+}
+
+.info_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    background-color: white;
+    padding: 4px;
+    border-radius: 4px;
+    border: 2px solid #eee;
+}
+
+.info_box {
+    /* position: absolute; */
+    top: -43px;
+    right: 1px;
+    z-index: 100;
+    cursor: pointer;
+    color: brown;
+}
+
+.infopic {
+    width: 100px;
+}
+
+@media all and (max-width: 1170px) {
+    .balance_detalje_label,
+    .genopretning_detalje_label,
+    .gui_container,
+    .btn_tjek,
+    .label,
+    .ok_btn,
+    .btn_forfra .spm {
+        font-size: 1.3vw;
+    }
+    .spm_numbers {
+        font-size: 1vw;
+    }
+}
+
+@media all and (min-width: 1171px) {
+    .balance_detalje_label,
+    .genopretning_detalje_label,
+    .btn_tjek,
+    .label,
+    .ok_btn,
+    .btn_forfra .gui_container,
+    .spm {
+        font-size: 14px;
+    }
+    .spm_numbers {
+        font-size: 10px;
+    }
+}
+
+.img_overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.spm {
+    margin: 10px 10px 10px 0px;
+    font-weight: bold;
+}
+
+.spm_numbers,
+.skjult {
+    color: #666;
+    margin-bottom: -5px;
+}
+
+.btn_tjek,
+.ok_btn,
+.btn_forfra {
+    margin-top: 0px;
+    float: right;
+    margin-right: 0;
+}
+
+.btn_closeGUI {
+    color: #666;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.feedback_txt {
+    padding: 0;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: 4%;
+}
+
+.svar {
+    -webkit-user-select: none;
+}
+
+.glyphicon {
+    color: #666;
+}
+
+.answerChoice {
+    margin-top: -4px;
+}
+
+h4 {
+    margin-top:2%;
+    margin-bottom:1%;
+}
+
+.glyphicon-arrow-up{
+    color: #333;
+}
+
+.toggle_info{
+    font-size: 11px;
+    color: #aaa;
+    margin-bottom: -5px;
+    text-align: center;
+}

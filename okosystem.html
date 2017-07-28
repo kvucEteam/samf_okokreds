@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Det økonomiske kredsløba</title>
+    <meta name="author" content="ato">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../library/css/styles.css" type="text/css">
+    <link rel="stylesheet" href="okosystem.css" type="text/css">
+    <title>Simple Map</title>
+    <meta name="viewport" content="init ial-scale=1.0">
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1>Det økonomiske kredsløb</h1>
+        <div class="col-xs-12">
+            <div class="instr_container"></div>
+            <div id="explanationwrapper"></div>
+        </div>
+        <div class="exp_container col-xs-12 ">
+            <ul class="nav nav-tabs">
+                <li class="active fane"><a data-toggle="tab">Det økonimske kredsløb</a></li>
+                <li class="fane"><a data-toggle="tab">Lavkonjunktur</a></li>
+                <li class="fane"><a data-toggle="tab">Højkonjunktur</a></li>
+                <li class="fane"><a data-toggle="tab">Politiske indgreb</a></li>
+            </ul>
+            <div class="gui_container">
+                <div class="btn_closeGUI glyphicon glyphicon-chevron-down"></div>
+                <div class="spm_togggle_container">
+                    <div class="spm_container">
+                        <div class="spm_numbers"></div>
+                        <div class="spm"></div>
+                        <div class="svar"></div>
+                        <div class='btn btn-xs btn-primary btn_tjek'>Tjek svar</div>
+                        <div class="Clear"></div>
+                    </div>
+                    <div class="feedback_container">
+                        <div class="feedback_txt"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="lake_container">
+                <div class="bg_container">
+                    <img src="img/BG_balance.png" class="bg_image img-responsive" />
+                </div>
+                <div class="info_labels_container"></div>
+                <div class="ekspert_labels_container"></div>
+                <div class="png_container">
+                    <div class="lav_container">
+                        <img class="img_overlay img-responsive balance_overlay" src="img/kredslob_2.png" class="img-responsive" />
+                    </div>
+                    <div class="hoj_container">
+                        <img class="img_overlay img-responsive ubalance_overlay" src="img/kredsloeb_dummy_2.png" class="img-responsive" />
+                    </div>
+                    
+                </div>
+            </div>
+            <script src="../library/vendor_scripts.js"></script>
+            <script src="../library/custom_scripts.js"></script>
+            <script type="text/javascript">
+            $(document).ready(function() {
+                getAjaxData("GET", "json/okosystem.json", false, "json");
+                one_line_footer();
+            });
+            </script>
+            <script type="text/javascript" src="okosystem.js"></script>
+</body>
+
+</html>
