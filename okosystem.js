@@ -6,8 +6,8 @@ var state = 0,
     /*----------  hvor meget ubalance er der?  ----------*/
     ubalance_niveau = 0,
 
-    viewArray = [$(".info_labels_container"), $(".lav_container"), $(".hoj_container"), $(".ekspert_container")],
-    state_Array = ["balance_spm", "ubalance_spm"],
+    viewArray = [$(".info_labels_container"), $(".lavkonj_labels_container"), $(".hoj_konj_labels_container")], //, $(".ekspert_container")],
+    state_Array = ["void", "balance_spm", "ubalance_spm"],
     /*----------  variabler til at tilgå json pba sø state  ----------*/
 
     svar_array = [],
@@ -30,10 +30,22 @@ $(document).ready(function() {
 
     generate_labels(state);
     toggleView();
+
+
     $(".balance_detalje_label").click(function() {
         var indeks = $(this).index(".balance_detalje_label");
         show_info(indeks);
     });
+
+    $(".gen_label").click(function() {
+        //var indeks = $(this).attr("class").
+        console.log("HEY HEY HEY");
+
+
+    });
+
+
+
 
     $(".genopretning_detalje_label").click(function() {
         var indeks = $(this).index(".genopretning_detalje_label");
@@ -51,11 +63,11 @@ $(document).ready(function() {
 
                 //$(".gui_container").css("background-color", "#999");
                 $(".btn_closeGUI").switchClass("glyphicon-chevron-up", "glyphicon-chevron-down");
-                
+
 
 
             } else {
-                $(".gui_container").prepend("<p class='toggle_info'>Indhold skjult</p>");
+                $(".gui_container").prepend("<p class='toggle_info'>Quizzen er skjult</p>");
                 //$(".gui_container").css("background-color", "white");
                 $(".btn_closeGUI").switchClass("glyphicon-chevron-down", "glyphicon-chevron-up");
 
@@ -64,11 +76,12 @@ $(document).ready(function() {
 
     });
 
+
     viewArray[1].fadeOut(0);
     viewArray[2].fadeOut(0);
 
 
-    microhint($(".gui_container"), "Lær om det økonomiske kredsløb ved at klikke på info-punkterne. Skift fane for at lære om konjunkturer og politiske virkemidler.");
+    //microhint($(".active").eq(0), "Lær om det økonomiske kredsløb ved at klikke på knapperne.</p><p>Lær om lav- og højkonjunkturer på fanerne.");
 
 });
 
@@ -80,20 +93,34 @@ function generate_labels(state) {
         var element = jsonData.labels[i];
         console.log(i + " punkt");
         //viewArray[state].append("<div><img class='gif' src=" + element.pics[state] + "></div>");
-        $(".info_labels_container").append("<span class='btn btn-xs btn-default balance_detalje_label'><span class='glyphicon glyphicon-info-sign'> </span> " + element.element + "</span>");
-        $(".balance_detalje_label").eq(i).css("left", element.balance_pos[0] + "%").css("top", element.balance_pos[1] + "%")
-            //$(".gif").eq(i).css("left", element.balance_pos[0] + "%").css("top", element.balance_pos[1] + "%");
-    }
+        if (jsonData.labels[i].type != "pil") {
+            $(".info_labels_container").append("<span class='btn btn btn-info balance_detalje_label info_label gen_label num_" + i + "'>" + element.element + "</span>");
+            $(".lavkonj_labels_container").append("<span class='btn btn btn-info balance_detalje_label lav_konj_label gen_label num_" + i + "'>" + element.element + "</span>");
+            $(".hoj_konj_labels_container").append("<span class='btn btn btn-info balance_detalje_label hoj_konj_label gen_label num_" + i + "'>" + element.element + "</span>");
+            //$(".lavkonj_labels_container").append("<span class='btn btn btn-info balance_detalje_label'>" + element.element + "</span>");
 
-    for (var i = 0; i < jsonData.genopretning_labels.length; i++) {
-        var element = jsonData.genopretning_labels[i];
-        console.log(i + " punkt");
-        //viewArray[state].append("<div><img class='gif' src=" + element.pics[state] + "></div>");
-        $(".ekspert_labels_container").append("<span class='btn btn-xs btn-default genopretning_detalje_label'><span class='glyphicon glyphicon-play'> </span> " + element.element + "</span>");
-        $(".genopretning_detalje_label").eq(i).css("left", element.balance_pos[0] + "%").css("top", element.balance_pos[1] + "%")
-            //$(".gif").eq(i).css("left", element.balance_pos[0] + "%").css("top", element.balance_pos[1] + "%");
+        } else {
+            $(".info_labels_container").append("<span class='btn btn-xs btn-default balance_detalje_label info_label btn_pil'" + element.element + "''>" + element.element + "</span>");
+            $(".lavkonj_labels_container").append("<span class='btn btn-xs btn-default balance_detalje_label btn_pil lav_konj_label num_" + element.lav_konj_runde + " btn_pil_konj'>" + element.element + "</span>");
+            $(".hoj_konj_labels_container").append("<span class='btn btn-xs btn-default balance_detalje_label btn_pil hoj_konj_label num_" + element.lav_konj_runde + " btn_pil_konj''>" + element.element + "</span>");
+
+            if (element.pil == "ned") {
+                $(".lav_konj_label").eq(i).prepend("<span class='glyph_wrapper'><span class='glyphicon glyphicon-download'></span></div>");
+                $(".hoj_konj_label").eq(i).prepend("<span class='glyph_wrapper'><span class='glyphicon glyphicon-upload'></span></div>");
+            } else if (element.pil == "op") {
+                $(".lav_konj_label").eq(i).prepend("<span class='glyph_wrapper'><span class='glyphicon glyphicon-upload'></span></div>");
+                $(".hoj_konj_label").eq(i).prepend("<span class='glyph_wrapper'><span class='glyphicon glyphicon-download'></span></div>");
+            }
+        }
+        //$(".lav_konj_label").eq(i).css("left", element.balance_pos[0] + "%").css("top", element.balance_pos[1] + "%").css("transform", element.balance_pos[2])
+        $(".info_label").eq(i).css("left", element.balance_pos[0] + "%").css("top", element.balance_pos[1] + "%").css("transform", element.balance_pos[2])
+        $(".lav_konj_label").eq(i).css("left", element.balance_pos[0] + "%").css("top", element.balance_pos[1] + "%").css("transform", element.balance_pos[2])
+        $(".hoj_konj_label").eq(i).css("left", element.balance_pos[0] + "%").css("top", element.balance_pos[1] + "%").css("transform", element.balance_pos[2])
+
+        //$(".lav_konj_label").eq(i).hide();
+        //$(".gif").eq(i).css("left", element.balance_pos[0] + "%").css("top", element.balance_pos[1] + "%");
+
     }
-    console.log("break");
 }
 
 
@@ -103,24 +130,49 @@ function show_info(indeks) {
     console.log("I: " + indeks);
     //$(".container-fluid").append("<div class='info_container'><div class='info_box'><h4>" + jsonData.elementer[indeks].element + "</h4><img class='infopic' src='" + jsonData.elementer[indeks].pic + "'><p>" + jsonData.elementer[indeks].infotekst + "</p></div></div>")
     if (state == 0) {
-        UserMsgBox("body", "<h3>" + jsonData.labels[indeks].element + "</h3><div class='col-xs-2'></div><div class='col-xs-8'><img class='img-responsive' src='" + jsonData.labels[indeks].infopic + "'></div><div class='col-xs-12'><p>" + jsonData.labels[indeks].infotekst + "</p></div>");
+        UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='" + jsonData.labels[indeks].infopic + "'></div><div class='col-xs-12'><h3>" + jsonData.labels[indeks].element + "</h3><p class='broed_info_text'>" + jsonData.labels[indeks].infotekst + "</p></div>");
         //UserMsgBox("body", "<h3>" + jsonData.labels[indeks].element + "</h3><div class='col-xs-8'><img class='img-responsive' src='" + jsonData.labels[indeks].infopic + "'><p></div><div class='col-xs-4>'" + jsonData.labels[indeks].infotekst + "</p></div>");
+        tekst_forklaring($('.broed_info_text'), jsonData.forklaringer);
+    } else if (state == 1 || state == 2) {
 
-    } else if (state == 1) {
+        var konj_indeks = $(".balance_detalje_label").eq(indeks).attr("class").split(' ')[6];
+        konj_indeks = konj_indeks.substring(4, 5);
 
+        //var indeks = $(this).attr('class').split(' ')[6];
+
+        console.log("konj_indeks: " + konj_indeks);
+
+
+        if ($(".balance_detalje_label").eq(indeks).hasClass("gen_label")) {
+            //alert("indeks: " + indeks);
+            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='" + jsonData.labels[konj_indeks].infopic + "'></div><div class='col-xs-12'><h3>" + jsonData.labels[konj_indeks].element + "</h3><p class='broed_info_text'>" + jsonData.labels[konj_indeks].infotekst + "</p></div>");
+            tekst_forklaring($('.broed_info_text'), jsonData.forklaringer);
+        } else {
+            //alert("NO GEN LEBALE");
+            microhint($(".balance_detalje_label").eq(indeks), jsonData.balance_spm[konj_indeks].feedback_true);
+        }
+
+
+        //UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='" + jsonData.labels[indeks].infopic + "'></div><div class='col-xs-12'><h3>" + jsonData.labels[indeks].element + "</h3><p class='broed_info_text'>" + jsonData.labels[indeks].infotekst + "</p></div>");
     } else if (state == 3) {
-        UserMsgBox("body", "<h3>" + jsonData.genopretning_labels[indeks].element + "</h3><div class='embed-responsive embed-responsive-16by9'><iframe class='embed-responsive-item' src='https://www.youtube.com/embed/" + jsonData.genopretning_labels[indeks].genopretning_url + "?rel=0' allowfullscreen></iframe></div>");
+        UserMsgBox_xclick("body", "<h3>" + jsonData.genopretning_labels[indeks].element + "</h3><div class='embed-responsive embed-responsive-16by9'><iframe class='embed-responsive-item' src='https://www.youtube.com/embed/" + jsonData.genopretning_labels[indeks].genopretning_url + "?rel=0' allowfullscreen></iframe></div>");
 
     }
 
     //viewArray[state].addClass("blur");
+
+
 }
 
 /*----------  Skift view på Søen  ----------*/
 
 function toggleView() {
 
+
+
     var indeks = $(this).index();
+
+    //alert(indeks + ", state: " + state);
 
     if (indeks == -1) {
         indeks = state;
@@ -129,38 +181,57 @@ function toggleView() {
     if (state != indeks) {
         state = indeks;
 
-        for (i in viewArray) {
-            viewArray[i].fadeOut(0)
-        }
-        viewArray[state].fadeIn(500);
 
         poseQuestion();
 
         //alert("State: "+ state);
     }
+
+    for (i in viewArray) {
+        console.log("W - A" + i)
+        viewArray[i].fadeOut(0)
+    }
+    viewArray[state].fadeIn(0);
+
+
+
     if (state == 0) {
-        $(".ekspert_labels_container").hide();
         $(".info_labels_container").show();
-        $(".bg_image").attr("src", "img/kredsloeb_dummy_2.png");
+        $(".bg_image").attr("src", "img/pile_tyndere_banktxt.png");
+        $(".gui_container").hide();
+
 
     } else if (state == 1) {
+        console.log("BGR IMG:" + jsonData.overlays[state - 1][0]);
+        $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
         if (runder[state] < 1) {
-            UserMsgBox("body", "<h3>Lavkonjunktur </h3><div class='col-xs-2'></div><div class='col-xs-8'><img class='img-responsive' src='http://thewillnigeria.com/news/wp-content/uploads/2016/09/Economy-reccesion.jpg'></div><div class='col-xs-12'><p>Der er opstået en oliekrise i verden. Priserne på olie er skyhøje. En lavkonjunktur er nært forestående. Hvad gør vi?</p></div>");
+            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_LAV.jpg'></div><div class='col-xs-12'><h3>Lavkonjunktur </h3><p>En økonomisk krise i den globale økonomi gør at efterspørgslen i verden falder og det påvirker blandt andet de danske virksomheder ved at de køber færre dansk producerede varer.</p></div>");
+            $(".CloseClass").click(function() {
+                microhint($(".gui_container"), "Besvar spørgsmålene i quizzen og se hvordan pengestrømmene bevæger sig i en lavkonjunktur.");
+            });
         }
-        $(".info_labels_container, .ekspert_labels_container").hide();
-        $(".bg_image").attr("src", "img/kredsloeb_dummy_3.png");
+
+        //$(".ekspert_labels_container").hide();
+        //$(".bg_image").attr("src", "img/mockup02_infotab.gif");
+        $(".gui_container").show();
 
     } else if (state == 2) {
+        $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
         if (runder[state] < 1) {
-            UserMsgBox("body", "<h3>Højkonjunktur </h3><div class='col-xs-2'></div><div class='col-xs-8'><img class='img-responsive' src='http://learntotradeonline.co.uk/wp-content/uploads/2012/12/bar-chart-red-arrow-6899733-1024x768.jpg'></div><div class='col-xs-12'><p>Det går ufattelig godt! Væksten hamrer derudaf og arbejdsløsheden er historisk lav. Måske burde nogen gøre noget førend økonomien løber af sporet?</p></div>");
+            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_HOJ.jpg'></div><div class='col-xs-12'><h3>Højkonjunktur </h3><div class='col-xs-12'><p>Det går ufattelig godt! Væksten hamrer derudaf og arbejdsløsheden er historisk lav. Måske burde nogen gøre noget førend økonomien løber af sporet?</p></div>");
+            $(".CloseClass").click(function() {
+                microhint($(".gui_container"), "Besvar spørgsmålene i quizzen og se hvordan pengestrømmene bevæger sig i en højkonjunktur.");
+            });
         }
-        $(".info_labels_container, .ekspert_labels_container").hide();
-        $(".bg_image").attr("src", "img/kredsloeb_dummy_3.png");
+        //$(".info_labels_container, .ekspert_labels_container").hide();
+        //$(".bg_image").attr("src", "img/mockup02_infotab.gif");
+        $(".gui_container").show();
 
     } else if (state == 3) {
         $(".info_labels_container").hide();
         $(".ekspert_labels_container").show();
-        $(".bg_image").attr("src", "img/kredsloeb_dummy_2.png");
+        $(".bg_image").attr("src", "img/mockup02_infotab.gif");
+        $(".gui_container").show();
 
     }
 }
@@ -168,13 +239,45 @@ function toggleView() {
 /*----------  Kør spørgsmål  ----------*/
 
 function poseQuestion() {
-    $(".gui_container").fadeIn(1500);
+
+    setTimeout(function() {
+        $(".gui_container").fadeIn(1500);
+    }, 3000);
+
+
+    //window.setTimeout($(".gui_container").fadeIn(1500), 25000);
+
+
+    $(".lav_konj_label, .hoj_konj_label").each(function() {
+
+
+        var hasPil = $(this).hasClass("btn_pil");
+
+        if (hasPil == true) {
+            $(this).hide();
+        }
+
+
+        var indeks = $(this).attr('class').split(' ')[6];
+
+
+        if (typeof(indeks) !== "undefined") {
+            indeks = parseInt(indeks.substring(4, 5));
+        }
+
+
+        console.log("runde:" + runder[state] + ", indeks: " + indeks);
+        if (indeks - 1 < runder[state]) {
+            $(this).show();
+        }
+    });
 
     console.log("posing q");
+
     $(".feedback_container").hide();
     $(".btn_tjek").show();
     console.log("runder: " + runder);
-    var spmData = jsonData[state_Array[state - 1]];
+    var spmData = jsonData[state_Array[state]];
 
     if (state != 0 && state != 3) {
 
@@ -182,6 +285,8 @@ function poseQuestion() {
         $(".spm_numbers").show();
 
         if (runder[state] < spmData.length) {
+
+
 
             $(".spm_numbers").html("Spørgsmål " + (runder[state] + 1) + " / " + spmData.length);
             $(".spm").html(spmData[runder[state]].spm);
@@ -205,6 +310,16 @@ function poseQuestion() {
 
             $(".btn_tjek").click(tjek_svar);
         } else {
+
+            if (state == 1) {
+                $(".num_0").find(".glyphicon").removeClass("glyphicon-download").addClass("glyphicon-upload");
+            } else if (state == 2) {
+                $(".num_0").find(".glyphicon").removeClass("glyphicon-upload").addClass("glyphicon-download");
+            }
+
+
+
+
             $(".spm").html("Du har besvaret alle spørgsmålene i quizzen <h4><span class='label_slut label label-success'>Korrekt</span></h4><p>Du kan tage quizzen igen eller undersøge en af de andre faner.");
             $(".svar").html("<div class='btn btn-primary btn_forfra'>Tag quizzen igen</div><div class='Clear'></div>");
             $(".btn_tjek").hide();
@@ -252,53 +367,73 @@ function tjek_svar() {
 
 function visuel_feedback() {
 
+    console.log("visuel feedback, BRO")
 
-    if (state == 0) {
+    if (runder[state] < jsonData.overlays[state - 1].overlaypics.length) {
 
-        if (runder[state] < jsonData.overlays[state].overlaypics.length) {
+
+        //if (state == 1) {
+
+
+        $(".gui_container").fadeOut(0);
+        runder.splice(state, 1, runder[state] + 1);
+
+        console.log("RUNDER: " + runder)
+
+
+        setTimeout(function() {
+
+            $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
+
+            poseQuestion();
+        }, 1000);
+        //console.log("OL_length: " + $(".ubalance_overlay").length);
+
+        $(".balance_overlay").eq(0).fadeOut(0);
+        $(".balance_overlay").eq(1).fadeOut(3000);
+
+
+        $(".balance_overlay").eq(0).fadeIn(3000, function() {
+            $(".balance_overlay").eq(1).remove();
+
+            console.log($(".lav_container").find(".img_overlay").length);
+
+
+            console.log("State: " + state);
+            console.log("IF!");
+        });
+
+
+
+        /*} else if (state == 2) {
+
             $(".gui_container").fadeOut(100);
 
-            $(".lav_container").prepend("<img class='balance_overlay img_overlay img-responsive' src='" + jsonData.overlays[state].overlaypics[runder[0]] + "'>");
-            //console.log("OL_length: " + $(".ubalance_overlay").length);
+            viewArray[state].prepend("<img class='ubalance_overlay img_overlay img-responsive' src='" + jsonData.overlays[state - 1].overlaypics[runder[state]] + "'>");
+            console.log("OL_length: " + $(".ubalance_overlay").length);
 
-            $(".balance_overlay").eq(0).fadeOut(0);
-            $(".balance_overlay").eq(1).fadeOut(3000);
+            $(".ubalance_overlay").eq(0).fadeOut(0);
+            $(".ubalance_overlay").eq(1).fadeOut(3000);
 
+            $(".ubalance_overlay").eq(0).fadeIn(3000, function() {
+                $(".ubalance_overlay").eq(1).remove();
 
-            $(".balance_overlay").eq(0).fadeIn(3000, function() {
-                $(".balance_overlay").eq(1).remove();
-
-                console.log($(".lav_container").find(".img_overlay").length);
+                console.log($(".hoj_container").find(".img_overlay").length);
                 runder.splice(state, 1, runder[state] + 1);
                 poseQuestion();
             });
+
         } else {
             runder.splice(state, 1, runder[state] + 1);
+            console.log("ELSE!");
             poseQuestion();
-        }
-    } else if (state == 1) {
-        $(".gui_container").fadeOut(100);
+        }*/
 
-        $(".hoj_container").prepend("<img class='ubalance_overlay img_overlay img-responsive' src='" + jsonData.overlays[state].overlaypics[runder[1]] + "'>");
-        console.log("OL_length: " + $(".ubalance_overlay").length);
 
-        $(".ubalance_overlay").eq(0).fadeOut(0);
-        $(".ubalance_overlay").eq(1).fadeOut(3000);
+        $(".ubalance_overlay").eq(1).fadeIn(1500);
 
-        $(".ubalance_overlay").eq(0).fadeIn(3000, function() {
-            $(".ubalance_overlay").eq(1).remove();
-
-            console.log($(".hoj_container").find(".img_overlay").length);
-            runder.splice(state, 1, runder[state] + 1);
-            poseQuestion();
-        });
 
     }
-
-
-    //$(".ubalance_overlay").eq(1).fadeIn(1500);
-
-
 }
 
 
@@ -309,36 +444,41 @@ function feedback(svar, checked) {
     $(".feedback_container").show();
     /* Hvis vi er i balance mode */
 
-    if (state == 0) {
+    if (state == 1 || state == 2) {
         // alert("state: " + state);
         if (svar == true) {
             $(".feedback_container").html("<h4><span class='label label-success'>Korrekt</span></h4><p class='feedback_txt'>" + jsonData.balance_spm[runder[state]].feedback_true + "</p><div class='btn btn-xs btn-primary ok_btn'>Fortsæt</div>");
             $(".btn_tjek").hide();
         } else {
-            if (jsonData.balance_spm[runder[state]].feedback_false[checked] != "") {
-                $(".feedback_container").html("<h4><span class='label label-danger'>Forkert</span></h4><p class='feedback_txt'>" + jsonData.balance_spm[runder[state]].feedback_false[checked] + "</p>");
-            } else {
-                $(".feedback_container").html("<h4><span class='label label-danger'>Forkert</span></h4><p class='feedback_txt'>Klik på de enkelte elementer og læs om dem.</p>");
-            }
+
+            $(".feedback_container").html("<h4><span class='label label-danger'>Forkert - prøv igen</span></h4><p class='feedback_txt'>" + jsonData.balance_spm[runder[state]].feedback_true + "</p>");
+
+
+
         }
         /* Hvis vi er i ubalance mode */
-    } else if (state == 1) {
-        if (svar == true) {
-            $(".feedback_container").html("<h4><span class='label label-success'>Korrekt</span></h4><p class='feedback_txt'>Klik på fortsæt og se hvordan processen påvirker søen.</p><div class='btn btn-xs btn-primary ok_btn'>Fortsæt</div>");
-            $(".btn_tjek").hide();
-        } else {
-            //alert(jsonData.ubalance_spm[runder[state]].feedback);
-            $(".feedback_container").html("<h4><span class='label label-danger'>Forkert</span></h4><p class='feedback_txt'>" + jsonData.ubalance_spm[runder[state]].feedback_false[checked] + "</p>");
-        }
     }
+    /*else if (state == 2) {
+           if (svar == true) {
+               $(".feedback_container").html("<h4><span class='label label-success'>Korrekt</span></h4><p class='feedback_txt'>Klik på fortsæt og se hvordan processen påvirker søen< /p><div class='btn btn-xs btn-primary ok_btn'>Fortsæt</div > ");
+                   $(".btn_tjek").hide();
+               }
+               else {
+                   //alert(jsonData.ubalance_spm[runder[state]].feedback);
+                   $(".feedback_container").html("<h4><span class='label label-danger'>Forkert - prøv igen</span></h4> <p class='feedback_txt'>" + jsonData.ubalance_spm[runder[state]].feedback_false[checked] + "</p>");
+               }
+           }*/
 
     $(".ok_btn").click(function() {
-        console.log("ok BTN");
+
         if (svar == true) {
+            console.log("ok BTN - TRUE");
             visuel_feedback();
 
         }
     });
+
+    tekst_forklaring($('.feedback_txt'), jsonData.forklaringer);
 }
 
 /*----------  Genstart quiz - ryd variabler   ----------*/
@@ -347,7 +487,8 @@ function genstart_quiz() {
     runder.splice(state, 1, 0);
     poseQuestion();
     if (state == 0) {
-        $(".lav_container").html('<img class="img_overlay img-responsive ubalance_overlay" src="img/balance01.png"  />');
+        $(".bg_image").attr("src", "img/pile_tyndere_banktxt.png");
+        //$(".lav_container").html('<img class="img_overlay img-responsive ubalance_overlay" src="img/balance01.png"  />');
     } else if (state == 1) {
         $(".hoj_container").html('<img class="img_overlay img-responsive ubalance_overlay" src="img/Ubalance01.png" />');
     }

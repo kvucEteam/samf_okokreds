@@ -5,7 +5,7 @@
     height: 100%;
 }
 
-.lake_container {
+.outer_container {
     position: relative;
     margin-top: 0px;
     background-color: white;
@@ -18,13 +18,13 @@
 .gui_container {
     position: absolute;
     background-color: rgba(248, 248, 246, 0.8);
-    width: 30%;
+    width: 49.2%;
     /* height: 240px; */
     margin-top: 0px;
     margin-left: 0px;
     border-radius: 0px 0px 4px 0px;
     padding: 10px;
-    z-index: 1;
+    z-index: 90;
     max-height: 84%;
     overflow: auto;
     min-height: 5%;
@@ -36,6 +36,7 @@
 
 .gif,
 .balance_detalje_label,
+.lav_konj_label,
 .genopretning_detalje_label {
     position: absolute;
     z-index: 10;
@@ -50,10 +51,17 @@
 .detalje_label {
     z-index: 3;
 }
+ .fane {
+        font-size: 18px;
+        color: red;
+    }
 
-.fane {
-    font-size: 1.5vw;
-    color: red;
+
+@media screen and (max-width: 1170px) {
+    .fane {
+        font-size: 1.5vw;
+        color: red;
+    }
 }
 
 .nav-tabs>li>a {
@@ -68,7 +76,21 @@
     color: black;
     font-weight: bold;
     cursor: pointer;
+    background-color: #eee;
 }
+
+
+.nav-tabs>li>a,
+.nav-tabs>li>a:focus,
+.nav-tabs>li>a:hover {
+    
+    
+    cursor: pointer;
+    background-color: white;
+}
+
+
+
 
 .answerChoice input {
     margin-right: 4px;
@@ -113,6 +135,7 @@
 
 @media all and (max-width: 1170px) {
     .balance_detalje_label,
+    .lav_konj_label,
     .genopretning_detalje_label,
     .gui_container,
     .btn_tjek,
@@ -126,8 +149,13 @@
     }
 }
 
+.clicked_word {
+    text-transform: capitalize;
+}
+
 @media all and (min-width: 1171px) {
     .balance_detalje_label,
+    .lav_konj_label,
     .genopretning_detalje_label,
     .btn_tjek,
     .label,
@@ -177,7 +205,6 @@
 .feedback_txt {
     padding: 0;
     border-radius: 4px;
-    font-weight: bold;
     margin-top: 4%;
 }
 
@@ -194,17 +221,62 @@
 }
 
 h4 {
-    margin-top:2%;
-    margin-bottom:1%;
+    margin-top: 2%;
+    margin-bottom: 1%;
 }
 
-.glyphicon-arrow-up{
+.glyphicon-arrow-up {
     color: #333;
 }
 
-.toggle_info{
+.toggle_info {
     font-size: 11px;
     color: #aaa;
     margin-bottom: -5px;
     text-align: center;
+}
+
+.btn_label {
+    background-color: #71989D;
+    cursor: pointer;
+}
+
+.btn_pil {
+    padding: 3px 10px 3px 10px;
+}
+
+.btn_dpil:hover {
+    padding: 0px;
+    background-color: blue;
+    /*rgba(0,0,0,0);*/
+    height: 0px;
+    color: red;
+    border: none;
+}
+
+.msbox_pic {
+    margin-top: -50px;
+}
+
+#UserMsgBox {
+    margin-top: -5%;
+    max-height: 90%;
+}
+
+.glyph_wrapper{
+     position: absolute;
+     font-size: 22px;
+     overflow: visible;
+     padding: 0px;
+     top: -1px;
+     left: 9px;
+     color: red;
+}
+
+.btn_pil_konj{
+    padding: 3px 10px 3px 36px;
+}
+
+.glyphicon-download, .glyphicon-upload{
+    color: #1AA0A7;
 }
