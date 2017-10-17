@@ -26,9 +26,10 @@ $(document).ready(function() {
     $("#explanationwrapper").html(explanation(jsonData.userInterface.explanation));
     $('.instr_container').html(instruction(jsonData.userInterface.instruktion));
     $('.fane').click(toggleView);
-    poseQuestion(runder[state]);
+    //poseQuestion(runder[state]);
 
     generate_labels(state);
+    $(".gui_container").hide();
     toggleView();
 
 
@@ -80,6 +81,8 @@ $(document).ready(function() {
     viewArray[1].fadeOut(0);
     viewArray[2].fadeOut(0);
 
+
+microhint($(".balance_detalje_label").eq(17), "Klik på de forskellige enheder og pile for at undersøge det økonomiske kredsløb")
 
     //microhint($(".active").eq(0), "Lær om det økonomiske kredsløb ved at klikke på knapperne.</p><p>Lær om lav- og højkonjunkturer på fanerne.");
 
@@ -168,7 +171,7 @@ function show_info(indeks) {
 
 function toggleView() {
 
-
+    $(".microhint").remove();
 
     var indeks = $(this).index();
 
@@ -181,9 +184,9 @@ function toggleView() {
     if (state != indeks) {
         state = indeks;
 
-
-        poseQuestion();
-
+        if (state != 0) {
+            poseQuestion();
+        }
         //alert("State: "+ state);
     }
 
@@ -205,7 +208,7 @@ function toggleView() {
         console.log("BGR IMG:" + jsonData.overlays[state - 1][0]);
         $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
         if (runder[state] < 1) {
-            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_LAV.jpg'></div><div class='col-xs-12'><h3>Lavkonjunktur </h3><p>En økonomisk krise i den globale økonomi gør at efterspørgslen i verden falder og det påvirker blandt andet de danske virksomheder ved at de køber færre dansk producerede varer.</p></div>");
+            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_LAV.jpg'></div><div class='col-xs-12'><h3>Lavkonjunktur </h3>Udsving i produktion, forbrug og beskæftigelse er normalt i en markedsøkonomi. Økonomisk vækst i højkonjunkturer afløses af krise og arbejdsløshed i lavkonjunkturer. En økonomisk krise i Danmark kan i gangsættes af en global økonomisk krise. <br/>Undersøg i quizzen her hvordan et fald i efterspørgslen i verdensøkonomien kan påvirke dansk økonomi.</p></div>");
             $(".CloseClass").click(function() {
                 microhint($(".gui_container"), "Besvar spørgsmålene i quizzen og se hvordan pengestrømmene bevæger sig i en lavkonjunktur.");
             });
@@ -218,7 +221,7 @@ function toggleView() {
     } else if (state == 2) {
         $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
         if (runder[state] < 1) {
-            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_HOJ.jpg'></div><div class='col-xs-12'><h3>Højkonjunktur </h3><div class='col-xs-12'><p>Det går ufattelig godt! Væksten hamrer derudaf og arbejdsløsheden er historisk lav. Måske burde nogen gøre noget førend økonomien løber af sporet?</p></div>");
+            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_HOJ.jpg'></div><div class='col-xs-12'><h3>Højkonjunktur </h3><div class='col-xs-12'><p>Udsving i produktion, forbrug og beskæftigelse er normalt i en markedsøkonomi. Økonomisk vækst i højkonjunkturer afløses af krise og arbejdsløshed i lavkonjunkturer. En økonomisk krise i Danmark kan i gangsættes af en global økonomisk krise. <br/>Undersøg i quizzen her hvordan en stigning i efterspørgslen i verdensøkonomien kan påvirke dansk økonomi.</p></div>");
             $(".CloseClass").click(function() {
                 microhint($(".gui_container"), "Besvar spørgsmålene i quizzen og se hvordan pengestrømmene bevæger sig i en højkonjunktur.");
             });
@@ -239,6 +242,7 @@ function toggleView() {
 /*----------  Kør spørgsmål  ----------*/
 
 function poseQuestion() {
+
 
     setTimeout(function() {
         $(".gui_container").fadeIn(1500);
@@ -330,7 +334,7 @@ function poseQuestion() {
     } else {
         $(".spm_numbers").hide(); //html("Spørgsmål " + (runder[state] + 1) + " / " + spmData.length);
         if (state == 0) {
-            $(".spm").html("Klik på de forskellige enheder og pile for at undersøge det økonomiske kredsløb");
+            microhint($("body"), "Klik på de forskellige enheder og pile for at undersøge det økonomiske kredsløb");
         } else if (state == 3) {
             $(".spm").html("Klik på de forskellige infopunkter for at se en video de forklarer de forksellige økonomiske politikker");
         }
@@ -444,7 +448,9 @@ function feedback(svar, checked) {
     $(".feedback_container").show();
     /* Hvis vi er i balance mode */
 
-    if (state == 1 || state == 2) {
+    console.log("BAL: " + jsonData.balance_spm.length + ", U_BAL: " + jsonData.ubalance_spm.length);
+
+    if (state == 1) {
         // alert("state: " + state);
         if (svar == true) {
             $(".feedback_container").html("<h4><span class='label label-success'>Korrekt</span></h4><p class='feedback_txt'>" + jsonData.balance_spm[runder[state]].feedback_true + "</p><div class='btn btn-xs btn-primary ok_btn'>Fortsæt</div>");
@@ -458,16 +464,16 @@ function feedback(svar, checked) {
         }
         /* Hvis vi er i ubalance mode */
     }
-    /*else if (state == 2) {
+    else if (state == 2) {
            if (svar == true) {
-               $(".feedback_container").html("<h4><span class='label label-success'>Korrekt</span></h4><p class='feedback_txt'>Klik på fortsæt og se hvordan processen påvirker søen< /p><div class='btn btn-xs btn-primary ok_btn'>Fortsæt</div > ");
+               $(".feedback_container").html("<h4><span class='label label-success'>Korrekt</span></h4><p class='feedback_txt'>" + jsonData.ubalance_spm[runder[state]].feedback + "</p><div class='btn btn-xs btn-primary ok_btn'>Fortsæt</div>");
                    $(".btn_tjek").hide();
                }
                else {
                    //alert(jsonData.ubalance_spm[runder[state]].feedback);
-                   $(".feedback_container").html("<h4><span class='label label-danger'>Forkert - prøv igen</span></h4> <p class='feedback_txt'>" + jsonData.ubalance_spm[runder[state]].feedback_false[checked] + "</p>");
+                   $(".feedback_container").html("<h4><span class='label label-danger'>Forkert - prøv igen</span></h4> <p class='feedback_txt'>" + jsonData.ubalance_spm[runder[state]].feedback + "</p>");
                }
-           }*/
+           }
 
     $(".ok_btn").click(function() {
 
@@ -490,6 +496,6 @@ function genstart_quiz() {
         $(".bg_image").attr("src", "img/pile_tyndere_banktxt.png");
         //$(".lav_container").html('<img class="img_overlay img-responsive ubalance_overlay" src="img/balance01.png"  />');
     } else if (state == 1) {
-        $(".hoj_container").html('<img class="img_overlay img-responsive ubalance_overlay" src="img/Ubalance01.png" />');
+        //$(".hoj_container").html('<img class="img_overlay img-responsive ubalance_overlay" src="img/Ubalance01.png" />');
     }
 }

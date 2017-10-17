@@ -16,37 +16,41 @@
     "overlays": [{ "overlaypics": ["img/lavkonj/PILE_quiz01.jpg", "img/lavkonj/PILE_quiz02.jpg", "img/lavkonj/PILE_quiz03.jpg", "img/lavkonj/PILE_quiz04.jpg", "img/lavkonj/PILE_quiz05.jpg", "img/lavkonj/PILE_quiz06.jpg", "img/lavkonj/PILE_quiz07.jpg", "img/lavkonj/PILE_quiz08.jpg"] }, { "overlaypics": ["img/lavkonj/PILE_quiz01.jpg", "img/lavkonj/PILE_quiz02.jpg", "img/lavkonj/PILE_quiz03.jpg", "img/lavkonj/PILE_quiz04.jpg", "img/lavkonj/PILE_quiz05.jpg", "img/lavkonj/PILE_quiz06.jpg", "img/lavkonj/PILE_quiz07.jpg", "img/lavkonj/PILE_quiz08.jpg"] }, { "overlaypics": ["img/gedde1.jpg"] }],
 
     "forklaringer": [
-        ["efterspørgsel", "Den mængde af et gode (evt: en forbrugsvare), som køberne i en given periode er villige til at aftage. Størrelsen af efterspørgslen afhænger især af varens pris, indkomstniveau hos køberne, priser på beslægtede varer samt købergruppens smag."],
+        ["efterspørgsel", "Den mængde varer og ydelser, som forbrugerne er villige til at købe. Størrelsen af efterspørgslen afhænger især af varens pris, indkomstniveau hos køberne, priser på beslægtede varer samt købernes smag."],
 
         ["penge", "Anvendes som betegnelse for såvel betalingsenheden (fx den danske krone) i et samfund som betalingsmidlerne (fx kontanter og kreditkort) i et samfund."],
 
-        ["stat", "Udgør en vigtig del af den offentlige sektor (knap 40 %). De vigtigste statsopgaver er forsvar, retsvæsen, politi, udenrigstjeneste og den centrale administration."],
+        ["stat", "Udgør en vigtig del af den offentlige sektor, og ansvaret for knap 40 % af de offentlige udgifter. De vigtigste statsopgaver er forsvar, retsvæsen, politi, udenrigstjeneste og den centrale administration."],
 
-        ["region", "Danmark er inddelt i 5 regioner, der altovervejende varetager den offentlige sundhed. (hvor meget fylder den ca?"],
+        ["region", "Danmark er inddelt i 5 regioner, der altovervejende varetager den offentlige sundhed. Regionerne har ansvaret for ca. 10 % af de offentlige udgifter."],
 
-        ["kommune", "Danmark er inddelt i 98 kommuner, der varetager den borgernære offentlige service som vuggestuer, børnehaver, skoler, plejehjem mv. (hvor meget fylder den ca?)"],
+        ["kommune", "Danmark er inddelt i 98 kommuner, der varetager den borgernære offentlige service som vuggestuer, børnehaver, skoler, plejehjem mv. Kommunerne har ansvaret for ca. 50 % af de offentlige udgifter."],
 
-        ["eksport", "Betyder udførsel, dvs. Indtægter fra salg af varer (fx landbrugs- og industriprodukter) og tjenester (fx indtægter fra skibsfart, turisme og entreprenørvirksomhed) i udlandet."],
+        ["eksport", "er en betegnelse for handel med varer og tjenesteydelser mellem stater. Hvis Danmark køber biler i Tyskland, vil man tale om at Danmark importerer biler fra Tyskland. Varer og tjenesteydelserne kommer ind i landet og pengestrømmen går ud af landet. Det mindsker altså efterspørgslen i Danmark og øger efterspørgslen i Tyskland."],
 
         ["import", "Betyder indførsel, dvs. Udgifter til køb af varer og tjenester (fx danske turisters udgifter i udlandet, udgifter til transport og udgifter til serviceydelser) i udlandet."],
 
         ["moms", "Er en generel afgift, der pålægges næsten al omsætning i samfundet. Momssatsen er 25% og udgør en betydelig del af statens indtægter"],
 
-        ["afgift", "(Reelt her punktafgifter): Er knyttet til enkelte vare- og tjenestegrupper og de varierer i størrelse. Fx er der tendens til at miljøbelastende forbrug i stigende grad pålægges afgifter."],
+        ["afgift", "er en speciel form for skat der er lagt på forskellige former for varer og tjenesteydelser. Der er eksempelvis afgifter på biler, vand, el, cigaretter mm."],
 
         ["overførselsindkomst", "Samlebetegnelse for fx folkepension, arbejdsløshedsdagpenge og boligsikring fra den offentlige sektor til husholdningerne."],
 
-        ["arbejdsløshed", "Dækker over personer uden erhvervsmæssig beskæftigelse som søger arbejde. Arbejdsløsheden i procent kan opgøres på flere forskellige måder."],
+        ["arbejdsløshed", "Dækker over personer uden erhvervsmæssig beskæftigelse som søger arbejde. Arbejdsløsheden kan opgøres på forskellige måder og angives enten i antal eller i procent."],
 
-        ["betalingsbalance", "Er en opgørelse over samtlige økonomiske transaktioner, som et land med udlandet i en given periode, typisk ét år."],
+        ["betalingsbalance", "Er en opgørelse over samtlige økonomiske transaktioner, som et land har med udlandet i typisk ét år. For eksempel opgøres al import og eksport på betalingsbalancen."],
 
         ["udlandsgæld", "Når et land igennem en periode har negativ status over for udlandet. Danmark har i dag ingen udlandsgæld - tværtimod har Danmark en nettoformue i udlandet."],
 
         ["statsgæld", "Er der underskud på de offentlige finanser har den offentlige sektor et finansieringsbehov. Typisk finansieres underskuddet ved optagelse af lån i den private sektor i indland og udland – overvejende ved udstedelse af statsobligationer."],
 
-        ["blandingsøkonomi", "Er karakteriseret ved en blanding af markedsøkonomi og en vis politisk styring af denne."],
+        ["blandingsøkonomi", "Er karakteriseret ved at markedsøkonomien i en vis grad er politisk reguleret. Det er også typisk for en blandingsøkonomi, at staten selv står for produktionen af forskellige ydelser (fx inden for uddannelse og sundhedsvæsen). "],
 
-        ["BNP", "Bruttonationalproduktet er et mål for den samlede produktion opgjort i markedspriser."]
+        ["BNP", "Bruttonationalproduktet er et udtryk for værdien af den samlede produktion i et land i et år (fratrukket udgiften til råvarer og hjælpestoffer). Man måler ofte vækst i et land ved at se på stigninger og fald i BNP."],
+
+        ["Vækst", "I en samfundsøkonomi beregner man ofte væksten på baggrund af BNP opgivet i faste priser. Det vil sige at inflation skæres fra, så tal fra foregående år kan sammenlignes på trods af en tidsmæssig forskel. Hvis den samlede produktion er blevet større ved sammenligningen, så har samfundet oplevet vækst i økonomien i den pågældende periode."],
+
+        ["Inflation", "Er når hele samfundets priser stiger. Det medfører en forringet købekraft og dermed et fald i efterspørgslen."]
     ],
 
     "labels": [{
@@ -262,104 +266,104 @@
         "genopretning_url": "1V-DKm23gX0"
     }],
     "balance_spm": [{
-        "spm": "Eksporten falder. Hvordan påvirker det virksomhederne?",
-        "svar": "De mindsker produktionen og mindsker beskæftigelsen, fordi de ikke kan sælge så meget til udlandet.",
-        "forkerte_svar": ["De ansætter flere fordi de regner med at det bliver bedre senere", "De fortsætter som om ingen ting er sket, fordi danske virksomheder ikke er så afhængige af at eksportere."],
+        "spm": "Eksporten falder. Hvordan påvirker det de danske virksomheder?",
+        "svar": "Virksomhederne nedsætter produktionen og mindsker beskæftigelsen, fordi de ikke kan sælge så meget til udlandet.",
+        "forkerte_svar": ["Virksomhederne ansætter flere, fordi de regner med at den økonomiske krise hurtigt er overstået.", "Virksomhederne fortsætter som om ingen ting er sket, fordi de danske virksomheder ikke er så afhængige af at eksportere."],
         "feedback_true": "Dansk økonomi er meget integreret i den europæiske og globale økonomi. Båre import og eksport er stor (%). De danske eksportvirksomheder vil blive meget påvirket og det vil føre til fald i både produktion og beskæftigelse.",
         "feedback_false": ["", ""]
     }, {
         "spm": "Virksomhederne mindsker produktionen og beskæftigelsen. Hvordan påvirker det husholdningerne?",
-        "svar": ["Arbejdsløsheden gør at husholdningerne nedsætter forbruget og dermed efterspørgslen på virksomhedernes varer og tjenesteydelser"],
+        "svar": ["Den stigende arbejdsløshed gør, at husholdningerne nedsætter forbruget og dermed efterspørgslen på virksomhedernes varer og tjenesteydelser"],
         "forkerte_svar": ["Husholdningerne øger forbruget for at trøste sig i de dårlige tider.", "Husholdningernes forbrug forbliver uændret, fordi dagpenge og kontanthjælp er på et niveau, der gør at de kan fastholde deres forbrug."],
-        "feedback_true": "Arbejdsløses overførselsindkomst er mindre end beskæftigedes lønindkomst og derfor falder deres forbrug hos virksomhederne. Det mindsker altså efterspørgslen yderligere og beskæftigelsen falder yderligere.",
+        "feedback_true": "Arbejdsløses overførselsindkomst er mindre end beskæftigedes lønindkomst og derfor falder deres forbrug i virksomhederne. Det mindsker altså efterspørgslen yderligere og beskæftigelsen falder yderligere.",
         "feedback_false": ["", ""]
     }, {
         "spm": "Husholdningernes indkomst og efterspørgsel falder og virksomhedernes produktion falder. Hvordan påvirker det pengeinstitutterne? ",
-        "svar": "Det samlede udlån bliver mindre, fordi virksomhederne ikke investerer så meget og husholdningerne hverken vil eller kan låne i tider hvor deres beskæftigelse og indkomst er usikker.",
-        "forkerte_svar": ["Det samlede udlån bliver større fordi virksomhederne og husholdningerne mangler penge i krisetider.", "Der sker ikke noget. Udsving i husholdningernes økonomi påvirker ikke pengeinstitutterne. Og husholdningerne låner af hinanden hvis de mangler penge."],
+        "svar": "Pengeinstitutternes samlede udlån bliver mindre, fordi virksomhederne ikke investerer så meget og husholdningerne hverken vil eller kan låne i tider hvor deres beskæftigelse og indkomst er usikker.",
+        "forkerte_svar": ["Pengeinstitutternes samlede udlån bliver større fordi virksomhederne og husholdningerne mangler penge i krisetider.", "Der sker ikke noget. Udsving i husholdningernes økonomi påvirker ikke pengeinstitutterne. Og husholdningerne låner af hinanden hvis de mangler penge."],
         "feedback_true": "Når husholdningernes indkomst og efterspørgsel falder vil det blive mere usikkert for pengeinstitutterne at udlåne penge, da risikoen for at kunden ikke kan betale lånet tilbage er forøget.",
         "feedback_false": ["", ""]
     }, {
         "spm": "Husholdningernes indkomst og efterspørgsel falder og virksomhedernes produktion falder. Hvordan påvirker det den offentlige sektors indtægter?",
-        "svar": "Den offentlige sektors indtægter vil falde fordi både virksomheder og husholdninger vil betale mindre i skat når beskæftigelsen og produktionen falder.",
-        "forkerte_svar": ["Den er uændret. Statens skatteindtægter falder fordi de ikke tjener så meget i husholdningerne. Men til gengæld køber husholdninger flere varer og derfor stiger statens indtægter fra moms og afgifter.", "Den offentlige sektors indtægterne vil stige fordi virksomhederne vil betale mere i selskabsskat."],
-        "feedback_true": "I en lavkonjunktur falder den offentlige sektors indtægter meget fra både skatter og afgifter på grund af faldet i indtægter og forbrug.",
+        "svar": "Den offentlige sektors indtægter vil falde, fordi både virksomheder og husholdninger vil betale mindre i skat når beskæftigelsen og produktionen falder.",
+        "forkerte_svar": ["Den offentlige sektors indtægter er uændrede. På den ene side falder statens skatteindtægter, fordi husholdningerne nu har en lavere indtægt. På den anden side køber husholdninger flere varer og derfor stiger statens indtægter fra moms og afgifter. ", "Den offentlige sektors indtægter vil stige fordi virksomhederne vil betale mere i selskabsskat."],
+        "feedback_true": "I en lavkonjunktur falder den offentlige sektors indtægter, da både husholdningernes indtægter og forbrug falder. Dermed falder den offentlige sektors skatteindtægtsgrundlag.",
         "feedback_false": ["", ""]
     }, {
         "spm": "Husholdningernes efterspørgsel falder og virksomhedernes produktion falder. Hvordan påvirker det Danmarks samhandel med udlandet?",
-        "svar": "Samlet tendens til øget overskud på betalingsbalancen. Importen vil falde fordi virksomhederne ikke skal købe så mange varer, råstoffer og halvfabrikata i udlandet. Eksporten vil på kort sigt være upåvirket af faldende efterspørgsel i Danmark.",
-        "forkerte_svar": ["Samlet tendens til overskud på betalingsbalancen, fordi eksporten vil stige. Virksomhederne kan eksportere flere varer fordi de danske forbrugere ikke køber dem. Importen vil være uændret.", "Samlet tendens til underskud på betalingsbalancen. Importen vil stige fordi husholdningerne vil købe flere billige udenlandske varer og færre dyre danske varer. Eksporten vil på kort sigt være upåvirket af faldende efterspørgsel i Danmark."],
-        "feedback_true": "Når efterspørgslen falder i Danmark så falder importen af varer, råstoffer og halvfabrikata fra udlandet. Siden 1991 hvor Danmark blev selvforsynende med olie og gas har der været overskud på den danske betalingsbalance.",
+        "svar": "Samlet tendens til øget overskud på betalingsbalancen. Importen vil falde, fordi virksomhederne ikke skal købe så mange varer, råstoffer og halvfabrikata i udlandet. Samtidig vil eksporten på kort sigt være upåvirket af faldende efterspørgsel i Danmark.",
+        "forkerte_svar": ["Samlet tendens til overskud på betalingsbalancen, fordi eksporten vil stige. Virksomhederne kan eksportere flere varer, fordi de danske forbrugere ikke køber dem. Samtidig vil importen være uændret.", "Samlet tendens til underskud på betalingsbalancen. Importen vil stige, fordi husholdningerne vil købe flere billige udenlandske varer og færre dyre danske varer. Samtidig vil eksporten på kort sigt være upåvirket af faldende efterspørgsel i Danmark."],
+        "feedback_true": "Når efterspørgslen falder i Danmark så falder importen af varer, råstoffer og halvfabrikata fra udlandet. Siden 1991, hvor Danmark blev selvforsynende med olie og gas, har der været overskud på den danske betalingsbalance .",
         "feedback_false": ["", ""]
     }, {
         "spm": " Arbejdsløsheden i husholdningerne stiger. Hvordan påvirker det den offentlige sektors udgifter?",
-        "svar": "Den offentlige sektors udgifter stiger på grund af stigning i overførselsindkomsterne til de arbejdsløse i husholdningerne.",
-        "forkerte_svar": ["Den offentlige sektors udgifter vil falde fordi færre vil anvende kulturelle tilbud og færre vil gå på pension.", "De er uændret. Statens udgifter til dagpenge og kontanthjælp stiger, men til gengæld falder udgifterne til sundhed og uddannelse fordi der er færre arbejdsulykker og borgerne ikke uddanner sig så meget under en lavkonjunktur."],
-        "feedback_true": "I en lavkonjunktur stiger den offentlige sektors udgifter til social sikkerhed (fx dagpenge og kontanthjælp) meget. Dette vil sammen med de faldende indtægter fra skat og afgifter medføre et underskud på de offentlige budgetter og dermed vil der blive sendt efterspørgsel ud i det økonomiske kredsløb.",
+        "svar": "Den offentlige sektors udgifter vil stige på grund af stigning i overførselsindkomsterne til de arbejdsløse i husholdningerne.",
+        "forkerte_svar": ["Den offentlige sektors udgifter vil falde, fordi færre vil anvende kulturelle tilbud og færre vil gå på pension.", "Den offentlige sektors udgifter er uændret. Statens udgifter til dagpenge og kontanthjælp stiger, men til gengæld falder udgifterne til sundhed og uddannelse, fordi der er færre arbejdsulykker og borgerne ikke uddanner sig så meget under en lavkonjunktur."],
+        "feedback_true": "I en lavkonjunktur stiger den offentlige sektors udgifter til social sikkerhed (fx dagpenge og kontanthjælp) meget. Samtidig får den offentlige sektor færre indtægter fra skat og afgifter. Samlet vil de stigende udgifter og faldende indtægter medføre et underskud på de offentlige budgetter. Men overførslerne til social sikkerhed er med til at øge efterspørgslen i det økonomiske kredsløb.",
         "feedback_false": ["Klik på de enkelte elementer og læs om dem", "Bundplanter er ikke de eneste organismer i kredsløbet, som kan udføre fotosyntese"]
     }, {
         "spm": "Hvordan bliver lønniveauet og virksomhederne påvirket af den økonomiske lavkonjunktur?",
         "svar": "Der vil være tendens til faldende lønniveau. Virksomhederne kan holde lønniveauet nede fordi arbejdsløsheden er høj. De har flere ledige at vælge i mellem. Fagforeninger og den enkelte lønmodtager vil have tendens til at holde igen med at stille lønkrav. Det vil forbedre virksomhedernes konkurrenceevne og de vil kunne producere mere og beskæftige flere på et lavere lønniveau. ",
-        "forkerte_svar": ["Lønniveauet stiger. Under kriser vil husholdningerne have brug for flere penge og de vil kræve mere i løn. Det vil øge virksomhedernes omkostninger og forringe deres konkurrenceevne. De vil derfor producere og beskæftige færre.", "Lønniveauet stiger fordi virksomhederne vil forsøge at motivere arbejdskraften til at producere mere i krisetider. Det vil gøre produktionen mere effektiv og forbedre virksomhedernes konkurrenceevne. De vil derfor producere og beskæftige flere på et højere lønniveau."],
-        "feedback_true": "I de økonomiske modeller og i den offentlige debat bliver der taget udgangspunkt i at en lavkonjunktur kan medføre lavere lønniveau og det kan være medvirkende til at forbedre konkurrenceevnen, øge produktionen og beskæftigelsen. Sammen med den offentlige sektors faldende indtægter og stigende udgifter kan det øge efterspørgslen. Den forbedrede konkurrenceevne får nu nogle økonomiske eksperter til at mene at lavkonjunkturen måske er ved at vende.",
+        "forkerte_svar": ["Lønniveauet stiger. Under kriser vil husholdningerne have brug for flere penge og de vil kræve mere i løn. Det vil øge virksomhedernes omkostninger og forringe deres konkurrenceevne. De vil derfor producere og beskæftige færre.", "Lønniveauet stiger, fordi virksomhederne vil forsøge at motivere arbejdskraften til at producere mere i krisetider. Det vil gøre produktionen mere effektiv og forbedre virksomhedernes konkurrenceevne. De vil derfor producere og beskæftige flere på et højere lønniveau."],
+        "feedback_true": "I de økonomiske modeller og i den offentlige debat bliver der taget udgangspunkt i at en lavkonjunktur kan medføre lavere lønniveau og det kan være medvirkende til at forbedre konkurrenceevnen, øge produktionen og beskæftigelsen. Sammen med den offentlige sektors faldende indtægter og stigende udgifter (til fx overførselsindkomster) kan det øge efterspørgslen. Den forbedrede konkurrenceevne får nu nogle økonomiske eksperter til at mene at lavkonjunkturen måske er ved at vende. Gå nu til fanebladet HØJKONJUNKTUR.",
         "feedback_false": ["Dette reaktionsskema viser en gæringsreaktion, hvor glukose omdannes til ethanol og kuldioxid.", "Det er forkert. Dette reaktionsskema viser respiration, hvor glukose under forbrug af ilt nedbrydes til kuldioxid og stat."]
     }],
     "ubalance_spm": [{
         "spm": " Eksporten stiger. Hvordan påvirker det de danske virksomheder?",
         "svar": ["De øger produktionen og øger beskæftigelsen, fordi de kan sælge mere til udlandet."],
-        "forkerte_svar": ["De ansætter færre fordi de regner med at det økonomiske opsving hurtigt er overstået og der vil komme en krise igen snart.","De fortsætter som om ingen ting er sket, fordi de danske virksomheder ikke er så afhængige af at eksportere."],
+        "forkerte_svar": ["Virksomhederne  ansætter færre fordi de regner med at det økonomiske opsving hurtigt er overstået og der snart igen vil komme en økonomisk krise.", "Virksomhederne fortsætter som om ingen ting er sket, fordi de danske virksomheder ikke er så afhængige af at eksportere."],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
-        "feedback": "Dansk økonomi er meget integreret i den europæiske og globale økonomi. Både importen og eksporten er meget stor. De danske eksportvirksomheder vil derfor blive meget påvirket og det vil føre til stigning i både produktion og beskæftigelse.",
+        "feedback": "Dansk økonomi er i høj grad integreret i den europæiske og globale økonomi. Både importen og eksporten er meget stor. De danske eksportvirksomheder vil derfor i høj grad blive påvirket af den globale højkonjunktur og dette vil føre til stigning i både produktion og beskæftigelse.",
         "feedback_false": ["Der er flere kilder til udledning af næringssalte.", "Der er flere kilder til udledning af næringssalte."]
     }, {
         "spm": "Virksomhederne øger produktionen og beskæftigelsen. Hvordan påvirker det husholdningerne?",
         "svar": ["Den faldende arbejdsløshed gør, at husholdningerne øger forbruget og dermed efterspørgslen på virksomhedernes varer og tjenesteydelser"],
-        "forkerte_svar": ["Husholdningerne mindsker forbruget for at forberede sig på dårlige tider.","Husholdningernes forbrug forbliver uændret, fordi lønniveauet ikke er højere end dagpenge og kontanthjælp."],
+        "forkerte_svar": ["Husholdningerne mindsker forbruget for at forberede sig på dårlige tider.", "Husholdningernes forbrug forbliver uændret, fordi lønniveauet ikke er højere end dagpenge og kontanthjælp."],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
-        "feedback": "Arbejdsløses overførselsindkomst er mindre end beskæftigedes lønindkomst og derfor stiger deres forbrug hos virksomhederne. Det øger altså efterspørgslen yderligere og beskæftigelsen stiger yderligere.",
+        "feedback": "Arbejdsløses overførselsindkomst er mindre end beskæftigedes lønindkomst og derfor stiger husholdningernes forbrug i virksomhederne. Det øger altså efterspørgslen yderligere og beskæftigelsen stiger yderligere.",
         "feedback_false": ["Gå på opdagelse i kredsløbet i balance.", "Gå på opdagelse i kredsløbet i balance."]
     }, {
         "spm": "Husholdningernes indkomst og efterspørgsel stiger og virksomhedernes produktion stiger. Hvordan påvirker det pengeinstitutterne?",
         "svar": ["Det samlede udlån bliver større, fordi virksomhederne investerer meget og husholdningerne vil og kan låne i tider hvor deres beskæftigelse og indkomst er sikker."],
-        "forkerte_svar": ["Det samlede udlån bliver mindre fordi virksomhederne og husholdningerne har masser af penge i opgangstider.","Der sker ikke noget. Udsving i husholdningernes og virksomhedernes økonomi påvirker ikke pengeinstitutterne. Og husholdningerne og virksomhederne bruger bare af penge de har lagt til side under lavkonjunkturen, hvis de mangler penge."],
+        "forkerte_svar": ["Det samlede udlån bliver mindre, fordi virksomhederne og husholdningerne har masser af penge i opgangstider.", "Der sker ikke noget. Udsving i husholdningernes og virksomhedernes økonomi påvirker ikke pengeinstitutterne. Og hvis husholdningerne og virksomhederne mangler penge, kan de bruge af penge de har lagt til side under lavkonjunkturen."],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
-        "feedback": "Når husholdningernes indkomst og efterspørgsel stiger vil det blive mere sikkert for pengeinstitutterne at udlåne penge, da risikoen for at kunden ikke kan betale lånet tilbage er mindskes. Virksomhederne vil og kan også i højere grad låne penge til investeringer når efterspørgslen efter varer og tjenesteydelser stiger.",
+        "feedback": "Når husholdningernes indkomst og efterspørgsel stiger vil det blive mere sikkert for pengeinstitutterne at udlåne penge, da risikoen for at kunden ikke kan betale lånet tilbage er mindsket. Virksomhederne vil og kan også i højere grad låne penge til investeringer, når efterspørgslen efter varer og tjenesteydelser stiger.",
         "feedback_false": ["Antallet af husholdning holdes normalt nede af rovfiskene, men rovfiskene har svært ved at jage når staten bliver uklart af plantevirksomhed.", "Antallet af husholdning holdes normalt nede af rovfiskene, men rovfiskene har svært ved at jage når staten bliver uklart af plantevirksomhed."]
     }, {
         "spm": "Husholdningernes indkomst og efterspørgsel stiger og virksomhedernes produktion stiger. Hvordan påvirker det den offentlige sektors indtægter?",
-        "svar": ["Den offentlige sektors indtægter vil stige fordi både virksomheder og husholdninger vil betale mere i skat når beskæftigelsen og produktionen stiger."],
-        "forkerte_svar": ["Den er uændret. Statens skatteindtægter stiger fordi de tjener meget i husholdningerne. Men til gengæld køber husholdninger færre varer og derfor falder statens indtægter fra moms og afgifter.", "Den offentlige sektors indtægterne vil falde fordi virksomhederne vil betale mindre i selskabsskat. "],
+        "svar": ["Den offentlige sektors indtægter vil stige, fordi både virksomheder og husholdninger vil betale mere i skat, når beskæftigelsen og produktionen stiger."],
+        "forkerte_svar": ["Den offentlige sektors indtægter er uændret. Statens skatteindtægter stiger, (komma) fordi husholdningernes indkomst er høj. Men til gengæld køber husholdningerne færre varer, (komma) og derfor falder statens indtægter fra moms og afgifter.", "Den offentlige sektors indtægter vil falde, fordi virksomhederne vil betale mindre i selskabsskat. "],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
-        "feedback": "I en lavkonjunktur stiger den offentlige sektors indtægter meget fra både skatter og afgifter på grund af stigningen i indtægter og forbrug.",
+        "feedback": "I en højkonjunktur stiger den offentlige sektors indtægter, da både husholdningernes indtægter og forbrug stiger. Dermed stiger den offentlige sektors skatteindtægtsgrundlag.",
         "feedback_false": ["Gå på opdagelse i kredsløbet i balance.", "Når der er så mange husholdning vil de æde det meste dyrevirksomhed, også selvom dyrevirksomhed formerer sig hurtigt når der er meget plantevirksomhed."]
     }, {
         "spm": "Husholdningernes efterspørgsel stiger og virksomhedernes produktion stiger. Hvordan påvirker det Danmarks samhandel med udlandet?",
-        "svar": ["Samlet tendens til mindre overskud på betalingsbalancen. Importen vil stige fordi virksomhederne skal købe flere varer, råstoffer og halvfabrikata i udlandet. Eksporten vil på kort sigt være upåvirket af stigende efterspørgsel i Danmark."],
-        "forkerte_svar": ["Samlet tendens til underskud på betalingsbalancen, fordi eksporten vil falde. Virksomhederne kan eksportere færre varer fordi de danske forbrugere køber dem. Importen vil være uændret.","Samlet tendens til overskud på betalingsbalancen. Importen vil falde fordi husholdningerne vil købe flere billige danske varer og færre dyre udenlandske varer. Eksporten vil på kort sigt være upåvirket af stigende efterspørgsel i Danmark."],
+        "svar": ["Samlet tendens til mindre overskud på betalingsbalancen. Importen vil stige, fordi virksomhederne skal købe flere varer, råstoffer og halvfabrikata i udlandet. Samtidig vil eksporten på kort sigt være upåvirket af stigende efterspørgsel i Danmark."],
+        "forkerte_svar": ["Samlet tendens til underskud på betalingsbalancen, fordi eksporten vil falde. Virksomhederne kan eksportere færre varer fordi de danske forbrugere køber dem. Samtidig vil importen være uændret.", "Samlet tendens til overskud på betalingsbalancen. Importen vil falde fordi husholdningerne vil købe flere billige danske varer og færre dyre udenlandske varer. Eksporten vil på kort sigt være upåvirket af stigende efterspørgsel i Danmark."],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
-        "feedback": "Når efterspørgslen stiger i Danmark så stiger importen af varer, råstoffer og halvfabrikata fra udlandet. Siden 1991 hvor Danmark blev selvforsynende med olie og gas har der været overskud på den danske betalingsbalance. Så selvom der har været stigende import under højkonjunkturer, så er den danske eksport større.",
+        "feedback": "Når efterspørgslen stiger i Danmark så stiger importen af varer, råstoffer og halvfabrikata fra udlandet. Siden 1991, (komma) hvor Danmark blev selvforsynende med olie og gas, (komma) har der været overskud på den danske betalingsbalance. Så selvom der har været stigende import under højkonjunkturer, så er den danske eksport større.",
         "feedback_false": ["Der er rigeligt CO<sub>2</sub> i staten", "Når der er mindre dyrevirksomhed bliver der ikke ædt så meget plantevirksomhed."]
 
     }, {
         "spm": "Arbejdsløsheden i husholdningerne falder. Hvordan påvirker det den offentlige sektors udgifter?",
         "svar": ["Den offentlige sektors udgifter falder på grund af fald i overførselsindkomsterne til de arbejdsløse i husholdningerne."],
-        "forkerte_svar": ["De er uændret. Statens udgifter til dagpenge og kontanthjælp falder, men til gengæld stiger udgifterne til sundhed og uddannelse fordi der er flere arbejdsulykker og borgerne uddanner sig meget under en højkonjunktur.","Den offentlige sektors udgifter vil stige fordi flere vil anvende kulturelle tilbud og flere vil gå på pension."],
+        "forkerte_svar": ["Den offentlige sektors udgifter er uændret. Statens udgifter til dagpenge og kontanthjælp falder, men til gengæld stiger udgifterne til sundhed og uddannelse fordi der er flere arbejdsulykker og borgerne uddanner sig meget under en højkonjunktur.", "Den offentlige sektors udgifter vil stige fordi flere vil anvende kulturelle tilbud og flere vil gå på pension."],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
-        "feedback": "I en højkonjunktur falder den offentlige sektors udgifter til social sikkerhed (fx dagpenge og kontanthjælp) meget. Dette vil sammen med de stigende indtægter fra skat og afgifter medføre et overskud på de offentlige budgetter og dermed vil der blive trukket efterspørgsel ud af økonomiske kredsløb.",
+        "feedback": "I en højkonjunktur falder den offentlige sektors udgifter til social sikkerhed (fx dagpenge og kontanthjælp) meget. Samtidig får den offentlige sektor stigende indtægter fra skat og afgifter. Samlet vil de faldende udgifter og stigende indtægter medføre et overskud på de offentlige budgetter. De mindskede overførsler til social sikkerhed er med til at nedsætte efterspørgslen i det økonomiske kredsløb.",
         "feedback_false": ["", ""]
     }, {
         "spm": "Hvordan bliver lønniveauet og virksomhederne påvirket af den økonomiske højkonjunktur?",
-        "svar": ["Der vil være tendens til stigende lønniveau. Virksomhederne kan ikke holde lønniveauet nede fordi arbejdsløsheden er lav. De har færre ledige at vælge i mellem. Fagforeninger og den enkelte lønmodtager vil have tendens til at stille højere lønkrav. Det vil forringe virksomhedernes konkurrenceevne og de vil kunne producere mindre og beskæftige færre på et højere lønniveau."],
-        "forkerte_svar": ["Lønniveauet falder. Under højkonjunkturer vil husholdningerne have brug for færre penge og de vil kræve mindre i løn. Det vil mindske virksomhedernes omkostninger og forbedre deres konkurrenceevne. De vil derfor producere og beskæftige flere.","Lønniveauet falder fordi lønkravene vil blive mindre når der er færre arbejdsløse. Lønmodtagerne i husholdningerne har en bedre økonomi under højkonjunkturer og derfor vil de og deres fagforeninger ikke stille krav om højere lønninger. Det vil forbedre virksomhedernes konkurrenceevne. De vil derfor producere mere og beskæftige flere på et lavere lønniveau."],
+        "svar": ["Der vil være tendens til stigende lønniveau. Virksomhederne kan ikke holde lønniveauet nede, fordi arbejdsløsheden er lav. De har færre ledige at vælge i mellem. Fagforeninger og den enkelte lønmodtager vil have tendens til at stille højere lønkrav. Det vil forringe virksomhedernes konkurrenceevne og de vil kunne producere mindre og beskæftige færre på et højere lønniveau."],
+        "forkerte_svar": ["Lønniveauet falder. Under højkonjunkturer vil husholdningerne have brug for færre penge og de vil kræve mindre i løn. Det vil mindske virksomhedernes omkostninger og forbedre deres konkurrenceevne. Virksomhederne vil derfor producere mere og beskæftige flere.", "Lønniveauet falder fordi lønkravene vil blive mindre når der er færre arbejdsløse. Lønmodtagerne i husholdningerne har en bedre økonomi under højkonjunkturer og derfor vil de og deres fagforeninger ikke stille krav om højere lønninger. Det vil forbedre virksomhedernes konkurrenceevne. Virksomhederne vil derfor producere mere og beskæftige flere på et lavere lønniveau."],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
-        "feedback": "I de økonomiske modeller og i den offentlige debat bliver der taget udgangspunkt i at en højkonjunktur kan medføre højere lønniveau og det kan være medvirkende til at forringe konkurrenceevnen, mindske produktionen og beskæftigelsen. Sammen med den offentlige sektors stigende indtægter og faldende udgifter kan det mindske efterspørgslen. Den forringede konkurrenceevne får nu nogle økonomiske eksperter til at mene at højkonjunkturen måske er ved at vende.",
+        "feedback": "I de økonomiske modeller og i den offentlige debat bliver der taget udgangspunkt i at en højkonjunktur kan medføre højere lønniveau og det kan være medvirkende til at forringe konkurrenceevnen, mindske produktionen og beskæftigelsen. Sammen med den offentlige sektors stigende indtægter og faldende udgifter (til fx overførselsindkomster) kan det mindske efterspørgslen. Den forringede konkurrenceevne får nu nogle økonomiske eksperter til at mene at højkonjunkturen måske er ved at vende.",
         "feedback_false": ["Dødt plantevirksomhed kan ikke foretage fotosyntese", "Dannelsen af kul og olie tager mange millioner år, så den proces har ingen betydning i denne sammenhæng."]
     }]
 }
