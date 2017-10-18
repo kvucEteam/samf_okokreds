@@ -16,7 +16,7 @@ var state = 0,
 
     korrekt_svar,
 
-    runder = [0, 0, 0]; /*----------  hvilken runde spørgsmål er vi i?  ----------*/
+    runder = [0, 4, 4]; /*----------  hvilken runde spørgsmål er vi i?  ----------*/
 
 
 /*=====  End of Initialize variables  ======*/
@@ -82,7 +82,7 @@ $(document).ready(function() {
     viewArray[2].fadeOut(0);
 
 
-microhint($(".balance_detalje_label").eq(17), "Klik på de forskellige enheder og pile for at undersøge det økonomiske kredsløb")
+    microhint($(".balance_detalje_label").eq(17), "Klik på de forskellige enheder og pile for at undersøge det økonomiske kredsløb")
 
     //microhint($(".active").eq(0), "Lær om det økonomiske kredsløb ved at klikke på knapperne.</p><p>Lær om lav- og højkonjunkturer på fanerne.");
 
@@ -136,15 +136,10 @@ function show_info(indeks) {
         UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='" + jsonData.labels[indeks].infopic + "'></div><div class='col-xs-12'><h3>" + jsonData.labels[indeks].element + "</h3><p class='broed_info_text'>" + jsonData.labels[indeks].infotekst + "</p></div>");
         //UserMsgBox("body", "<h3>" + jsonData.labels[indeks].element + "</h3><div class='col-xs-8'><img class='img-responsive' src='" + jsonData.labels[indeks].infopic + "'><p></div><div class='col-xs-4>'" + jsonData.labels[indeks].infotekst + "</p></div>");
         tekst_forklaring($('.broed_info_text'), jsonData.forklaringer);
-    } else if (state == 1 || state == 2) {
+    } else if (state == 1) {
 
         var konj_indeks = $(".balance_detalje_label").eq(indeks).attr("class").split(' ')[6];
         konj_indeks = konj_indeks.substring(4, 5);
-
-        //var indeks = $(this).attr('class').split(' ')[6];
-
-        console.log("konj_indeks: " + konj_indeks);
-
 
         if ($(".balance_detalje_label").eq(indeks).hasClass("gen_label")) {
             //alert("indeks: " + indeks);
@@ -152,13 +147,31 @@ function show_info(indeks) {
             tekst_forklaring($('.broed_info_text'), jsonData.forklaringer);
         } else {
             //alert("NO GEN LEBALE");
-            microhint($(".balance_detalje_label").eq(indeks), jsonData.balance_spm[konj_indeks].feedback_true);
+            if (konj_indeks == 0) {
+                microhint($(".balance_detalje_label").eq(indeks), jsonData.balance_spm[konj_indeks].spm);
+            } else {
+                microhint($(".balance_detalje_label").eq(indeks), jsonData.balance_spm[konj_indeks - 1].feedback_true);
+            }
         }
 
 
         //UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='" + jsonData.labels[indeks].infopic + "'></div><div class='col-xs-12'><h3>" + jsonData.labels[indeks].element + "</h3><p class='broed_info_text'>" + jsonData.labels[indeks].infotekst + "</p></div>");
-    } else if (state == 3) {
-        UserMsgBox_xclick("body", "<h3>" + jsonData.genopretning_labels[indeks].element + "</h3><div class='embed-responsive embed-responsive-16by9'><iframe class='embed-responsive-item' src='https://www.youtube.com/embed/" + jsonData.genopretning_labels[indeks].genopretning_url + "?rel=0' allowfullscreen></iframe></div>");
+    } else if (state == 2) {
+        var konj_indeks = $(".balance_detalje_label").eq(indeks).attr("class").split(' ')[6];
+        konj_indeks = konj_indeks.substring(4, 5);
+
+        if ($(".balance_detalje_label").eq(indeks).hasClass("gen_label")) {
+            //alert("indeks: " + indeks);
+            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='" + jsonData.labels[konj_indeks].infopic + "'></div><div class='col-xs-12'><h3>" + jsonData.labels[konj_indeks].element + "</h3><p class='broed_info_text'>" + jsonData.labels[konj_indeks].infotekst + "</p></div>");
+            tekst_forklaring($('.broed_info_text'), jsonData.forklaringer);
+        } else {
+            //alert("NO GEN LEBALE");
+            if (konj_indeks == 0) {
+                microhint($(".balance_detalje_label").eq(indeks), jsonData.ubalance_spm[konj_indeks].spm);
+            } else {
+                microhint($(".balance_detalje_label").eq(indeks), jsonData.ubalance_spm[konj_indeks - 1].feedback);
+            }
+        }
 
     }
 
@@ -463,17 +476,15 @@ function feedback(svar, checked) {
 
         }
         /* Hvis vi er i ubalance mode */
+    } else if (state == 2) {
+        if (svar == true) {
+            $(".feedback_container").html("<h4><span class='label label-success'>Korrekt</span></h4><p class='feedback_txt'>" + jsonData.ubalance_spm[runder[state]].feedback + "</p><div class='btn btn-xs btn-primary ok_btn'>Fortsæt</div>");
+            $(".btn_tjek").hide();
+        } else {
+            //alert(jsonData.ubalance_spm[runder[state]].feedback);
+            $(".feedback_container").html("<h4><span class='label label-danger'>Forkert - prøv igen</span></h4> <p class='feedback_txt'>" + jsonData.ubalance_spm[runder[state]].feedback + "</p>");
+        }
     }
-    else if (state == 2) {
-           if (svar == true) {
-               $(".feedback_container").html("<h4><span class='label label-success'>Korrekt</span></h4><p class='feedback_txt'>" + jsonData.ubalance_spm[runder[state]].feedback + "</p><div class='btn btn-xs btn-primary ok_btn'>Fortsæt</div>");
-                   $(".btn_tjek").hide();
-               }
-               else {
-                   //alert(jsonData.ubalance_spm[runder[state]].feedback);
-                   $(".feedback_container").html("<h4><span class='label label-danger'>Forkert - prøv igen</span></h4> <p class='feedback_txt'>" + jsonData.ubalance_spm[runder[state]].feedback + "</p>");
-               }
-           }
 
     $(".ok_btn").click(function() {
 

@@ -50,7 +50,7 @@
 
         ["Vækst", "I en samfundsøkonomi beregner man ofte væksten på baggrund af BNP opgivet i faste priser. Det vil sige at inflation skæres fra, så tal fra foregående år kan sammenlignes på trods af en tidsmæssig forskel. Hvis den samlede produktion er blevet større ved sammenligningen, så har samfundet oplevet vækst i økonomien i den pågældende periode."],
 
-        ["Inflation", "Er når hele samfundets priser stiger. Det medfører en forringet købekraft og dermed et fald i efterspørgslen."]
+        ["Inflation", "Er når hele samfundets priser stiger. Det medfører en forringet købekraft og dermed et fald i efterspørgslen.  "]
     ],
 
     "labels": [{
@@ -293,7 +293,7 @@
         "spm": "Husholdningernes efterspørgsel falder og virksomhedernes produktion falder. Hvordan påvirker det Danmarks samhandel med udlandet?",
         "svar": "Samlet tendens til øget overskud på betalingsbalancen. Importen vil falde, fordi virksomhederne ikke skal købe så mange varer, råstoffer og halvfabrikata i udlandet. Samtidig vil eksporten på kort sigt være upåvirket af faldende efterspørgsel i Danmark.",
         "forkerte_svar": ["Samlet tendens til overskud på betalingsbalancen, fordi eksporten vil stige. Virksomhederne kan eksportere flere varer, fordi de danske forbrugere ikke køber dem. Samtidig vil importen være uændret.", "Samlet tendens til underskud på betalingsbalancen. Importen vil stige, fordi husholdningerne vil købe flere billige udenlandske varer og færre dyre danske varer. Samtidig vil eksporten på kort sigt være upåvirket af faldende efterspørgsel i Danmark."],
-        "feedback_true": "Når efterspørgslen falder i Danmark så falder importen af varer, råstoffer og halvfabrikata fra udlandet. Siden 1991, hvor Danmark blev selvforsynende med olie og gas, har der været overskud på den danske betalingsbalance .",
+        "feedback_true": "Når efterspørgslen falder i Danmark så falder importen af varer, råstoffer og halvfabrikata fra udlandet. Siden 1991, hvor Danmark blev selvforsynende med olie og gas, har der været overskud på den danske betalingsbalance.",
         "feedback_false": ["", ""]
     }, {
         "spm": " Arbejdsløsheden i husholdningerne stiger. Hvordan påvirker det den offentlige sektors udgifter?",
@@ -335,7 +335,7 @@
     }, {
         "spm": "Husholdningernes indkomst og efterspørgsel stiger og virksomhedernes produktion stiger. Hvordan påvirker det den offentlige sektors indtægter?",
         "svar": ["Den offentlige sektors indtægter vil stige, fordi både virksomheder og husholdninger vil betale mere i skat, når beskæftigelsen og produktionen stiger."],
-        "forkerte_svar": ["Den offentlige sektors indtægter er uændret. Statens skatteindtægter stiger, (komma) fordi husholdningernes indkomst er høj. Men til gengæld køber husholdningerne færre varer, (komma) og derfor falder statens indtægter fra moms og afgifter.", "Den offentlige sektors indtægter vil falde, fordi virksomhederne vil betale mindre i selskabsskat. "],
+        "forkerte_svar": ["Den offentlige sektors indtægter er uændret. Statens skatteindtægter stiger,  fordi husholdningernes indkomst er høj. Men til gengæld køber husholdningerne færre varer,  og derfor falder statens indtægter fra moms og afgifter.", "Den offentlige sektors indtægter vil falde, fordi virksomhederne vil betale mindre i selskabsskat. "],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
         "feedback": "I en højkonjunktur stiger den offentlige sektors indtægter, da både husholdningernes indtægter og forbrug stiger. Dermed stiger den offentlige sektors skatteindtægtsgrundlag.",
@@ -346,7 +346,7 @@
         "forkerte_svar": ["Samlet tendens til underskud på betalingsbalancen, fordi eksporten vil falde. Virksomhederne kan eksportere færre varer fordi de danske forbrugere køber dem. Samtidig vil importen være uændret.", "Samlet tendens til overskud på betalingsbalancen. Importen vil falde fordi husholdningerne vil købe flere billige danske varer og færre dyre udenlandske varer. Eksporten vil på kort sigt være upåvirket af stigende efterspørgsel i Danmark."],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
-        "feedback": "Når efterspørgslen stiger i Danmark så stiger importen af varer, råstoffer og halvfabrikata fra udlandet. Siden 1991, (komma) hvor Danmark blev selvforsynende med olie og gas, (komma) har der været overskud på den danske betalingsbalance. Så selvom der har været stigende import under højkonjunkturer, så er den danske eksport større.",
+        "feedback": "Når efterspørgslen stiger i Danmark så stiger importen af varer, råstoffer og halvfabrikata fra udlandet. Siden 1991,  hvor Danmark blev selvforsynende med olie og gas, har der været overskud på den danske betalingsbalance. Så selvom der har været stigende import under højkonjunkturer, så er den danske eksport større.",
         "feedback_false": ["Der er rigeligt CO<sub>2</sub> i staten", "Når der er mindre dyrevirksomhed bliver der ikke ædt så meget plantevirksomhed."]
 
     }, {
