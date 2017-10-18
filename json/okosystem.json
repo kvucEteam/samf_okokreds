@@ -268,8 +268,8 @@
     "balance_spm": [{
         "spm": "Eksporten falder. Hvordan påvirker det de danske virksomheder?",
         "svar": "Virksomhederne nedsætter produktionen og mindsker beskæftigelsen, fordi de ikke kan sælge så meget til udlandet.",
-        "forkerte_svar": ["Virksomhederne ansætter flere, fordi de regner med at den økonomiske krise hurtigt er overstået.", "Virksomhederne fortsætter som om ingen ting er sket, fordi de danske virksomheder ikke er så afhængige af at eksportere."],
-        "feedback_true": "Dansk økonomi er meget integreret i den europæiske og globale økonomi. Båre import og eksport er stor (%). De danske eksportvirksomheder vil blive meget påvirket og det vil føre til fald i både produktion og beskæftigelse.",
+        "forkerte_svar": ["Virksomhederne ansætter flere, fordi de regner med at den økonomiske krise hurtigt er overstået.", "Virksomhederne fortsætter som om ingenting er sket, fordi de danske virksomheder ikke er så afhængige af at eksportere."],
+        "feedback_true": "Dansk økonomi er meget integreret i den europæiske og globale økonomi. Både import og eksport er stor (%). De danske eksportvirksomheder vil blive meget påvirket og det vil føre til fald i både produktion og beskæftigelse.",
         "feedback_false": ["", ""]
     }, {
         "spm": "Virksomhederne mindsker produktionen og beskæftigelsen. Hvordan påvirker det husholdningerne?",
@@ -311,7 +311,7 @@
     "ubalance_spm": [{
         "spm": " Eksporten stiger. Hvordan påvirker det de danske virksomheder?",
         "svar": ["De øger produktionen og øger beskæftigelsen, fordi de kan sælge mere til udlandet."],
-        "forkerte_svar": ["Virksomhederne  ansætter færre fordi de regner med at det økonomiske opsving hurtigt er overstået og der snart igen vil komme en økonomisk krise.", "Virksomhederne fortsætter som om ingen ting er sket, fordi de danske virksomheder ikke er så afhængige af at eksportere."],
+        "forkerte_svar": ["Virksomhederne  ansætter færre fordi de regner med at det økonomiske opsving hurtigt er overstået og der snart igen vil komme en økonomisk krise.", "Virksomhederne fortsætter som om ingenting er sket, fordi de danske virksomheder ikke er så afhængige af at eksportere."],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
         "feedback": "Dansk økonomi er i høj grad integreret i den europæiske og globale økonomi. Både importen og eksporten er meget stor. De danske eksportvirksomheder vil derfor i høj grad blive påvirket af den globale højkonjunktur og dette vil føre til stigning i både produktion og beskæftigelse.",

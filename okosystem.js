@@ -16,7 +16,7 @@ var state = 0,
 
     korrekt_svar,
 
-    runder = [0, 4, 4]; /*----------  hvilken runde spørgsmål er vi i?  ----------*/
+    runder = [0, 0, 0]; /*----------  hvilken runde spørgsmål er vi i?  ----------*/
 
 
 /*=====  End of Initialize variables  ======*/
@@ -361,6 +361,8 @@ function poseQuestion() {
 
 
 function tjek_svar() {
+
+    $(".microhint").remove();
     var checked = $('input[name=radioName]:checked').val();
     var svar = svar_Array[checked];
     console.log("checked: " + checked);
@@ -374,6 +376,8 @@ function tjek_svar() {
             console.log("FORKERT!");
             feedback(false, checked);
         }
+    } else {
+        microhint($(".gui_container"), "Vælg et svar fra mulighederne herover. Tryk derefter på 'Tjek svar'")
     }
     console.log("svar: " + korrekt_svar + ", checked:" + $(".svar_txt").eq(checked).html());
 
