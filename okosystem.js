@@ -23,6 +23,8 @@ var state = 0,
 
 
 $(document).ready(function() {
+    rotateCheck();
+
     $("#explanationwrapper").html(explanation(jsonData.userInterface.explanation));
     $('.instr_container').html(instruction(jsonData.userInterface.instruktion));
     $('.fane').click(toggleView);
@@ -221,7 +223,9 @@ function toggleView() {
         console.log("BGR IMG:" + jsonData.overlays[state - 1][0]);
         $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
         if (runder[state] < 1) {
-            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_LAV.jpg'></div><div class='col-xs-12'><h3>Lavkonjunktur </h3>Udsving i produktion, forbrug og beskæftigelse er normalt i en markedsøkonomi. Økonomisk vækst i højkonjunkturer afløses af krise og arbejdsløshed i lavkonjunkturer. En økonomisk krise i Danmark kan i gangsættes af en global økonomisk krise. <br/>Undersøg i quizzen her hvordan et fald i efterspørgslen i verdensøkonomien kan påvirke dansk økonomi.</p></div>");
+            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_LAV.jpg'></div><div class='col-xs-12'><h3>Lavkonjunktur </h3><div class='konjunktur_popud'><p>I en blandingsøkonomi som den danske er det normalt med udsving i vækst, forbrug, produktion og beskæftigelse. Det kaldes konjunktursvingninger. En lavkonjunktur eller en økonomisk krise i Danmark kan fx igangsættes af en nedgang i den global økonomi.<br/>Undersøg nu i quizzen hvordan et fald i efterspørgslen i verdensøkonomien kan påvirke dansk økonomi. Bemærk at lavkonjunkturforløbet foregår uden politiske indgreb fra det danske folketing.</p></div>");
+            
+tekst_forklaring($('.konjunktur_popud'), jsonData.forklaringer);
             $(".CloseClass").click(function() {
                 microhint($(".gui_container"), "Besvar spørgsmålene i quizzen og se hvordan pengestrømmene bevæger sig i en lavkonjunktur.");
             });
@@ -234,7 +238,8 @@ function toggleView() {
     } else if (state == 2) {
         $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
         if (runder[state] < 1) {
-            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_HOJ.jpg'></div><div class='col-xs-12'><h3>Højkonjunktur </h3><div class='col-xs-12'><p>Udsving i produktion, forbrug og beskæftigelse er normalt i en markedsøkonomi. Økonomisk vækst i højkonjunkturer afløses af krise og arbejdsløshed i lavkonjunkturer. En økonomisk krise i Danmark kan i gangsættes af en global økonomisk krise. <br/>Undersøg i quizzen her hvordan en stigning i efterspørgslen i verdensøkonomien kan påvirke dansk økonomi.</p></div>");
+            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_HOJ.jpg'></div><div class='col-xs-12'><h3>Højkonjunktur </h3><div class='konjunktur_popud'><p>I en blandingsøkonomi som den danske er det normalt med udsving i vækst, forbrug, produktion og beskæftigelse. Det kaldes konjunktursvingninger. En højkonjunktur med økonomisk vækst i Danmark kan fx igangsættes af en vækst i den globale økonomi.<br/>Undersøg nu i quizzen hvordan en stigning i efterspørgslen i verdensøkonomien kan påvirke dansk økonomi. Bemærk at højkonjunkturforløbet foregår uden politiske indgreb fra det danske folketing.</p></div>");
+            tekst_forklaring($('.konjunktur_popud'), jsonData.forklaringer);
             $(".CloseClass").click(function() {
                 microhint($(".gui_container"), "Besvar spørgsmålene i quizzen og se hvordan pengestrømmene bevæger sig i en højkonjunktur.");
             });
