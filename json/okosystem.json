@@ -18,8 +18,6 @@
     "forklaringer": [
         ["efterspørgsel", "Den mængde varer og ydelser, som forbrugerne er villige til at købe. Størrelsen af efterspørgslen afhænger især af varens pris, indkomstniveau hos køberne, priser på beslægtede varer samt købernes smag."],
 
-        ["penge", "Anvendes som betegnelse for såvel betalingsenheden (fx den danske krone) i et samfund som betalingsmidlerne (fx kontanter og kreditkort) i et samfund."],
-
         ["stat", "Udgør en vigtig del af den offentlige sektor, og ansvaret for knap 40 % af de offentlige udgifter. De vigtigste statsopgaver er forsvar, retsvæsen, politi, udenrigstjeneste og den centrale administration."],
 
         ["region", "Danmark er inddelt i 5 regioner, der altovervejende varetager den offentlige sundhed. Regionerne har ansvaret for ca. 10 % af de offentlige udgifter."],
@@ -48,9 +46,9 @@
 
         ["BNP", "Bruttonationalproduktet er et udtryk for værdien af den samlede produktion i et land i et år (fratrukket udgiften til råvarer og hjælpestoffer). Man måler ofte vækst i et land ved at se på stigninger og fald i BNP."],
 
-        ["Vækst", "I en samfundsøkonomi beregner man ofte væksten på baggrund af BNP opgivet i faste priser. Det vil sige at inflation skæres fra, så tal fra foregående år kan sammenlignes på trods af en tidsmæssig forskel. Hvis den samlede produktion er blevet større ved sammenligningen, så har samfundet oplevet vækst i økonomien i den pågældende periode."],
+        ["vækst", "I en samfundsøkonomi beregner man ofte væksten på baggrund af BNP opgivet i faste priser. Det vil sige at inflation skæres fra, så tal fra foregående år kan sammenlignes på trods af en tidsmæssig forskel. Hvis den samlede produktion er blevet større ved sammenligningen, så har samfundet oplevet vækst i økonomien i den pågældende periode."],
 
-        ["Inflation", "Er når hele samfundets priser stiger. Det medfører en forringet købekraft og dermed et fald i efterspørgslen.  "]
+        ["inflation", "Er når hele samfundets priser stiger. Det medfører en forringet købekraft og dermed et fald i efterspørgslen.  "]
     ],
 
     "labels": [{
