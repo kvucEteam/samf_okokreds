@@ -28,7 +28,7 @@ $(document).ready(function() {
     $('.fane').click(toggleView);
 
 
-    
+
     //poseQuestion(runder[state]);
 
     generate_labels(state);
@@ -181,7 +181,7 @@ function show_info(indeks) {
     }
 
     //viewArray[state].addClass("blur");
-$(".CloseClass").click(function(){
+    $(".CloseClass").click(function() {
         $(".forklaring").remove();
     });
 
