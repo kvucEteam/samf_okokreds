@@ -23,12 +23,11 @@ var state = 0,
 
 
 $(document).ready(function() {
+    rotateCheck();
+
     $("#explanationwrapper").html(explanation(jsonData.userInterface.explanation));
     $('.instr_container').html(instruction(jsonData.userInterface.instruktion));
     $('.fane').click(toggleView);
-
-
-    
     //poseQuestion(runder[state]);
 
     generate_labels(state);
@@ -133,8 +132,6 @@ function generate_labels(state) {
 /*----------  vis information  ----------*/
 
 function show_info(indeks) {
-
-    $(".microhint").remove();
     console.log("I: " + indeks);
     //$(".container-fluid").append("<div class='info_container'><div class='info_box'><h4>" + jsonData.elementer[indeks].element + "</h4><img class='infopic' src='" + jsonData.elementer[indeks].pic + "'><p>" + jsonData.elementer[indeks].infotekst + "</p></div></div>")
     if (state == 0) {
@@ -181,9 +178,7 @@ function show_info(indeks) {
     }
 
     //viewArray[state].addClass("blur");
-$(".CloseClass").click(function(){
-        $(".forklaring").remove();
-    });
+
 
 }
 
@@ -216,7 +211,7 @@ function toggleView() {
     }
     viewArray[state].fadeIn(0);
 
-    //alert("State: " + state);
+
 
     if (state == 0) {
         $(".info_labels_container").show();
@@ -228,9 +223,11 @@ function toggleView() {
         console.log("BGR IMG:" + jsonData.overlays[state - 1][0]);
         $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
         if (runder[state] < 1) {
-            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_LAV.jpg'></div><div class='col-xs-12'><h3>Lavkonjunktur </h3>Udsving i produktion, forbrug og beskæftigelse er normalt i en markedsøkonomi. Økonomisk vækst i højkonjunkturer afløses af krise og arbejdsløshed i lavkonjunkturer. En økonomisk krise i Danmark kan igangsættes af en global økonomisk krise. <br/>Undersøg i quizzen her, hvordan et fald i efterspørgslen i verdensøkonomien kan påvirke dansk økonomi.</p></div>");
+            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_LAV.jpg'></div><div class='col-xs-12'><h3>Lavkonjunktur </h3><div class='konjunktur_popud'><p>I en blandingsøkonomi som den danske er det normalt med udsving i vækst, forbrug, produktion og beskæftigelse. Det kaldes konjunktursvingninger. En lavkonjunktur eller en økonomisk krise i Danmark kan fx igangsættes af en nedgang i den global økonomi.<br/>Undersøg nu i quizzen hvordan et fald i efterspørgslen i verdensøkonomien kan påvirke dansk økonomi. Bemærk at lavkonjunkturforløbet foregår uden politiske indgreb fra det danske folketing.</p></div>");
+            
+tekst_forklaring($('.konjunktur_popud'), jsonData.forklaringer);
             $(".CloseClass").click(function() {
-                microhint($(".gui_container"), "Besvar spørgsmålene i quizzen, og se hvordan pengestrømmene bevæger sig i en lavkonjunktur.");
+                microhint($(".gui_container"), "Besvar spørgsmålene i quizzen og se hvordan pengestrømmene bevæger sig i en lavkonjunktur.");
             });
         }
 
@@ -241,7 +238,8 @@ function toggleView() {
     } else if (state == 2) {
         $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
         if (runder[state] < 1) {
-            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_HOJ.jpg'></div><div class='col-xs-12'><h3>Højkonjunktur </h3><div class='col-xs-12'><p>Udsving i produktion, forbrug og beskæftigelse er normalt i en markedsøkonomi. Økonomisk vækst i højkonjunkturer afløses af krise og arbejdsløshed i lavkonjunkturer. En økonomisk krise i Danmark kan igangsættes af en global økonomisk krise. <br/>I quizzen kan du undersøge, hvordan en stigning i efterspørgslen i verdensøkonomien kan påvirke dansk økonomi.</p></div>");
+            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_HOJ.jpg'></div><div class='col-xs-12'><h3>Højkonjunktur </h3><div class='konjunktur_popud'><p>I en blandingsøkonomi som den danske er det normalt med udsving i vækst, forbrug, produktion og beskæftigelse. Det kaldes konjunktursvingninger. En højkonjunktur med økonomisk vækst i Danmark kan fx igangsættes af en vækst i den globale økonomi.<br/>Undersøg nu i quizzen hvordan en stigning i efterspørgslen i verdensøkonomien kan påvirke dansk økonomi. Bemærk at højkonjunkturforløbet foregår uden politiske indgreb fra det danske folketing.</p></div>");
+            tekst_forklaring($('.konjunktur_popud'), jsonData.forklaringer);
             $(".CloseClass").click(function() {
                 microhint($(".gui_container"), "Besvar spørgsmålene i quizzen og se hvordan pengestrømmene bevæger sig i en højkonjunktur.");
             });
@@ -265,9 +263,7 @@ function poseQuestion() {
 
 
     setTimeout(function() {
-        if (state == 1 || state == 2) {
-            $(".gui_container").fadeIn(1500);
-        }
+        $(".gui_container").fadeIn(1500);
     }, 3000);
 
 
@@ -358,7 +354,7 @@ function poseQuestion() {
         if (state == 0) {
             microhint($("body"), "Klik på de forskellige enheder og pile for at undersøge det økonomiske kredsløb");
         } else if (state == 3) {
-            $(".spm").html("Klik på de forskellige infopunkter for at se en video, der forklarer de forskellige økonomiske politikker.");
+            $(".spm").html("Klik på de forskellige infopunkter for at se en video de forklarer de forksellige økonomiske politikker");
         }
         $(".svar").html("");
         $(".btn_tjek").hide();
@@ -386,7 +382,7 @@ function tjek_svar() {
             feedback(false, checked);
         }
     } else {
-        microhint($(".gui_container"), "Vælg et svar fra mulighederne herover. Klik derefter på 'Tjek svar'")
+        microhint($(".gui_container"), "Vælg et svar fra mulighederne herover. Tryk derefter på 'Tjek svar'")
     }
     console.log("svar: " + korrekt_svar + ", checked:" + $(".svar_txt").eq(checked).html());
 
