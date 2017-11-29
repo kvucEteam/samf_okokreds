@@ -6,7 +6,7 @@ var state = 0,
     /*----------  hvor meget ubalance er der?  ----------*/
     ubalance_niveau = 0,
 
-    viewArray = [$(".info_labels_container"), $(".lavkonj_labels_container"), $(".hoj_konj_labels_container")], //, $(".ekspert_container")],
+    viewArray = [$(".info_labels_container"), $(".lavkonj_labels_container"), $(".hoj_konj_labels_container"), $(".fane4_container")], //, $(".ekspert_container")],
     state_Array = ["void", "balance_spm", "ubalance_spm"],
     /*----------  variabler til at tilgå json pba sø state  ----------*/
 
@@ -23,6 +23,9 @@ var state = 0,
 
 
 $(document).ready(function() {
+
+
+
     $("#explanationwrapper").html(explanation(jsonData.userInterface.explanation));
     $('.instr_container').html(instruction(jsonData.userInterface.instruktion));
     $('.fane').click(toggleView);
@@ -75,6 +78,8 @@ $(document).ready(function() {
 
     //microhint($(".active").eq(0), "Lær om det økonomiske kredsløb ved at klikke på knapperne.</p><p>Lær om lav- og højkonjunkturer på fanerne.");
 
+    rotateCheck();
+
 });
 
 /*----------  Subsection comment block  ----------*/
@@ -116,7 +121,7 @@ function generate_labels(state) {
 }
 
 
-/*----------  vis information  ----------*/
+/*----------  vis information:   ----------*/
 
 function show_info(indeks) {
 
@@ -173,7 +178,7 @@ function show_info(indeks) {
 
 }
 
-/*----------  Skift view på Kredsløbet  ----------*/
+/*----------  Skift view på Kredsløbet ved klik på fanerne ----------*/
 
 function toggleView() {
 
@@ -214,8 +219,10 @@ function toggleView() {
         console.log("BGR IMG:" + jsonData.overlays[state - 1][0]);
         $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
         if (runder[state] < 1) {
-            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_LAV.jpg'></div><div class='col-xs-12'><h3>Lavkonjunktur </h3>Udsving i produktion, forbrug og beskæftigelse er normalt i en markedsøkonomi. Økonomisk vækst i højkonjunkturer afløses af krise og arbejdsløshed i lavkonjunkturer. En økonomisk krise i Danmark kan igangsættes af en global økonomisk krise. <br/>Undersøg i quizzen her, hvordan et fald i efterspørgslen i verdensøkonomien kan påvirke dansk økonomi.</p></div>");
+            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_LAV.jpg'></div><div class='col-xs-12'><h3>Lavkonjunktur </h3><p class='lavkonjunktur_broedtxt'>Udsving i produktion, forbrug og beskæftigelse er normalt i en markedsøkonomi. Økonomisk vækst i højkonjunkturer afløses af krise og arbejdsløshed i lavkonjunkturer. En økonomisk krise i Danmark kan igangsættes af en global økonomisk krise. <br/>Undersøg i quizzen her, hvordan et fald i efterspørgslen i verdensøkonomien kan påvirke dansk økonomi.</p></div>");
+            tekst_forklaring($(".lavkonjunktur_broedtxt"), jsonData.forklaringer)
             $(".CloseClass").click(function() {
+                $(".forklaring").remove();
                 microhint($(".gui_container"), "Besvar spørgsmålene i quizzen, og se hvordan pengestrømmene bevæger sig i en lavkonjunktur.");
             });
         }
@@ -227,8 +234,11 @@ function toggleView() {
     } else if (state == 2) {
         $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
         if (runder[state] < 1) {
-            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_HOJ.jpg'></div><div class='col-xs-12'><h3>Højkonjunktur </h3><div class='col-xs-12'><p>Udsving i produktion, forbrug og beskæftigelse er normalt i en markedsøkonomi. Økonomisk vækst i højkonjunkturer afløses af krise og arbejdsløshed i lavkonjunkturer. En økonomisk krise i Danmark kan igangsættes af en global økonomisk krise. <br/>I quizzen kan du undersøge, hvordan en stigning i efterspørgslen i verdensøkonomien kan påvirke dansk økonomi.</p></div>");
+            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_HOJ.jpg'></div><div class='col-xs-12'><h3>Højkonjunktur </h3><p class='hojkonjunktur_broedtxt'>Udsving i produktion, forbrug og beskæftigelse er normalt i en markedsøkonomi. Økonomisk vækst i højkonjunkturer afløses af krise og arbejdsløshed i lavkonjunkturer. En økonomisk krise i Danmark kan igangsættes af en global økonomisk krise. <br/>I quizzen kan du undersøge, hvordan en stigning i efterspørgslen i verdensøkonomien kan påvirke dansk økonomi.</p>");
+            tekst_forklaring($(".hojkonjunktur_broedtxt"), jsonData.forklaringer)
+                //tekst_forklaring($('.broed_info_text'), jsonData.forklaringer);
             $(".CloseClass").click(function() {
+                $(".forklaring").remove();
                 microhint($(".gui_container"), "Besvar spørgsmålene i quizzen og se hvordan pengestrømmene bevæger sig i en højkonjunktur.");
             });
         }
@@ -236,13 +246,22 @@ function toggleView() {
         //$(".bg_image").attr("src", "img/mockup02_infotab.gif");
         $(".gui_container").show();
 
+        /*=============================================
+        =            Her bliver fane 4 initialiseret (info labels skjules)            =
+        =============================================*/
+
+
     } else if (state == 3) {
         $(".info_labels_container").hide();
         $(".ekspert_labels_container").show();
-        $(".bg_image").attr("src", "img/mockup02_infotab.gif");
-        $(".gui_container").show();
+        $(".bg_image").attr("src", "img/pile_tyndere_banktxt.png");
+        //$(".gui_container").show();
 
     }
+
+    /*=====  End of Section comment block  ======*/
+
+    //
 }
 
 /*----------  Kør spørgsmål  ----------*/
@@ -339,7 +358,7 @@ function poseQuestion() {
         if (state == 0) {
             microhint($("body"), "Klik på de forskellige enheder og pile for at undersøge det økonomiske kredsløb");
         } else if (state == 3) {
-            $(".spm").html("Klik på de forskellige infopunkter for at se en video, der forklarer de forskellige økonomiske politikker.");
+            $(".spm").html("Her skal du arbejde med fane 4 (Steens quiz)");
         }
         $(".svar").html("");
         $(".btn_tjek").hide();
@@ -413,33 +432,6 @@ function visuel_feedback() {
             console.log("State: " + state);
             console.log("IF!");
         });
-
-
-
-        /*} else if (state == 2) {
-
-            $(".gui_container").fadeOut(100);
-
-            viewArray[state].prepend("<img class='ubalance_overlay img_overlay img-responsive' src='" + jsonData.overlays[state - 1].overlaypics[runder[state]] + "'>");
-            console.log("OL_length: " + $(".ubalance_overlay").length);
-
-            $(".ubalance_overlay").eq(0).fadeOut(0);
-            $(".ubalance_overlay").eq(1).fadeOut(3000);
-
-            $(".ubalance_overlay").eq(0).fadeIn(3000, function() {
-                $(".ubalance_overlay").eq(1).remove();
-
-                console.log($(".hoj_container").find(".img_overlay").length);
-                runder.splice(state, 1, runder[state] + 1);
-                poseQuestion();
-            });
-
-        } else {
-            runder.splice(state, 1, runder[state] + 1);
-            console.log("ELSE!");
-            poseQuestion();
-        }*/
-
 
         $(".ubalance_overlay").eq(1).fadeIn(1500);
 
