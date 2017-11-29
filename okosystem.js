@@ -1,3 +1,28 @@
+/**
+ *
+ * Hej THAN 
+ * Forhåbentlig er de fleste rettelser i ToggleView funktionen 
+ * Hvis der er behov for rettelser ift labels, må du gerne kontaktet mig også i barslen
+ * Ligeledes hvis det er besværligt at skal pusle en fane 4 på plads! 
+ *
+ */
+
+
+ /**
+ 
+     TODO:
+     - Opdaterere explanation og instruktion tekst
+     - Lave slutfeedback til opgaven (fane 2+3) - enten i $(".gui_container") eller som en us Msg box Søg :"Du har besvaret alle spørgsmålene"
+     - Udarbejde fane 4  
+  */
+ 
+
+
+
+
+
+
+
 /*============================================
 =            Initialize variables            =
 ============================================*/
@@ -81,6 +106,94 @@ $(document).ready(function() {
     rotateCheck();
 
 });
+
+
+
+/*----------  Skift view på Kredsløbet ved klik på fanerne ----------*/
+
+function toggleView() {
+
+    $(".microhint").remove();
+
+    var indeks = $(this).index();
+
+    //alert(indeks + ", state: " + state);
+
+    if (indeks == -1) {
+        indeks = state;
+    }
+
+    if (state != indeks) {
+        state = indeks;
+
+        if (state != 0) {
+            poseQuestion();
+        }
+        //alert("State: "+ state);
+    }
+
+    for (i in viewArray) {
+        console.log("W - A" + i)
+        viewArray[i].fadeOut(0)
+    }
+    viewArray[state].fadeIn(0);
+
+    //alert("State: " + state);
+
+    if (state == 0) {
+        $(".info_labels_container").show();
+        $(".bg_image").attr("src", "img/pile_tyndere_banktxt.png");
+        $(".gui_container").hide();
+
+
+    } else if (state == 1) {
+        console.log("BGR IMG:" + jsonData.overlays[state - 1][0]);
+        $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
+        if (runder[state] < 1) {
+            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_LAV.jpg'></div><div class='col-xs-12'><h3>Lavkonjunktur </h3><p class='lavkonjunktur_broedtxt'>Udsving i produktion, forbrug og beskæftigelse er normalt i en markedsøkonomi. Økonomisk vækst i højkonjunkturer afløses af krise og arbejdsløshed i lavkonjunkturer. En økonomisk krise i Danmark kan igangsættes af en global økonomisk krise. <br/>Undersøg i quizzen her, hvordan et fald i efterspørgslen i verdensøkonomien kan påvirke dansk økonomi.</p></div>");
+            tekst_forklaring($(".lavkonjunktur_broedtxt"), jsonData.forklaringer)
+            $(".CloseClass").click(function() {
+                $(".forklaring").remove();
+                microhint($(".gui_container"), "Besvar spørgsmålene i quizzen, og se hvordan pengestrømmene bevæger sig i en lavkonjunktur.");
+            });
+        }
+
+        //$(".ekspert_labels_container").hide();
+        //$(".bg_image").attr("src", "img/mockup02_infotab.gif");
+        $(".gui_container").show();
+
+    } else if (state == 2) {
+        $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
+        if (runder[state] < 1) {
+            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_HOJ.jpg'></div><div class='col-xs-12'><h3>Højkonjunktur </h3><p class='hojkonjunktur_broedtxt'>Udsving i produktion, forbrug og beskæftigelse er normalt i en markedsøkonomi. Økonomisk vækst i højkonjunkturer afløses af krise og arbejdsløshed i lavkonjunkturer. En økonomisk krise i Danmark kan igangsættes af en global økonomisk krise. <br/>I quizzen kan du undersøge, hvordan en stigning i efterspørgslen i verdensøkonomien kan påvirke dansk økonomi.</p>");
+            tekst_forklaring($(".hojkonjunktur_broedtxt"), jsonData.forklaringer)
+                //tekst_forklaring($('.broed_info_text'), jsonData.forklaringer);
+            $(".CloseClass").click(function() {
+                $(".forklaring").remove();
+                microhint($(".gui_container"), "Besvar spørgsmålene i quizzen og se hvordan pengestrømmene bevæger sig i en højkonjunktur.");
+            });
+        }
+        //$(".info_labels_container, .ekspert_labels_container").hide();
+        //$(".bg_image").attr("src", "img/mockup02_infotab.gif");
+        $(".gui_container").show();
+
+        /*=============================================
+        =            Her bliver fane 4 initialiseret (info labels skjules)            =
+        =============================================*/
+
+
+    } else if (state == 3) {
+        $(".info_labels_container").hide();
+        $(".ekspert_labels_container").show();
+        $(".bg_image").attr("src", "img/pile_tyndere_banktxt.png");
+        //$(".gui_container").show();
+
+    }
+
+    /*=====  End of Section comment block  ======*/
+
+    //
+}
 
 /*----------  Subsection comment block  ----------*/
 
@@ -178,91 +291,7 @@ function show_info(indeks) {
 
 }
 
-/*----------  Skift view på Kredsløbet ved klik på fanerne ----------*/
 
-function toggleView() {
-
-    $(".microhint").remove();
-
-    var indeks = $(this).index();
-
-    //alert(indeks + ", state: " + state);
-
-    if (indeks == -1) {
-        indeks = state;
-    }
-
-    if (state != indeks) {
-        state = indeks;
-
-        if (state != 0) {
-            poseQuestion();
-        }
-        //alert("State: "+ state);
-    }
-
-    for (i in viewArray) {
-        console.log("W - A" + i)
-        viewArray[i].fadeOut(0)
-    }
-    viewArray[state].fadeIn(0);
-
-    //alert("State: " + state);
-
-    if (state == 0) {
-        $(".info_labels_container").show();
-        $(".bg_image").attr("src", "img/pile_tyndere_banktxt.png");
-        $(".gui_container").hide();
-
-
-    } else if (state == 1) {
-        console.log("BGR IMG:" + jsonData.overlays[state - 1][0]);
-        $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
-        if (runder[state] < 1) {
-            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_LAV.jpg'></div><div class='col-xs-12'><h3>Lavkonjunktur </h3><p class='lavkonjunktur_broedtxt'>Udsving i produktion, forbrug og beskæftigelse er normalt i en markedsøkonomi. Økonomisk vækst i højkonjunkturer afløses af krise og arbejdsløshed i lavkonjunkturer. En økonomisk krise i Danmark kan igangsættes af en global økonomisk krise. <br/>Undersøg i quizzen her, hvordan et fald i efterspørgslen i verdensøkonomien kan påvirke dansk økonomi.</p></div>");
-            tekst_forklaring($(".lavkonjunktur_broedtxt"), jsonData.forklaringer)
-            $(".CloseClass").click(function() {
-                $(".forklaring").remove();
-                microhint($(".gui_container"), "Besvar spørgsmålene i quizzen, og se hvordan pengestrømmene bevæger sig i en lavkonjunktur.");
-            });
-        }
-
-        //$(".ekspert_labels_container").hide();
-        //$(".bg_image").attr("src", "img/mockup02_infotab.gif");
-        $(".gui_container").show();
-
-    } else if (state == 2) {
-        $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
-        if (runder[state] < 1) {
-            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_HOJ.jpg'></div><div class='col-xs-12'><h3>Højkonjunktur </h3><p class='hojkonjunktur_broedtxt'>Udsving i produktion, forbrug og beskæftigelse er normalt i en markedsøkonomi. Økonomisk vækst i højkonjunkturer afløses af krise og arbejdsløshed i lavkonjunkturer. En økonomisk krise i Danmark kan igangsættes af en global økonomisk krise. <br/>I quizzen kan du undersøge, hvordan en stigning i efterspørgslen i verdensøkonomien kan påvirke dansk økonomi.</p>");
-            tekst_forklaring($(".hojkonjunktur_broedtxt"), jsonData.forklaringer)
-                //tekst_forklaring($('.broed_info_text'), jsonData.forklaringer);
-            $(".CloseClass").click(function() {
-                $(".forklaring").remove();
-                microhint($(".gui_container"), "Besvar spørgsmålene i quizzen og se hvordan pengestrømmene bevæger sig i en højkonjunktur.");
-            });
-        }
-        //$(".info_labels_container, .ekspert_labels_container").hide();
-        //$(".bg_image").attr("src", "img/mockup02_infotab.gif");
-        $(".gui_container").show();
-
-        /*=============================================
-        =            Her bliver fane 4 initialiseret (info labels skjules)            =
-        =============================================*/
-
-
-    } else if (state == 3) {
-        $(".info_labels_container").hide();
-        $(".ekspert_labels_container").show();
-        $(".bg_image").attr("src", "img/pile_tyndere_banktxt.png");
-        //$(".gui_container").show();
-
-    }
-
-    /*=====  End of Section comment block  ======*/
-
-    //
-}
 
 /*----------  Kør spørgsmål  ----------*/
 
