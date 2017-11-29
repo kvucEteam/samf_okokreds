@@ -27,8 +27,6 @@ $(document).ready(function() {
     $('.instr_container').html(instruction(jsonData.userInterface.instruktion));
     $('.fane').click(toggleView);
 
-
-
     //poseQuestion(runder[state]);
 
     generate_labels(state);
@@ -40,16 +38,6 @@ $(document).ready(function() {
         var indeks = $(this).index(".balance_detalje_label");
         show_info(indeks);
     });
-
-    $(".gen_label").click(function() {
-        //var indeks = $(this).attr("class").
-        console.log("HEY HEY HEY");
-
-
-    });
-
-
-
 
     $(".genopretning_detalje_label").click(function() {
         var indeks = $(this).index(".genopretning_detalje_label");
@@ -67,8 +55,6 @@ $(document).ready(function() {
 
                 //$(".gui_container").css("background-color", "#999");
                 $(".btn_closeGUI").switchClass("glyphicon-chevron-up", "glyphicon-chevron-down");
-
-
 
             } else {
                 $(".gui_container").prepend("<p class='toggle_info'>Quizzen er skjult</p>");
@@ -187,7 +173,7 @@ function show_info(indeks) {
 
 }
 
-/*----------  Skift view på Søen  ----------*/
+/*----------  Skift view på Kredsløbet  ----------*/
 
 function toggleView() {
 
@@ -312,8 +298,6 @@ function poseQuestion() {
 
         if (runder[state] < spmData.length) {
 
-
-
             $(".spm_numbers").html("Spørgsmål " + (runder[state] + 1) + " / " + spmData.length);
             $(".spm").html(spmData[runder[state]].spm);
 
@@ -342,9 +326,6 @@ function poseQuestion() {
             } else if (state == 2) {
                 $(".num_0").find(".glyphicon").removeClass("glyphicon-upload").addClass("glyphicon-download");
             }
-
-
-
 
             $(".spm").html("Du har besvaret alle spørgsmålene i quizzen <h4><span class='label_slut label label-success'>Korrekt</span></h4><p>Du kan tage quizzen igen eller undersøge en af de andre faner.");
             $(".svar").html("<div class='btn btn-primary btn_forfra'>Tag quizzen igen</div><div class='Clear'></div>");
@@ -506,6 +487,7 @@ function feedback(svar, checked) {
             visuel_feedback();
 
         }
+        $(".microhint").remove();
     });
 
     tekst_forklaring($('.feedback_txt'), jsonData.forklaringer);
