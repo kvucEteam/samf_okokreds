@@ -169,7 +169,8 @@
         "element": "Indlån",
         "type": "pil",
         "infotekst": "Virksomhederne har indlån til pengeinstitutterne lige som husholdningerne har. Det kan betragtes som virksomhedernes opsparing.",
-        "infopic": "img/images_usmsgbx/CROPPER_USMSGBX_hus_bank.jpg",
+        "infopic_OLD": "img/images_usmsgbx/CROPPER_USMSGBX_hus_bank.jpg",
+        "infopic": "img/images_usmsgbx/CROPPER_USMSGBX_industri_bank.jpg",
         "balance_pos": ["66.5", "48.3"],
         "ubalance_pos": ""
 
@@ -187,7 +188,8 @@
         "element": "Udlån",
         "type": "pil",
         "infotekst": "Fra pengeinstitutterne til virksomhederne overføres der penge via udlån og det er så virksomhedernes gæld.",
-        "infopic": "img/images_usmsgbx/CROPPER_USMSGBX_bank_hus.jpg",
+        "infopic_OLD": "img/images_usmsgbx/CROPPER_USMSGBX_bank_hus.jpg",
+        "infopic": "img/images_usmsgbx/CROPPER_USMSGBX_bank_industri.jpg",
         "balance_pos": ["60.5", "60.7"],
         "ubalance_pos": "",
         "lav_konj_runde": "3",
@@ -217,7 +219,8 @@
         "element": "Varekøb",
         "type": "pil",
         "infotekst": "Fra den offentlige sektor til virksomhederne overføres der penge via varekøb. Fx når det offentlige køber bygninger, veje, mad, serviceydelser mm fra private virksomheder.",
-        "infopic": "img/images_usmsgbx/CROPPER_USMSGBX_industri_off.jpg",
+        "infopic_OLD": "img/images_usmsgbx/CROPPER_USMSGBX_industri_off.jpg",
+        "infopic": "img/images_usmsgbx/CROPPER_USMSGBX_off_industri.jpg",
         "balance_pos": ["61.5", "13.8"],
         "ubalance_pos": ""
 
