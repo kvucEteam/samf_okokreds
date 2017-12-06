@@ -17,42 +17,42 @@
     "forklaringer": [
         ["efterspørgsel", "Den mængde varer og ydelser, som forbrugerne er villige til at købe. Størrelsen af efterspørgslen afhænger især af varens pris, indkomstniveau hos køberne, priser på beslægtede varer samt købernes smag."],
 
-        ["stat", "Udgør en vigtig del af den offentlige sektor, og ansvaret for knap 40 % af de offentlige udgifter. De vigtigste statsopgaver er forsvar, retsvæsen, politi, udenrigstjeneste og den centrale administration."],
+        ["stat", "Staten udgør en vigtig del af den offentlige sektor og har ansvaret for knap 40 % af de offentlige udgifter. De vigtigste statsopgaver er forsvar, retsvæsen, politi, udenrigstjeneste og den centrale administration."],
 
-        ["region", "Danmark er inddelt i 5 regioner, der altovervejende varetager den offentlige sundhed. Regionerne har ansvaret for ca. 10 % af de offentlige udgifter."],
+        ["region", "Danmark er inddelt i fem regioner, der altovervejende varetager den offentlige sundhed. Regionerne har ansvaret for ca. 10 % af de offentlige udgifter."],
 
         ["kommune", "Danmark er inddelt i 98 kommuner, der varetager den borgernære offentlige service som vuggestuer, børnehaver, skoler, plejehjem mv. Kommunerne har ansvaret for ca. 50 % af de offentlige udgifter."],
 
-        ["eksport", "er en betegnelse for handel med varer og tjenesteydelser mellem stater. Hvis Danmark køber biler i Tyskland, vil man tale om at Danmark importerer biler fra Tyskland. Varer og tjenesteydelserne kommer ind i landet og pengestrømmen går ud af landet. Det mindsker altså efterspørgslen i Danmark og øger efterspørgslen i Tyskland."],
+        ["eksport", "Eksport er en betegnelse for handel med varer og tjenesteydelser mellem stater. Hvis Danmark køber biler i Tyskland, vil man tale om at Danmark importerer biler fra Tyskland. Varer og tjenesteydelserne kommer ind i landet, og pengestrømmen går ud af landet. Det mindsker altså efterspørgslen i Danmark og øger efterspørgslen i Tyskland."],
 
-        ["import", "Betyder indførsel, dvs. Udgifter til køb af varer og tjenester (fx danske turisters udgifter i udlandet, udgifter til transport og udgifter til serviceydelser) i udlandet."],
+        ["import", "Import betyder indførsel, dvs. udgifter til køb af varer og tjenester i udlandet. Det kunne fx være danske turisters udgifter i udlandet, udgifter til transport og udgifter til serviceydelser."],
 
-        ["moms", "Er en generel afgift, der pålægges næsten al omsætning i samfundet. Momssatsen er 25% og udgør en betydelig del af statens indtægter"],
+        ["moms", "Moms er en generel afgift, der pålægges næsten al omsætning i samfundet. Momssatsen er 25% og udgør en betydelig del af statens indtægter"],
 
-        ["afgift", "er en speciel form for skat der er lagt på forskellige former for varer og tjenesteydelser. Der er eksempelvis afgifter på biler, vand, el, cigaretter mm."],
+        ["afgift", "En afgift er en speciel form for skat, der er lagt på forskellige former for varer og tjenesteydelser. Der er eksempelvis afgifter på biler, vand, el, cigaretter m.m."],
 
-        ["overførselsindkomst", "Samlebetegnelse for fx folke-pension, arbejdsløshedsdagpenge og boligsikring fra den offentlige sektor til husholdningerne."],
+        ["overførselsindkomst", "Overførselsindkomst er en samlebetegnelse for fx folkepension, arbejdsløshedsdagpenge og boligsikring fra den offentlige sektor til husholdningerne."],
 
-        ["arbejdsløshed", "Dækker over personer uden erhvervsmæssig beskæftigelse som søger arbejde. Arbejdsløsheden kan opgøres på forskellige måder og angives enten i antal eller i procent."],
+        ["arbejdsløshed", "Arbejdsløshed dækker over personer uden erhvervsmæssig beskæftigelse, som søger arbejde. Arbejdsløsheden kan opgøres på forskellige måder og angives enten i antal eller i procent."],
 
-        ["betalingsbalance", "Er en opgørelse over samtlige økonomiske transaktioner, som et land har med udlandet i typisk ét år. For eksempel opgøres al import og eksport på betalingsbalancen."],
+        ["betalingsbalance", "Betalingsbalancen er en opgørelse over samtlige økonomiske transaktioner, som et land har med udlandet i typisk ét år. For eksempel opgøres al import og eksport på betalingsbalancen."],
 
         ["udlandsgæld", "Når et land igennem en periode har negativ status over for udlandet. Danmark har i dag ingen udlandsgæld - tværtimod har Danmark en nettoformue i udlandet."],
 
-        ["statsgæld", "Er der underskud på de offentlige finanser har den offentlige sektor et finansieringsbehov. Typisk finansieres underskuddet ved optagelse af lån i den private sektor i indland og udland – overvejende ved udstedelse af statsobligationer."],
+        ["statsgæld", "Er der underskud på de offentlige finanser, har den offentlige sektor et finansieringsbehov. Typisk finansieres underskuddet ved optagelse af lån i den private sektor i indland og udland – overvejende ved udstedelse af statsobligationer."],
 
-        ["blandingsøkonomi", "Er karakteriseret ved at markedsøkonomien i en vis grad er politisk reguleret. Det er også typisk for en blandingsøkonomi, at staten selv står for produktionen af forskellige ydelser (fx inden for uddannelse og sundhedsvæsen). "],
+        ["blandingsøkonomi", "Blandingsøkonomi er karakteriseret ved at markedsøkonomien i en vis grad er politisk reguleret. Det er også typisk for en blandingsøkonomi, at staten selv står for produktionen af forskellige ydelser fx inden for uddannelse og sundhedsvæsen. "],
 
         ["BNP", "Bruttonationalproduktet er et udtryk for værdien af den samlede produktion i et land i et år (fratrukket udgiften til råvarer og hjælpestoffer). Man måler ofte vækst i et land ved at se på stigninger og fald i BNP."],
 
         ["vækst", "I en samfundsøkonomi beregner man ofte væksten på baggrund af BNP opgivet i faste priser. Det vil sige at inflation skæres fra, så tal fra foregående år kan sammenlignes på trods af en tidsmæssig forskel. Hvis den samlede produktion er blevet større ved sammenligningen, så har samfundet oplevet vækst i økonomien i den pågældende periode."],
 
-        ["inflation", "Er når hele samfundets priser stiger. Det medfører en forringet købekraft og dermed et fald i efterspørgslen.  "]
+        ["inflation", "Inflation er, når hele samfundets priser stiger. Det medfører en forringet købekraft og dermed et fald i efterspørgslen."]
     ],
 
     "labels": [{
         "element": "Pengeinstitutter",
-        "infotekst": "Pengeinstitutter kan fx være banker, sparekasser, andelskasse og realkreditinstitutioner.  De står for indlån og udlån fra husholdningerne og virksomhederne. Næsten alle overførsler af penge i det økonomiske kredsløb går via pengeinstitutionerne fx udbetaling af løn og køb af varer.<br/>Renten er prisen på penge. Jo højere renten er desto dyrere er det at låne penge og jo mere får man for at spare op.<br/>Forholdet mellem indlån og udlån påvirker hvor meget efterspørgsel der er i det økonomiske kredsløb. Hvis der fx bliver sparet mere op end der lånes penge, så vil efterspørgslen blive mindre. ",
+        "infotekst": "Pengeinstitutter kan fx være banker, sparekasser, andelskasser og realkreditinstitutioner. De står for indlån og udlån fra husholdningerne og virksomhederne. Næsten alle overførsler af penge i det økonomiske kredsløb går via pengeinstitutionerne fx udbetaling af løn og køb af varer.<br/>Renten er prisen på penge. Jo højere renten er, desto dyrere er det at låne penge, og jo mere får man for at spare op.<br/>Forholdet mellem indlån og udlån påvirker hvor meget efterspørgsel, der er i det økonomiske kredsløb. Hvis der fx bliver sparet mere op end der lånes penge, så vil efterspørgslen blive mindre. ",
         "infopic": "img/images_usmsgbx/CROPPER_USMSGBX_bank.jpg",
         "balance_pos": ["42.5", "66.5"],
         "ubalance_pos": ["", ""]
