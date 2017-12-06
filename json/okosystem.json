@@ -1,8 +1,7 @@
 {
     "userInterface": {
         "header": "kredsløbet som økosystem",
-        "instruktion": "Undersøg det økonomiske kredsløb",
-        "explanation": "I fanebladet <b>Det økonomiske kredsløb</b> kan du lære grundbegreberne i det økoøkonomiske kredsløb. <br/>I fanebladet <b>Lavkonjunktur</b> kan du arbejde med hvordan man politisk kan komme ud af en periode med lavkonjunktur og i fanebladet <b>Højkonjunktur</b> kan du arbejde med hvordan man politisk kan komme ud af en periode med højkonjunktur.I fanebladet <b>Politiske indgreb </b> kan du lære om hvilke politiske indgreb man traditionelt har anvendt for at påvirke det økonomiske kredsløb",
+        "instruktion": "Undersøg modellen og lær grundbegreberne i det økonomiske kredsløb. På fanerne &quot;Lavkonjunktur&quot; og &quot;Højkonjunktur&quot; kan du arbejde med, hvordan konjunktursvingninger påvirker pengestrømmene. Under fanen &quot;Politiske indgreb&quot; kan du lære om, hvilke politiske indgreb man traditionelt har anvendt for at påvirke det økonomiske kredsløb.",
         "titel": "Det økonomiske kredsløb"
     },
     "actionpile": [{

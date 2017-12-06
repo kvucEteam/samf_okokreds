@@ -51,7 +51,7 @@ $(document).ready(function() {
 
 
 
-    $("#explanationwrapper").html(explanation(jsonData.userInterface.explanation));
+    // $("#explanationwrapper").html(explanation(jsonData.userInterface.explanation));  // Udkommenteret af THAN d. 06/12-2017
     $('.instr_container').html(instruction(jsonData.userInterface.instruktion));
     $('.fane').click(toggleView);
 
@@ -105,7 +105,13 @@ $(document).ready(function() {
 
     rotateCheck();
 
+    // Tilføjet af THAN d. 06-12-2017
+    $(document).on('click touchend', ".btn_closeUserMsgBox", function(event) {
+        console.log('btn_closeUserMsgBox - CLICKED');
+        $('.CloseClass').trigger('click');
+    });
 });
+
 
 
 
@@ -150,7 +156,7 @@ function toggleView() {
         console.log("BGR IMG:" + jsonData.overlays[state - 1][0]);
         $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
         if (runder[state] < 1) {
-            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_LAV.jpg'></div><div class='col-xs-12'><h3>Lavkonjunktur </h3><p class='lavkonjunktur_broedtxt'>Udsving i produktion, forbrug og beskæftigelse er normalt i en markedsøkonomi. Økonomisk vækst i højkonjunkturer afløses af krise og arbejdsløshed i lavkonjunkturer. En økonomisk krise i Danmark kan igangsættes af en global økonomisk krise. <br/>Undersøg i quizzen her, hvordan et fald i efterspørgslen i verdensøkonomien kan påvirke dansk økonomi.</p></div>");
+            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_LAV.jpg'></div><div class='col-xs-12'><h3>Lavkonjunktur </h3><p class='lavkonjunktur_broedtxt'>Udsving i produktion, forbrug og beskæftigelse er normalt i en markedsøkonomi. Økonomisk vækst i højkonjunkturer afløses af krise og arbejdsløshed i lavkonjunkturer. En økonomisk krise i Danmark kan igangsættes af en global økonomisk krise. <br/>Undersøg i quizzen her, hvordan et fald i efterspørgslen i verdensøkonomien kan påvirke dansk økonomi.</p><span class='btn_closeUserMsgBox btn btn-primary'>Klar til quiz om lavkonjunktur?</span></div>");
             tekst_forklaring($(".lavkonjunktur_broedtxt"), jsonData.forklaringer)
             $(".CloseClass").click(function() {
                 $(".forklaring").remove();
@@ -165,7 +171,7 @@ function toggleView() {
     } else if (state == 2) {
         $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
         if (runder[state] < 1) {
-            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_HOJ.jpg'></div><div class='col-xs-12'><h3>Højkonjunktur </h3><p class='hojkonjunktur_broedtxt'>Udsving i produktion, forbrug og beskæftigelse er normalt i en markedsøkonomi. Økonomisk vækst i højkonjunkturer afløses af krise og arbejdsløshed i lavkonjunkturer. En økonomisk krise i Danmark kan igangsættes af en global økonomisk krise. <br/>I quizzen kan du undersøge, hvordan en stigning i efterspørgslen i verdensøkonomien kan påvirke dansk økonomi.</p>");
+            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_HOJ.jpg'></div><div class='col-xs-12'><h3>Højkonjunktur </h3><p class='hojkonjunktur_broedtxt'>Udsving i produktion, forbrug og beskæftigelse er normalt i en markedsøkonomi. Økonomisk vækst i højkonjunkturer afløses af krise og arbejdsløshed i lavkonjunkturer. En økonomisk krise i Danmark kan igangsættes af en global økonomisk krise. <br/>I quizzen kan du undersøge, hvordan en stigning i efterspørgslen i verdensøkonomien kan påvirke dansk økonomi.</p><span class='btn_closeUserMsgBox btn btn-primary'>Klar til quiz om højkonjunktur?</span>");
             tekst_forklaring($(".hojkonjunktur_broedtxt"), jsonData.forklaringer)
                 //tekst_forklaring($('.broed_info_text'), jsonData.forklaringer);
             $(".CloseClass").click(function() {
