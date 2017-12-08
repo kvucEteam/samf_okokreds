@@ -15,7 +15,7 @@
     "overlays": [
         { "overlaypics": ["img/lavkonj/PILE_quiz01.jpg", "img/lavkonj/PILE_quiz02.jpg", "img/lavkonj/PILE_quiz03.jpg", "img/lavkonj/PILE_quiz04.jpg", "img/lavkonj/PILE_quiz05.jpg", "img/lavkonj/PILE_quiz06.jpg", "img/lavkonj/PILE_quiz07.jpg", "img/lavkonj/PILE_quiz08.jpg"] }, 
         { "overlaypics": ["img/lavkonj/PILE_quiz01.jpg", "img/lavkonj/PILE_quiz02.jpg", "img/lavkonj/PILE_quiz03.jpg", "img/lavkonj/PILE_quiz04.jpg", "img/lavkonj/PILE_quiz05.jpg", "img/lavkonj/PILE_quiz06.jpg", "img/lavkonj/PILE_quiz07.jpg", "img/lavkonj/PILE_quiz08.jpg"] },
-        { "overlaypics": ["img/indgreb/FANE4_BG_hojkonjunktur.jpg", "img/indgreb/FANE4_BG_lavkonjunktur.jpg", "img/indgreb/FANE4_BG_hojkonjunktur.jpg", "img/indgreb/FANE4_BG_lavkonjunktur.jpg"] },  
+        { "overlaypics": ["img/images_usmsgbx/konjunkturboelge_FANE4_BG_stiltest.jpg", "img/images_usmsgbx/konjunkturboelge_FANE4_BG_stiltest.jpg", "img/images_usmsgbx/konjunkturboelge_FANE4_BG_stiltest.jpg", "img/images_usmsgbx/konjunkturboelge_FANE4_BG_stiltest.jpg", "img/images_usmsgbx/konjunkturboelge_FANE4_BG_stiltest.jpg", "img/images_usmsgbx/konjunkturboelge_FANE4_BG_stiltest.jpg", "img/images_usmsgbx/konjunkturboelge_FANE4_BG_stiltest.jpg", "img/images_usmsgbx/konjunkturboelge_FANE4_BG_stiltest.jpg"] },  
         { "overlaypics": ["img/gedde1.jpg"] }
     ],
 
@@ -321,7 +321,7 @@
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
         "feedback": "Dansk økonomi er i høj grad integreret i den europæiske og globale økonomi. Både importen og eksporten er meget stor. De danske eksportvirksomheder vil derfor i høj grad blive påvirket af den globale højkonjunktur og dette vil føre til stigning i både produktion og beskæftigelse.",
-        "feedback_false": ["Der er flere kilder til udledning af næringssalte.", "Der er flere kilder til udledning af næringssalte."]
+        "feedback_false": ["Der er flere kilder til udledning af næringssalte.", "Der er flere kilder til udledning af næringssalte."] 
     }, {
         "spm": "Virksomhederne øger produktionen og beskæftigelsen. Hvordan påvirker det husholdningerne?",
         "svar": ["Den faldende arbejdsløshed gør, at husholdningerne øger forbruget og dermed efterspørgslen på virksomhedernes varer og tjenesteydelser"],
@@ -356,7 +356,7 @@
         "feedback_false": ["Der er rigeligt CO<sub>2</sub> i staten", "Når der er mindre dyrevirksomhed bliver der ikke ædt så meget plantevirksomhed."]
 
     }, {
-        "spm": "Arbejdsløsheden i husholdningerne falder. Hvordan påvirker det den offentlige sektors udgifter?", 
+        "spm": "Arbejdsløsheden i husholdningerne falder. Hvordan påvirker det den offentlige sektors udgifter?",
         "svar": ["Den offentlige sektors udgifter falder på grund af fald i overførselsindkomsterne til de arbejdsløse i husholdningerne."],
         "forkerte_svar": ["Den offentlige sektors udgifter er uændret. Statens udgifter til dagpenge og kontanthjælp falder, men til gengæld stiger udgifterne til sundhed og uddannelse fordi der er flere arbejdsulykker og borgerne uddanner sig meget under en højkonjunktur.", "Den offentlige sektors udgifter vil stige fordi flere vil anvende kulturelle tilbud og flere vil gå på pension."],
         "konsekvens": ["", ""],
@@ -373,40 +373,22 @@
         "feedback_false": ["Dødt plantevirksomhed kan ikke foretage fotosyntese", "Dannelsen af kul og olie tager mange millioner år, så den proces har ingen betydning i denne sammenhæng."]
     }],
     "indgreb_spm": [{
-        "caseText": "Det er højkonjunktur globalt og i Danmark. Produktionen og forbruget er højt og både eksport og import er stigende. Arbejdsløsheden er lav og i flere erhverv er der begyndende flaskehalse med problemer med at skaffe kvalificeret arbejdskraft. Lønninger og priser er stigende og specielt priserne på boliger er meget høje.",
-        "spm": "Hvilket finanspolitisk indgreb vil en klassisk <span class='roedFloej label label-default'>socialdemokratisk</span> ledet regering foreslå?",
-        "svar": ["De vil hæve skattetrykket for at dæmpe husholdningernes efterspørgsel og mindske de offentlige investeringer for at dæmpe virksomhedernes produktion. (En kontraktiv finanspolitik tænker de vil dæmpe højkonjunkturen og give offentlige indtægter der kan investeres under en senere lavkonjunktur.)"],
-        "forkerte_svar": ["De vil lave skattelettelser for at gøre deres kernevælgere positivt stemte og holde højkonjunkturen vedlige.", "De vil mindske det offentlige forbrug ved fx at lave besparelser både på overførselsindkomster og antallet af offentligt ansatte. Det tænker de vil mindske efterspørgslen og inflationen og gøre danske produkter mere konkurrencedygtige."],
+        "spm": "spm 1",
+        "caseText": "caseText 1",
+        "svar": ["Korrekt svar"],
+        "forkerte_svar": ["Forkert svar 1", "Forkert svar 2"],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
-        "feedback": "Rigtigt. De tænker at en kontraktiv finanspolitik vil dæmpe højkonjunkturen og give offentlige indtægter der kan investeres under en senere lavkonjunktur. De vil prioritere at bevare statens store rolle i økonomien.",
-        "feedback_false": ["Forkert. Det vil kun meget populistiske regeringer gøre.", "Forkert. Det ville være en klassisk borgerligt ledet regering gøre. De vil også føre en kontraktiv finanspolitik, men de vil mindske efterspørgslen ved at mindske udgifterne, og prioritere at gøre statens rolle i økonomien mindre."]
+        "feedback": "feedback korrekt svar",
+        "feedback_false": ["feedback forkert svar 1", "feedback forkert svar 2"]
     },{
-        "caseText": "Det er lavkonjunktur globalt og i Danmark. Produktionen og forbruget er lavt og både eksport og import er faldende. Beskæftigelsen er lav og arbejdsløsheden er høj. Udgifterne til arbejdsløshedsdagpenge og kontanthjælp er stigende mens skatteindtægterne falder. Samlet set er der underskud på det offentlige finanser.",
-        "spm": "Hvilket finanspolitisk indgreb vil en klassisk <span class='roedFloej label label-default'>socialdemokratisk</span> ledet regering foreslå?",
-        "svar": ["De vil øge de offentlige investeringer i infrastruktur fx togdrift, broer, sygehuse for at skabe offentligt finansieret produktion og dermed øge efterspørgslen i samfundet. "],
-        "forkerte_svar": ["De vil lave skattelettelser for at husholdningerne kan få et større økonomisk råderum og dermed via et øget privatforbrug trække produktion og beskæftigelse i gang.", "De vil øge skatterne for at få finansieret underskuddet på de offentlige finanser. De tænker at det vil stabilisere økonomien og gøre statskassen klar til at investere i uddannelse og forskning når højkonjunkturen kommer og der er behov for kvalificeret arbejdskraft."],
+        "spm": "spm 2",
+        "caseText": "caseText 2",
+        "svar": ["Korrekt svar"],
+        "forkerte_svar": ["Forkert svar 1", "Forkert svar 2"],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
-        "feedback": "<span class='red'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. (Posetiv feedback fra Søren og Steen mangler)</span>",
-        "feedback_false": ["<span class='red'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. (Negativ feedback fra Søren og Steen mangler)</span>", "<span class='red'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. (Negativ feedback fra Søren og Steen mangler)</span>"]
-    },{
-        "caseText": "Det er højkonjunktur globalt og i Danmark. Produktionen og forbruget er højt og både eksport og import er stigende. Arbejdsløsheden er lav og i flere erhverv er der begyndende flaskehalse med problemer med at skaffe kvalificeret arbejdskraft. Lønninger og priser er stigende og specielt priserne på boliger er meget høje. ",
-        "spm": "Hvilket finanspolitisk indgreb vil en klassisk <span class='blaaFloej label label-default'>borgerligt</span> ledet regering foreslå?",
-        "svar": ["De vil mindske det offentlige forbrug ved fx at lave besparelser både på overførselsindkomster og antallet af offentligt ansatte. Det tænker de vil mindske efterspørgslen og inflationen og gøre danske produkter mere konkurrencedygtige."],
-        "forkerte_svar": ["De vil hæve skattetrykket for at dæmpe husholdningernes efterspørgsel og mindske de offentlige investeringer for at dæmpe virksomhedernes produktion.", "De vil lave skattelettelser for at gøre deres kernevælgere positivt stemte og holde højkonjunkturen vedlige."],
-        "konsekvens": ["", ""],
-        "konsekvens_pics": ["", ""],
-        "feedback": "Rigtigt. De vil føre en kontraktiv finanspolitik og prioritere at gøre det ved at mindske de offentlige udgifter og dermed også statens rolle i økonomien.",
-        "feedback_false": ["Forkert. De borgerlige vil ikke hæve skattetrykket. De vil prioritere at mindske statens rolle i økonomien.", "Forkert. Det vil kun meget populistiske regeringer gøre. (Men det er sket)"]
-    },{
-        "caseText": "Det er lavkonjunktur globalt og i Danmark. Produktionen og forbruget er lavt og både eksport og import er faldende. Beskæftigelsen er lav og arbejdsløsheden er høj. Udgifterne til arbejdsløshedsdagpenge og kontanthjælp er stigende mens skatteindtægterne falder. Samlet set er der underskud på det offentlige finanser.",
-        "spm": "Hvilket finanspolitisk indgreb vil en klassisk <span class='blaaFloej label label-default'>borgerligt</span> ledet regering foreslå?",
-        "svar": ["De vil lave skattelettelser for at husholdningerne kan få et større økonomisk råderum og dermed via et øget privatforbrug trække produktion og beskæftigelse i gang."],
-        "forkerte_svar": ["De vil øge de offentlige investeringer i infrastruktur fx togdrift, broer, sygehuse for at skabe offentligt finansieret produktion og dermed øge efterspørgslen i samfundet.", "De vil øge skatterne for at få finansieret underskuddet på de offentlige finanser. De tænker at det vil stabilisere økonomien og gøre statskassen klar til at investere i uddannelse og forskning når højkonjunkturen kommer og der er behov for kvalificeret arbejdskraft."],
-        "konsekvens": ["", ""],
-        "konsekvens_pics": ["", ""],
-        "feedback": "<span class='red'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. (Posetiv feedback fra Søren og Steen mangler)</span>",
-        "feedback_false": ["<span class='red'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. (Negativ feedback fra Søren og Steen mangler)</span>", "<span class='red'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. (Negativ feedback fra Søren og Steen mangler)</span>"]
+        "feedback": "feedback korrekt svar",
+        "feedback_false": ["feedback forkert svar 1", "feedback forkert svar 2"]
     }]
 }

@@ -18,7 +18,7 @@
     <div class="container-fluid">
         <h1>Det økonomiske kredsløb</h1>
         <div class="col-xs-12">
-            <div class="instr_container"></div>
+            <div class="instr_container"></div> 
             <div id="explanationwrapper"></div>
         </div>
         <div class="exp_container col-xs-12 ">
@@ -27,7 +27,7 @@
                 <li class="fane"><a data-toggle="tab">Lavkonjunktur</a></li>
                 <li class="fane"><a data-toggle="tab">Højkonjunktur</a></li>
                 <!--<li class="fane"><a data-toggle="tab">Fane 4</a></li> -->
-                <!--<li class="fane"><a data-toggle="tab">Politiske indgreb</a></li> -->
+                <li class="fane"><a data-toggle="tab">Politiske indgreb</a></li> 
             </ul>
             <div class="gui_container">
                 <div class="btn_closeGUI glyphicon glyphicon-chevron-down"></div>
@@ -57,6 +57,7 @@
             <script type="text/javascript">
             $(document).ready(function() {
                 getAjaxData("GET", "json/okosystem.json", false, "json");
+                // getAjaxData("GET", "json/okosystem_test1.json", false, "json");
                 one_line_footer();
             });
             </script>

@@ -32,7 +32,8 @@ var state = 0,
     ubalance_niveau = 0,
 
     viewArray = [$(".info_labels_container"), $(".lavkonj_labels_container"), $(".hoj_konj_labels_container"), $(".fane4_container")], //, $(".ekspert_container")],
-    state_Array = ["void", "balance_spm", "ubalance_spm"],
+    // state_Array = ["void", "balance_spm", "ubalance_spm"],
+    state_Array = ["void", "balance_spm", "ubalance_spm", "indgreb_spm"],  // Tilføjet af THAN d. 06-12-2017
     /*----------  variabler til at tilgå json pba sø state  ----------*/
 
     svar_array = [],
@@ -41,7 +42,8 @@ var state = 0,
 
     korrekt_svar,
 
-    runder = [0, 0, 0]; /*----------  hvilken runde spørgsmål er vi i?  ----------*/
+    // runder = [0, 0, 0]; /*----------  hvilken runde spørgsmål er vi i?  ----------*/
+    runder = [0, 0, 0, 0]; // Tilføjet af THAN d. 06-12-2017
 
 
 /*=====  End of Initialize variables  ======*/
@@ -171,7 +173,7 @@ function toggleView() {
     } else if (state == 2) {
         $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
         if (runder[state] < 1) {
-            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_HOJ.jpg'></div><div class='col-xs-12'><h3>Højkonjunktur </h3><p class='hojkonjunktur_broedtxt'>Udsving i produktion, forbrug og beskæftigelse er normalt i en markedsøkonomi. Økonomisk vækst i højkonjunkturer afløses af krise og arbejdsløshed i lavkonjunkturer. En økonomisk krise i Danmark kan igangsættes af en global økonomisk krise. <br/>I quizzen kan du undersøge, hvordan en stigning i efterspørgslen i verdensøkonomien kan påvirke dansk økonomi.</p><span class='btn_closeUserMsgBox btn btn-primary'>Klar til quiz om højkonjunktur?</span>");
+            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/images_usmsgbx/konjunkturboelge_HOJ.jpg'></div><div class='col-xs-12'><h3>Højkonjunktur </h3><p class='hojkonjunktur_broedtxt'>Udsving i produktion, forbrug og beskæftigelse er normalt i en markedsøkonomi. Økonomisk vækst i højkonjunkturer afløses af krise og arbejdsløshed i lavkonjunkturer. En økonomisk krise i Danmark kan igangsættes af en global økonomisk krise. <br/>I quizzen kan du undersøge, hvordan en stigning i efterspørgslen i verdensøkonomien kan påvirke dansk økonomi.</p><span class='btn_closeUserMsgBox btn btn-primary'>Klar til quiz om højkonjunktur?</span></div>");
             tekst_forklaring($(".hojkonjunktur_broedtxt"), jsonData.forklaringer)
                 //tekst_forklaring($('.broed_info_text'), jsonData.forklaringer);
             $(".CloseClass").click(function() {
@@ -187,13 +189,33 @@ function toggleView() {
         =            Her bliver fane 4 initialiseret (info labels skjules)            =
         =============================================*/
 
+    // // UDKOMMENTERET AF THAN d. 06/12-2017
+    // } else if (state == 3) {
+    //     $(".info_labels_container").hide();
+    //     // $(".ekspert_labels_container").show();  // Udkommenteret af THAN d. 06/12-2017. Dette element er ikke i DOM'en.
+    //     // $(".bg_image").attr("src", "img/pile_tyndere_banktxt.png");
+    //     $(".bg_image").attr("src", "img/images_usmsgbx/konjunkturboelge_FANE4_BG_stiltest.jpg");
+    //     $(".gui_container").show();
 
-    } else if (state == 3) {
-        $(".info_labels_container").hide();
-        $(".ekspert_labels_container").show();
-        $(".bg_image").attr("src", "img/pile_tyndere_banktxt.png");
-        //$(".gui_container").show();
+    // }
 
+    //==============================================================================
+    //                  TILFØJET AF THAN d. 06-12-2017
+    //==============================================================================
+    } else if (state == 3) {  
+        $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
+        if (runder[state] < 1) {
+            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/indgreb/fane4_politiskeindgreb.jpg'></div><div class='indgreb_broedtxt col-xs-12'><h3>Politiske indgreb i samfundsøkonomien</h3><p>Økonomisk politik omhandler forskellige måder, en regering forsøger at påvirke samfundsøkonomien på. Det vælger en regering ofte ud fra hvilke mål de prioriterer politisk og hvordan den økonomiske konjunktur er. Økonomisk politik er med andre ord forskellige midler til at nå nogle mål med. Her skal du undersøge finanspolitik og strukturpolitik.</p><p>Finanspolitik er betegnelsen for den økonomiske politik, der har til formål at påvirke efterspørgslen i samfundet ved at ændre på statens indtægter og udgifter. Statens indtægter stammer bl.a. fra skatter og afgifter, mens udgifterne går til offentlige investeringer og offentligt forbrug.</p><p>Ved at regulere på enten indtægterne eller udgifterne kan staten påvirke efterspørgslen ved at husholdninger og virksomheder får hhv. større eller mindre forbrugsmuligheder. Ved at påvirke forbrugsmulighederne kan staten dermed påvirke produktion (vækst), import/eksport (betalingsbalance), beskæftigelse og prisudvikling (inflation).</p><p>Finanspolitik vedtages hvert år via finansloven og gennem aftaler i løbet af finansåret. Når der føres strukturpolitik, er formålet, at staten, aktivt går ind og ændrer på samfundsøkonomiens struktur og opbygning. Strukturpolitik er en samlet betegnelse for politikker, der er med til at understøtte formålet, nemlig: Erhvervspolitik, skattepolitik, uddannelses- og forskningspolitik samt arbejdsmarkedspolitik.</p><p>I quizzen skal du undersøge hvilke politiske indgreb en klassisk henholdsvis borgerligt ledet regering og en klassisk socialdemokratisk ledet regering ville vælge i forskellige konjunktursituationer.</p><span class='btn_closeUserMsgBox btn btn-primary'>Klar til quiz om politiske indgreb?</span></div>");
+            tekst_forklaring($(".indgreb_broedtxt"), jsonData.forklaringer);      // <-----------  "Ordbog"/wiki fra shared_functions.js
+                //tekst_forklaring($('.broed_info_text'), jsonData.forklaringer);
+            $(".CloseClass").click(function() {
+                $(".forklaring").remove();
+                microhint($(".gui_container"), "Hvilket indgreb vil regeringen benytte sig af?");  // Tilføjet af THAN d. 07-12-2017 - Tekst fra TLY mangler.
+            });
+        }
+        //$(".info_labels_container, .ekspert_labels_container").hide();
+        //$(".bg_image").attr("src", "img/mockup02_infotab.gif");
+        $(".gui_container").show();
     }
 
     /*=====  End of Section comment block  ======*/
@@ -288,6 +310,26 @@ function show_info(indeks) {
             }
         }
 
+    //==============================================================================
+    //                  TILFØJET AF THAN d. 06-12-2017
+    //==============================================================================
+    } else if (state == 3) {  // TILFØJET AF THAN d. 06-12-2017
+        var konj_indeks = $(".balance_detalje_label").eq(indeks).attr("class").split(' ')[6];
+        konj_indeks = konj_indeks.substring(4, 5);
+
+        if ($(".balance_detalje_label").eq(indeks).hasClass("gen_label")) {
+            //alert("indeks: " + indeks);
+            UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='" + jsonData.labels[konj_indeks].infopic + "'></div><div class='col-xs-12'><h3>" + jsonData.labels[konj_indeks].element + "</h3><p class='broed_info_text'>" + jsonData.labels[konj_indeks].infotekst + "</p></div>");
+            tekst_forklaring($('.broed_info_text'), jsonData.forklaringer);
+        } else {
+            //alert("NO GEN LEBALE");
+            if (konj_indeks == 0) {
+                microhint($(".balance_detalje_label").eq(indeks), jsonData.indgreb_spm[konj_indeks].spm);
+            } else {
+                microhint($(".balance_detalje_label").eq(indeks), jsonData.indgreb_spm[konj_indeks - 1].feedback);
+            }
+        }
+
     }
 
     //viewArray[state].addClass("blur");
@@ -303,12 +345,21 @@ function show_info(indeks) {
 
 function poseQuestion() {
 
+    if (state == 1 || state == 2) {  // Tilføjet af THAN d. 07/12-2017 - Ændring af timers i fane 4 ift de øvrige faner efter TLYs ønske - se linje 510.
+        setTimeout(function() {
+            console.log('poseQuestion - setTimeout 1');
+            // if (state == 1 || state == 2) {              // Udkommenteret af THAN d. 07/12-2017
+                $(".gui_container").fadeIn(1500);
+            // }
+        }, 3000);
+    }
 
-    setTimeout(function() {
-        if (state == 1 || state == 2) {
+    if (state == 3) {       // Tilføjet af THAN d. 07/12-2017 - Ændring af timers i fane 4 ift de øvrige faner efter TLYs ønske - se linje 510.
+        // setTimeout(function() {
+            console.log('poseQuestion - setTimeout 2');
             $(".gui_container").fadeIn(1500);
-        }
-    }, 3000);
+        // }, 3000);
+    }
 
 
     //window.setTimeout($(".gui_container").fadeIn(1500), 25000);
@@ -345,17 +396,25 @@ function poseQuestion() {
     console.log("runder: " + runder);
     var spmData = jsonData[state_Array[state]];
 
-    if (state != 0 && state != 3) {
+    // if (state != 0 && state != 3) {  // Udkommenteret af THAN d. 06/12-2017
+    if (state != 0 && state != 4) {  // Tiføjet af THAN d. 06/12-2017
 
 
         $(".spm_numbers").show();
 
-        if (runder[state] < spmData.length) {
+        if (runder[state] < spmData.length) { 
 
             $(".spm_numbers").html("Spørgsmål " + (runder[state] + 1) + " / " + spmData.length);
+
+            $('.caseText').remove();  // Tilføjet af THAN d. 06-12-2017: Fjern div-tag'et "caseText" i tilfældet for lav- og høj-konjuktur.
+            if (typeof(spmData[runder[state]].caseText)!=='undefined') { // Tilføjet af THAN d. 06-12-2017: FR vil have noget case tekst ind i objektet: der tilføjes her et div-tag med klassen "caseText" hvis "caseText" eksistere i JSON-data
+                console.log('poseQuestion - "caseText" defined!');
+                $(".spm_numbers").after('<div class="caseText">'+spmData[runder[state]].caseText+'</div>');
+            }
+
             $(".spm").html(spmData[runder[state]].spm);
 
-            svar_Array = [];
+            svar_Array = [];  // <------ THAN d. 06-12-2017: Konventionen er at de forkerte svar kommer ind i svar_Array først (i den rækkefølge de er i JSON), og det rigtige svar kommer ind til sidst.
             var svarHTML = "<div class='answerWrap'>";
 
             for (var i = 0; i < spmData[runder[state]].forkerte_svar.length; i++) {
@@ -380,6 +439,8 @@ function poseQuestion() {
             } else if (state == 2) {
                 $(".num_0").find(".glyphicon").removeClass("glyphicon-upload").addClass("glyphicon-download");
             }
+
+            $('.caseText').remove(); // Tilføjet af THAN d. 07-12-2017: Fjern caseText hvis state == 3 / fane 4
 
             $(".spm").html("Du har besvaret alle spørgsmålene i quizzen <h4><span class='label_slut label label-success'>Korrekt</span></h4><p>Du kan tage quizzen igen eller undersøge en af de andre faner.");
             $(".svar").html("<div class='btn btn-primary btn_forfra'>Tag quizzen igen</div><div class='Clear'></div>");
@@ -411,6 +472,7 @@ function tjek_svar() {
     var svar = svar_Array[checked];
     console.log("checked: " + checked);
     if (typeof(checked) != "undefined") {
+        console.log('tjek_svar - svar_Array: ' + JSON.stringify(svar_Array) + ', checked: ' + checked);
         if (korrekt_svar == svar) {
             console.log("KORREKT")
 
@@ -445,13 +507,26 @@ function visuel_feedback() {
 
         console.log("RUNDER: " + runder)
 
+        if (state == 1 || state == 2) {  // Tilføjet af THAN d. 07-12-2017 - Ændring af timers i fane 4 ift de øvrige faner efter TLYs ønske - se linje 350.
+            setTimeout(function() {
+                console.log('visuel_feedback - setTimeout');
 
-        setTimeout(function() {
+                $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
 
-            $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
+                poseQuestion();
+            }, 1000);
+        }
 
-            poseQuestion();
-        }, 1000);
+        if (state == 3) {               // Tilføjet af THAN d. 07-12-2017 - Ændring af timers i fane 4 ift de øvrige faner efter TLYs ønske - se linje 350.
+            // setTimeout(function() {
+                console.log('visuel_feedback - setTimeout');
+
+                $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
+
+                poseQuestion();
+            // }, 1000);
+        }
+
         //console.log("OL_length: " + $(".ubalance_overlay").length);
 
         $(".balance_overlay").eq(0).fadeOut(0);
@@ -503,7 +578,20 @@ function feedback(svar, checked) {
             $(".btn_tjek").hide();
         } else {
             //alert(jsonData.ubalance_spm[runder[state]].feedback);
-            $(".feedback_container").html("<h4><span class='label label-danger'>Forkert - prøv igen</span></h4> <p class='feedback_txt'>" + jsonData.ubalance_spm[runder[state]].feedback + "</p>");
+            $(".feedback_container").html("<h4><span class='label label-danger'>Forkert - prøv igen</span></h4><p class='feedback_txt'>" + jsonData.ubalance_spm[runder[state]].feedback + "</p>");
+        }
+
+        //================================================================
+        //                  Tilføjet af THAN d. 06/12-2017
+        //================================================================
+    } else if (state == 3) {
+        if (svar == true) {
+            $(".feedback_container").html("<h4><span class='label label-success'>Korrekt</span></h4><p class='feedback_txt'>" + jsonData.indgreb_spm[runder[state]].feedback + "</p><div class='btn btn-xs btn-primary ok_btn'>Fortsæt</div>");
+            $(".btn_tjek").hide();
+        } else {
+            //alert(jsonData.ubalance_spm[runder[state]].feedback);
+            // $(".feedback_container").html("<h4><span class='label label-danger'>Forkert - prøv igen</span></h4><p class='feedback_txt'>" + jsonData.indgreb_spm[runder[state]].feedback + "</p>");
+            $(".feedback_container").html("<h4><span class='label label-danger'>Forkert - prøv igen</span></h4><p class='feedback_txt'>" + jsonData.indgreb_spm[runder[state]].feedback_false[checked] + "</p>");  // <---- Dette giver mulighed for at give induviduel feedback på forkerte svar på denne opgave efter ønske fra Steen.
         }
     }
 
@@ -530,5 +618,8 @@ function genstart_quiz() {
         //$(".lav_container").html('<img class="img_overlay img-responsive ubalance_overlay" src="img/balance01.png"  />');
     } else if (state == 1) {
         //$(".hoj_container").html('<img class="img_overlay img-responsive ubalance_overlay" src="img/Ubalance01.png" />');
+
+    } else if (state == 3) { // Tilføjet af THAN d. 07-12-2017
+        $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
     }
 }
