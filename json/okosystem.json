@@ -373,16 +373,16 @@
         "feedback_false": ["", ""]
     }],
     "indgreb_spm": [{
-        "caseText": "Det er højkonjunktur globalt og i Danmark. Produktionen og forbruget er højt og både eksport og import er stigende. Arbejdsløsheden er lav, og i flere erhverv er der begyndende problemer med at skaffe kvalificeret arbejdskraft. Lønninger og priser er stigende, og specielt priserne på boliger er meget høje.",
+        "caseText": "Det er højkonjunktur globalt og i Danmark. Produktionen og forbruget er højt, og både eksport og import er stigende. Arbejdsløsheden er lav, og i flere erhverv er der begyndende problemer med at skaffe kvalificeret arbejdskraft. Lønninger og priser er stigende, og specielt priserne på boliger er meget høje.",
         "spm": "Hvilket finanspolitisk indgreb vil en klassisk <span class='roedFloej label label-default'>socialdemokratisk</span> ledet regering foreslå?",
         "svar": ["De vil hæve skattetrykket for at dæmpe husholdningernes efterspørgsel og mindske de offentlige investeringer for at dæmpe virksomhedernes produktion. (En kontraktiv finanspolitik, tænker de, vil dæmpe højkonjunkturen og give offentlige indtægter, der kan investeres under en senere lavkonjunktur.)"],
         "forkerte_svar": ["De vil lave skattelettelser for at gøre deres kernevælgere positivt stemte og holde højkonjunkturen vedlige.", "De vil mindske det offentlige forbrug ved fx at lave besparelser både på overførselsindkomster og antallet af offentligt ansatte. Det, tænker de, vil mindske efterspørgslen og inflationen og gøre danske produkter mere konkurrencedygtige."],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
-        "feedback": "Rigtigt. De tænker, at en kontraktiv finanspolitik vil dæmpe højkonjunkturen og give offentlige indtægter, der kan investeres under en senere lavkonjunktur. De vil prioritere at bevare statens store rolle i økonomien.",
-        "feedback_false": ["Forkert. Det vil kun meget populistiske regeringer gøre.", "Forkert. Det ville være en klassisk borgerligt ledet regering gøre. De vil også føre en kontraktiv finanspolitik, men de vil mindske efterspørgslen ved at mindske udgifterne og prioritere at gøre statens rolle i økonomien mindre."]
+        "feedback": "De tænker, at en kontraktiv finanspolitik vil dæmpe højkonjunkturen og give offentlige indtægter, der kan investeres under en senere lavkonjunktur. De vil prioritere at bevare statens store rolle i økonomien.",
+        "feedback_false": ["Det vil kun meget populistiske regeringer gøre.", "Forkert. Det ville være en klassisk borgerligt ledet regering gøre. De vil også føre en kontraktiv finanspolitik, men de vil mindske efterspørgslen ved at mindske udgifterne og prioritere at gøre statens rolle i økonomien mindre."]
     },{
-        "caseText": "Det er lavkonjunktur globalt og i Danmark. Produktionen og forbruget er lavt og både eksport og import er faldende. Beskæftigelsen er lav og arbejdsløsheden er høj. Udgifterne til arbejdsløshedsdagpenge og kontanthjælp er stigende, mens skatteindtægterne falder. Samlet set er der underskud på de offentlige finanser.",
+        "caseText": "Det er lavkonjunktur globalt og i Danmark. Produktionen og forbruget er lavt, og både eksport og import er faldende. Beskæftigelsen er lav og arbejdsløsheden er høj. Udgifterne til arbejdsløshedsdagpenge og kontanthjælp er stigende, mens skatteindtægterne falder. Samlet set er der underskud på de offentlige finanser.",
         "spm": "Hvilket finanspolitisk indgreb vil en klassisk <span class='roedFloej label label-default'>socialdemokratisk</span> ledet regering foreslå?",
         "svar": ["De vil øge de offentlige investeringer i infrastruktur fx togdrift, broer og sygehuse for at skabe offentligt finansieret produktion og dermed øge efterspørgslen i samfundet. "],
         "forkerte_svar": ["De vil lave skattelettelser, for at husholdningerne kan få et større økonomisk råderum, og dermed, via et øget privatforbrug, trække produktion og beskæftigelse i gang.", "De vil øge skatterne for at få finansieret underskuddet på de offentlige finanser. De tænker, at det vil stabilisere økonomien og gøre statskassen klar til at investere i uddannelse og forskning, når højkonjunkturen kommer, og der er behov for kvalificeret arbejdskraft."],
@@ -397,8 +397,8 @@
         "forkerte_svar": ["De vil hæve skattetrykket for at dæmpe husholdningernes efterspørgsel og mindske de offentlige investeringer for at dæmpe virksomhedernes produktion.", "De vil lave skattelettelser for at gøre deres kernevælgere positivt stemte og holde højkonjunkturen vedlige."],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
-        "feedback": "Rigtigt. De vil føre en kontraktiv finanspolitik og prioritere at gøre det ved at mindske de offentlige udgifter og dermed også statens rolle i økonomien.",
-        "feedback_false": ["Forkert. De borgerlige vil ikke hæve skattetrykket. De vil prioritere at mindske statens rolle i økonomien.", "Forkert. Det vil kun meget populistiske regeringer gøre. (Men det er sket.)"]
+        "feedback": "De vil føre en kontraktiv finanspolitik og prioritere at gøre det ved at mindske de offentlige udgifter og dermed også statens rolle i økonomien.",
+        "feedback_false": ["De borgerlige vil ikke hæve skattetrykket. De vil prioritere at mindske statens rolle i økonomien.", "Forkert. Det vil kun meget populistiske regeringer gøre. (Men det er sket.)"]
     },{
         "caseText": "Det er lavkonjunktur globalt og i Danmark. Produktionen og forbruget er lavt, og både eksport og import er faldende. Beskæftigelsen er lav, og arbejdsløsheden er høj. Udgifterne til arbejdsløshedsdagpenge og kontanthjælp er stigende, mens skatteindtægterne falder. Samlet set er der underskud på de offentlige finanser.",
         "spm": "Hvilket finanspolitisk indgreb vil en klassisk <span class='blaaFloej label label-default'>borgerligt</span> ledet regering foreslå?",
