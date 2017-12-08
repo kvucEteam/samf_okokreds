@@ -355,10 +355,10 @@ function poseQuestion() {
     }
 
     if (state == 3) {       // Tilføjet af THAN d. 07/12-2017 - Ændring af timers i fane 4 ift de øvrige faner efter TLYs ønske - se linje 510.
-        // setTimeout(function() {
+        setTimeout(function() {
             console.log('poseQuestion - setTimeout 2');
             $(".gui_container").fadeIn(1500);
-        // }, 3000);
+        }, 1000);
     }
 
 
@@ -521,7 +521,8 @@ function visuel_feedback() {
             // setTimeout(function() {
                 console.log('visuel_feedback - setTimeout');
 
-                $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
+                // $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
+                $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]).hide().fadeIn(300);
 
                 poseQuestion();
             // }, 1000);
