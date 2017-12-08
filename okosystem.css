@@ -305,3 +305,7 @@ h4 {
 .blaaFloej {
     background-color: #64cae2;
 }
+
+#UserMsgBox .label {
+    margin-left: 0px;
+}
