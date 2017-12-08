@@ -619,7 +619,7 @@ function genstart_quiz() {
     } else if (state == 1) {
         //$(".hoj_container").html('<img class="img_overlay img-responsive ubalance_overlay" src="img/Ubalance01.png" />');
 
-    } else if (state == 3) { // Tilføjet af THAN d. 07-12-2017
+    } else if (state == 3) { // Tilføjet af THAN d. 07-12-2017 - for at fixe bug på billedet der ellers ville være hvis man genstarter quizzen igen i state == 3.
         $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
     }
 }
