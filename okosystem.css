@@ -299,11 +299,15 @@ h4 {
 }
 
 .roedFloej {
-    background-color: #e26060;
+    background-color: #e26c8a;
+    font-weight: inherit;
+    color: inherit;
 }
 
 .blaaFloej {
-    background-color: #64cae2;
+    background-color: #3bdeed;
+    font-weight: inherit;
+    color: inherit;
 }
 
 #UserMsgBox .label {
