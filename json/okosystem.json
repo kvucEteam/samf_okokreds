@@ -15,7 +15,7 @@
     "overlays": [
         { "overlaypics": ["img/lavkonj/PILE_quiz01.jpg", "img/lavkonj/PILE_quiz02.jpg", "img/lavkonj/PILE_quiz03.jpg", "img/lavkonj/PILE_quiz04.jpg", "img/lavkonj/PILE_quiz05.jpg", "img/lavkonj/PILE_quiz06.jpg", "img/lavkonj/PILE_quiz07.jpg", "img/lavkonj/PILE_quiz08.jpg"] }, 
         { "overlaypics": ["img/lavkonj/PILE_quiz01.jpg", "img/lavkonj/PILE_quiz02.jpg", "img/lavkonj/PILE_quiz03.jpg", "img/lavkonj/PILE_quiz04.jpg", "img/lavkonj/PILE_quiz05.jpg", "img/lavkonj/PILE_quiz06.jpg", "img/lavkonj/PILE_quiz07.jpg", "img/lavkonj/PILE_quiz08.jpg"] },
-        { "overlaypics": ["img/indgreb/FANE4_BG_hojkonjunktur.jpg", "img/indgreb/FANE4_BG_lavkonjunktur.jpg", "img/indgreb/FANE4_BG_hojkonjunktur.jpg", "img/indgreb/FANE4_BG_lavkonjunktur.jpg"] },  
+        { "overlaypics": ["img/indgreb/FANE4_BG_hojkonjunktur.jpg", "img/indgreb/FANE4_BG_lavkonjunktur.jpg", "img/indgreb/FANE4_BG_hojkonjunktur.jpg", "img/indgreb/FANE4_BG_lavkonjunktur.jpg", "img/indgreb/FANE4_BG_hojkonjunktur.jpg", "img/indgreb/FANE4_BG_hojkonjunktur.jpg", "img/indgreb/FANE4_BG_lavkonjunktur.jpg", "img/indgreb/FANE4_BG_lavkonjunktur.jpg"] },  
         { "overlaypics": ["img/gedde1.jpg"] }
     ],
 
@@ -384,12 +384,12 @@
     },{
         "caseText": "Det er lavkonjunktur globalt og i Danmark. Produktionen og forbruget er lavt, og både eksport og import er faldende. Beskæftigelsen er lav og arbejdsløsheden er høj. Udgifterne til arbejdsløshedsdagpenge og kontanthjælp er stigende, mens skatteindtægterne falder. Samlet set er der underskud på de offentlige finanser.",
         "spm": "Hvilket finanspolitisk indgreb vil en klassisk <span class='roedFloej label label-default'>socialdemokratisk</span> ledet regering foreslå?",
-        "svar": ["De vil øge de offentlige investeringer i infrastruktur fx togdrift, broer og sygehuse for at skabe offentligt finansieret produktion og dermed øge efterspørgslen i samfundet. "],
+        "svar": ["De vil øge de offentlige investeringer i infrastruktur fx togdrift, broer, sygehuse for at skabe offentligt finansieret produktion og dermed øge efterspørgslen i samfundet."],
         "forkerte_svar": ["De vil lave skattelettelser, for at husholdningerne kan få et større økonomisk råderum, og dermed, via et øget privatforbrug, trække produktion og beskæftigelse i gang.", "De vil øge skatterne for at få finansieret underskuddet på de offentlige finanser. De tænker, at det vil stabilisere økonomien og gøre statskassen klar til at investere i uddannelse og forskning, når højkonjunkturen kommer, og der er behov for kvalificeret arbejdskraft."],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
-        "feedback": "<span class='red'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. (Positiv feedback fra Søren og Steen mangler)</span>",
-        "feedback_false": ["<span class='red'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. (Negativ feedback fra Søren og Steen mangler)</span>", "<span class='red'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. (Negativ feedback fra Søren og Steen mangler)</span>"]
+        "feedback": "De vil føre en ekspansiv finanspolitik og prioritere at gøre det ved at øge det offentlige forbrug og de offentlige investeringer.",
+        "feedback_false": ["De vil føre en ekspansiv finanspolitik, men det er borgerlige ledet regeringer der vil vælge at gøre det ved at mindske de offentlige indtægter. En klassisk socialdemokratisk ledet regering vil gøre det via at øge de offentlige udgifter.", "Dette ville være en kontraktiv finanspolitik og det vil en klassisk socialdemokratisk ledet regering ikke vælge at gøre under en lavkonjunktur."]
     },{
         "caseText": "Det er højkonjunktur globalt og i Danmark. Produktionen og forbruget er højt, og både eksport og import er stigende. Arbejdsløsheden er lav, og i flere erhverv er der begyndende problemer med at skaffe kvalificeret arbejdskraft. Lønninger og priser er stigende, og specielt priserne på boliger er meget høje. ",
         "spm": "Hvilket finanspolitisk indgreb vil en klassisk <span class='blaaFloej label label-default'>borgerligt</span> ledet regering foreslå?",
@@ -406,7 +406,44 @@
         "forkerte_svar": ["De vil øge de offentlige investeringer i infrastruktur fx togdrift, broer, sygehuse for at skabe offentligt finansieret produktion og dermed øge efterspørgslen i samfundet.", "De vil øge skatterne for at få finansieret underskuddet på de offentlige finanser. De tænker, at det vil stabilisere økonomien og gøre statskassen klar til at investere i uddannelse og forskning, når højkonjunkturen kommer, og der er behov for kvalificeret arbejdskraft."],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
-        "feedback": "<span class='red'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. (Positiv feedback fra Søren og Steen mangler)</span>",
-        "feedback_false": ["<span class='red'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. (Negativ feedback fra Søren og Steen mangler)</span>", "<span class='red'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. (Negativ feedback fra Søren og Steen mangler)</span>"]
+        "feedback": "Hvis en klassisk borgerligt ledet regering vil stimulere efterspørgslen i samfundet, vil de gøre det ved at mindske de offentlige udgifter. Det vil gøre det til husholdningernes valg hvordan de vil anvende efterspørgslen og ikke øge statens rolle.",
+        "feedback_false": ["Det ville være en klassisk socialdemokratisk måde at stimulere efterspørgslen på.", "De færreste regeringer vil føre direkte kontraktiv finanspolitik under en lavkonjunktur. Det ville mindske efterspørgslen, forbruget, produktionen og beskæftigelsen yderligere."]
+    },{
+        "NOTE": "#################################################################################################",
+        "caseText": "Det er højkonjunktur globalt og i Danmark. Produktionen og forbruget er højt og både eksport og import er stigende. Arbejdsløsheden er lav og i flere erhverv er der begyndende flaskehalse med problemer med at skaffe kvalificeret arbejdskraft. Lønninger og priser er stigende og specielt priserne på boliger er meget høje.",
+        "spm": "Hvilket <b>strukturpolitisk</b> indgreb vil en klassisk <span class='blaaFloej label label-default'>borgerligt</span> ledet regering foreslå?",
+        "svar": ["De vil fx forkorte dagpengeperioden, stramme krav til kontanthjælp og øge transportfradraget for at få arbejdsløse til at søge de ledige jobs. Det vil også kunne dæmpe tendenser til lønstigninger."],
+        "forkerte_svar": ["De vil give skattelettelser for at mindske efterspørgslen efter arbejdskraft og dermed dæmpe tendenser til flaskehalse og lønstigninger.", "De vil investere i omskoling, efteruddannelse og uddannelse for at give arbejdskraften de kvalifikationer der efterspørges."],
+        "konsekvens": ["", ""],
+        "konsekvens_pics": ["", ""],
+        "feedback": "De vil forsøge at modvirke tendenser til flaskehalse på arbejdsmarkedet ved at opkvalificere arbejdskraften.",
+        "feedback_false": ["Det er dobbelt forkert. Dels er dette forslag finanspolitik og dels ville det virke omvendt. Skattelettelser under en højkonjunktur ville yderligere øge efterspørgslen og øge tendenser til lønstigninger og inflation.", "Det er et klassisk socialdemokratisk indgreb under en højkonjunktur."]
+    },{
+        "caseText": "Det er højkonjunktur globalt og i Danmark. Produktionen og forbruget er højt og både eksport og import er stigende. Arbejdsløsheden er lav og i flere erhverv er der begyndende flaskehalse med problemer med at skaffe kvalificeret arbejdskraft. Lønninger og priser er stigende og specielt priserne på boliger er meget høje.",
+        "spm": "Hvilket <b>strukturpolitisk</b> indgreb vil en klassisk <span class='roedFloej label label-default'>socialdemokratisk</span> ledet regering foreslå?",
+        "svar": ["De vil investere i omskoling, efteruddannelse og uddannelse for at give arbejdskraften de kvalifikationer der efterspørges."],
+        "forkerte_svar": ["De vil forsøge at modvirke tendenser til flaskehalse på arbejdsmarkedet ved at investere i omskoling, efteruddannelse og uddannelse for at give arbejdskraften de kvalifikationer der efterspørges.", "De vil øge det offentlige forbrug for at øge efterspørgslen efter arbejdskraft og dermed dæmpe tendenser til flaskehalse og lønstigninger."],
+        "konsekvens": ["", ""],
+        "konsekvens_pics": ["", ""],
+        "feedback": "De vil forsøge at modvirke tendenser til flaskehalse på arbejdsmarkedet ved at opkvalificere arbejdskraften. Det vil også kunne dæmpe tendenser til lønstigninger.",
+        "feedback_false": ["Det er et klassisk borgerligt strukturpolitisk indgreb under en højkonjunktur.", "Det er dobbelt forkert. Dels er dette forslag finanspolitik og dels ville det virke omvendt. At øge det offentlige forbrug under en højkonjunktur ville yderligere øge efterspørgslen og øge tendenser til lønstigninger og inflation. "]
+    },{
+        "caseText": "Det har lige været lavkonjunktur globalt og i Danmark. Langsomt stiger eksporten til de få vækstmarkeder som danske virksomheder handler på. Efterspørgslen på bioteknologi og grøn energiteknologi bliver vurderet som to områder for fremtidig vækst.",
+        "spm": "Hvilket <b>strukturpolitisk</b> indgreb vil en klassisk <span class='roedFloej label label-default'>socialdemokratisk</span> ledet regering foreslå?",
+        "svar": ["Investeringer i offentlig forskning på de to områder på universiteter og læreanstalter. Starte nye forskningsinstitutioner. Tilskud til husholdninger, der køber grøn energiteknologi. Offentlige indkøb af grøn energiteknologi."],
+        "forkerte_svar": ["Sænke selskabsskatten for at virksomhederne kan anvende en større del af deres overskud til investeringer i forskning og højteknologisk produktion. Støtte iværksættere indenfor højteknologi. Sænke skat for udenlandske virksomheder og forskere for at tiltrække begge dele.", "10 milliarder i statstilskud til virksomheder der producerer indenfor de to områder, og investeringer i nye store solenergianlæg, hvor det garanteres at det er danske virksomheder der er leverandører."],
+        "konsekvens": ["", ""],
+        "konsekvens_pics": ["", ""],
+        "feedback": "De vil forsøge støtte de to områder med offentlige investeringer og indkøb uden at komme i konflikt med EU's og WTOs regler om statsstøtte.",
+        "feedback_false": ["Det er et klassisk borgerligt strukturpolitisk indgreb for at fremme forskning og højteknologiske erhverv.", "Ifølge regler i EU og WTO er det ikke tilladt for stater at støtte nationale virksomheder så direkte."]
+    },{
+        "caseText": "Det har lige været lavkonjunktur globalt og i Danmark. Langsomt stiger eksporten til de få vækstmarkeder som danske virksomheder handler på. Efterspørgslen på bioteknologi og grøn energiteknologi bliver vurderet som to områder for fremtidig vækst.",
+        "spm": "Hvilket <b>strukturpolitisk</b> indgreb vil en klassisk <span class='blaaFloej label label-default'>borgerligt</span> ledet regering foreslå?",
+        "svar": ["Sænke selskabsskatten for at virksomhederne kan anvende en større del af deres overskud til investeringer i forskning og højteknologisk produktion. Støtte iværksættere indenfor højteknologi. Sænke skat for udenlandske virksomheder og forskere for at tiltrække begge dele."],
+        "forkerte_svar": ["De vil ikke gøre noget da de vurderer at det går godt nok ikke mener at staten skal blande sig i erhvervsudviklingen.", "Investeringer i offentlig forskning på de to områder på universiteter og læreanstalter. Starte nye forskningsinstitutioner. Tilskud til husholdninger, der køber grøn energiteknologi. Offentlige indkøb af grøn energiteknologi."],
+        "konsekvens": ["", ""],
+        "konsekvens_pics": ["", ""],
+        "feedback": "Det er et klassisk borgerligt strukturpolitisk indgreb at fremme forskning og højteknologiske erhverv ved at sænke skat og lade markedet prioritere hvad der skal forskes i.",
+        "feedback_false": ["Både borgerligt og socialdemokratisk ledede regering vil forsøge at støtte og styrke dansk erhvervsliv, de vil bare gøre det med forskellige midler. Meget liberalistisk orienterede politikere og økonomer ville kunne foreslå at staten blander sig helt uden om.", "Det ville mere være et klassisk socialdemokratisk strukturpolitisk indgreb for at styrke erhvervslivet og arbejdsmarkedet i forhold til højteknologisk produktion."]
     }]
 }
