@@ -313,3 +313,15 @@ h4 {
 #UserMsgBox .label {
     margin-left: 0px;
 }
+
+#UserMsgBox {
+    cursor: auto;
+}
+
+#UserMsgBox .CloseClass, #UserMsgBox .forklaring , #UserMsgBox .btn{
+    cursor: pointer;
+}
+
+.answerChoice input {
+    margin-right: 10px;
+}

@@ -203,7 +203,13 @@ function toggleView() {
     //                  TILFØJET AF THAN d. 06-12-2017
     //==============================================================================
     } else if (state == 3) {  
-        $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
+        
+        var imgIndex = ((typeof(state_3_completed)!=='undefined') && (state_3_completed))? runder[state]-1 : runder[state]; // Tilføjet af THAN d. 18/12-2017: Dette henter det sidste billede ind ved følgende rækkefølge af begivenheder: (1) besvarelse af alle spørgsmål i fane 4 og (2) efterfølgende skift til fane 2 eller 3 og (3) skift tilbage igen til fane 4.
+        console.log('toggleView - state: ' + state + ', src: ' + jsonData.overlays[state-1].overlaypics[runder[state]] + ', runder: ' + runder[state]  + ', imgIndex: ' + imgIndex);
+        
+        // $(".bg_image").attr("src", jsonData.overlays[state-1].overlaypics[runder[state]]);  // Udkommenteret d. 18/12-2017
+        $(".bg_image").attr("src", jsonData.overlays[state-1].overlaypics[imgIndex]);          // Tilføjet d. 18/12-2017
+        
         if (runder[state] < 1) {
             UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/indgreb/fane4_politiskeindgreb.jpg'></div><div class='indgreb_broedtxt col-xs-12'><h3>Politiske indgreb i samfundsøkonomien</h3><p>Økonomisk politik omhandler forskellige måder, en regering forsøger at påvirke samfundsøkonomien på. Det vælger en regering ofte ud fra hvilke politiske mål, regeringen prioriterer, og hvordan den økonomiske konjunktur er. Her skal du undersøge finanspolitik og strukturpolitik.</p><p>Finanspolitik er betegnelsen for den økonomiske politik, der har til formål at påvirke efterspørgslen i samfundet ved at ændre på statens indtægter og udgifter. Statens indtægter stammer bl.a. fra skatter og afgifter, mens udgifterne går til offentlige investeringer og offentligt forbrug. Ved at regulere på enten indtægterne eller udgifterne kan staten påvirke efterspørgslen ved at husholdninger og virksomheder får hhv. større eller mindre forbrugsmuligheder. Ved at påvirke forbrugsmulighederne kan staten dermed påvirke produktion (vækst), import/eksport (betalingsbalance), beskæftigelse og prisudvikling (inflation). Finanspolitik vedtages hvert år via finansloven og gennem aftaler i løbet af finansåret.</p><p>Når der føres strukturpolitik, er formålet, at staten aktivt går ind og ændrer på samfundsøkonomiens struktur og opbygning. Strukturpolitik er en samlet betegnelse for politikker, der er med til at understøtte formålet, nemlig: Erhvervspolitik, skattepolitik, uddannelses- og forskningspolitik samt arbejdsmarkedspolitik.</p><p>I quizzen skal du nu undersøge, hvilke politiske indgreb en klassisk <span class='blaaFloej label label-default'>borgerligt</span> ledet regering eller en klassisk <span class='roedFloej label label-default'>socialdemokratisk</span> ledet regering ville vælge i forskellige konjunktursituationer.</p><span class='btn_closeUserMsgBox btn btn-primary'>Klar til quiz om politiske indgreb?</span></div>");
             // UserMsgBox_xclick("body", "<div class='col-xs-12'><img class='img-responsive msbox_pic' src='img/indgreb/fane4_politiskeindgreb.jpg'></div><div class='indgreb_broedtxt col-xs-12'><h3>Politiske indgreb i samfundsøkonomien</h3><p>Økonomisk politik omhandler forskellige måder, en regering forsøger at påvirke samfundsøkonomien på. Det vælger en regering ofte ud fra hvilke politiske mål, regeringen prioriterer, og hvordan den økonomiske konjunktur er. Her skal du undersøge finanspolitik og strukturpolitik.</p><p>Finanspolitik er betegnelsen for den økonomiske politik, der har til formål at påvirke efterspørgslen i samfundet ved at ændre på statens indtægter og udgifter. Statens indtægter stammer bl.a. fra skatter og afgifter, mens udgifterne går til offentlige investeringer og offentligt forbrug. Ved at regulere på enten indtægterne eller udgifterne kan staten påvirke efterspørgslen ved at husholdninger og virksomheder får hhv. større eller mindre forbrugsmuligheder. Ved at påvirke forbrugsmulighederne kan staten dermed påvirke produktion (vækst), import/eksport (betalingsbalance), beskæftigelse og prisudvikling (inflation). Finanspolitik vedtages hvert år via finansloven og gennem aftaler i løbet af finansåret.</p><p>Når der føres strukturpolitik, er formålet, at staten aktivt går ind og ændrer på samfundsøkonomiens struktur og opbygning. Strukturpolitik er en samlet betegnelse for politikker, der er med til at understøtte formålet, nemlig: Erhvervspolitik, skattepolitik, uddannelses- og forskningspolitik samt arbejdsmarkedspolitik.</p><p>I quizzen skal du nu undersøge, hvilke politiske indgreb en klassisk <span class='blaaFloej'>borgerligt</span> ledet regering eller en klassisk <span class='roedFloej'>socialdemokratisk</span> ledet regering ville vælge i forskellige konjunktursituationer.</p><span class='btn_closeUserMsgBox btn btn-primary'>Klar til quiz om politiske indgreb?</span></div>");
@@ -352,7 +358,8 @@ function poseQuestion() {
             // if (state == 1 || state == 2) {              // Udkommenteret af THAN d. 07/12-2017
                 $(".gui_container").fadeIn(1500);
             // }
-        }, 3000);
+        // }, 3000);  // Udkommenteret af THAN d. 18/12-2017
+        }, 1500);     // Tilføjet af THAN d. 18/12-2017: TLY vil gerne have tiden halveret...
     }
 
     if (state == 3) {       // Tilføjet af THAN d. 07/12-2017 - Ændring af timers i fane 4 ift de øvrige faner efter TLYs ønske - se linje 510.
@@ -439,6 +446,8 @@ function poseQuestion() {
                 $(".num_0").find(".glyphicon").removeClass("glyphicon-download").addClass("glyphicon-upload");
             } else if (state == 2) {
                 $(".num_0").find(".glyphicon").removeClass("glyphicon-upload").addClass("glyphicon-download");
+            } else if (state == 3) {
+                window.state_3_completed = true;  // Tilføjet af THAN d. 18/12-2017
             }
 
             $('.caseText').remove(); // Tilføjet af THAN d. 07-12-2017: Fjern caseText hvis state == 3 / fane 4
@@ -625,3 +634,134 @@ function genstart_quiz() {
         $(".bg_image").attr("src", jsonData.overlays[state - 1].overlaypics[runder[state]]);
     }
 }
+
+
+//###########################################################################
+//                          NY WIKI / ORDBOG
+//###########################################################################
+
+
+
+// BESKRIVELSE:
+// ============
+// Denne version af tekst_forklaring() finder alle forekomster af søgeorderne i "dataArray" og variationer af søgeorderne med (p.t.) op til 4 efterfølgende ord, f.eks: "en", "er", "ens", "ers", "erne", "erer" mv...
+// De efterfølende ord kaldes "ekstra strengen" og længden af "ekstra strengen" fastsættes af variablen "tolerance" i funktionen wordWrapper().
+//
+// NOTE:
+// IE 11 (edge) på windows 7 på KVUC havde problemer med anvendelse global regex med variabel search/replace i august 2017. Andre browsere kan have samme problem. 
+// Derfor er denne funktion lavet uden global regex med variabel search/replace. Dette sikre at tekst_forklaring()-funktionaliteten virker på fleste mulige browsere...
+function tekst_forklaring(tekstcontainer, dataArray) {
+
+    //Loop igennem tekstcontaineren og led efter ord, der findes i array'et: 
+    var html = tekstcontainer.html();
+    for (var i = 0; i < dataArray.length; i++) {
+
+        var searchword = dataArray[i][0];
+
+        console.log("searchword: " + searchword);
+
+        var html = wordWrapper(html, searchword);
+
+        tekstcontainer.html(html);
+    }
+
+    $(".forklaring").click(function() {
+        // var clicked_word = ($(this).text().toString().toLowerCase());
+        var clicked_word = $(this).prop('class').replace('forklaring_', '').replace('forklaring', '').trim();  // Find ordet "strSearch"/clicked_word der gemmer sig i klassen...
+        console.log('wiki - clicked_word: ' + clicked_word);
+
+        var forklaring = "";
+
+        for (var i = 0; i < dataArray.length; i++) {
+
+            console.log(dataArray[i][0] + ", " + clicked_word)
+            if (dataArray[i][0].toString().toLowerCase() == clicked_word) {
+
+
+                forklaring = dataArray[i][1].toString();
+            }
+            if (forklaring == "") {
+                forklaring = "Forklaring findes ikke";
+            }
+        }
+
+        microhint($(this), "<b class='clicked_word'>" + clicked_word + "</b><br/>" + forklaring);
+
+        window.onscroll = function(e) {
+            $(".microhint").fadeOut(200, function() { $(this).remove() });
+        }
+    });
+
+
+    // BESKRIVELSE:
+    // Denne funktion wrapper et søgeord i et anchor-tag med klassen "forklaring" og "forklaring_XXX", hvor XXX er søgeordet strSearch. 
+    function wordWrapper(str, strSearch) {
+        var strMixedCase = str.slice(0);  // Kopier str, sålede at der laves et dobbelt bogholderi. Store og små bogstaver bevares.
+
+        str = str.toLowerCase();                // Converter til lowerCase for search/replace.
+        strSearch = strSearch.toLowerCase();    // Converter til lowerCase for search/replace.
+
+        console.log('wiki - wordWrapper - strSearch: ' + strSearch + ', str 1: ' + str);
+        var tolerance = 4;  // Dette er længden af ekstra strengen. F.eks: "en", "er", "ens", "ers", "erne" mv.. 
+        var posStart = str.indexOf(strSearch);  // Find første forekomst af strSearch.
+        var count = 0;
+        while ((posStart !== -1) && (count < 100)) {  // Hvis strSearch eksistere i str og der ikke tidligere er fortaget mere end 100 word-wraps i anchor-tags, så...
+
+            // posEnd = returnClosestChar(str, [' ','.',',',':',';','"',"'",'(',')','<','>','/'], posStart, strSearch);
+            var posEnd = returnClosestChar(str, [' ','.',',',':',';','"',"'",'(',')','<','/'], posStart, strSearch);
+            console.log('wiki - wordWrapper - posStart: ' + posStart + ', posEnd: ' + posEnd);
+
+            var TstrReplace = ' '; // Lav TstrReplace af længden 1, i tilfælde af TstrReplace ikke antager en anden længde.
+            if ((posEnd - posStart-strSearch.length <= tolerance) && !insideTag(str, posStart, strSearch)) {  // Hvis længden af den ekstra streng er mindre eller lig "tolerance" og strSearch ikke befinder inde i et tag, så...
+                TstrReplace = '<a class="forklaring'+' forklaring_'+strSearch+'">'+str.substring(posStart, posEnd)+'</a>';  // Wrap ordet i anchor-tag med klassen "forklaring" og "forklaring_XXX", hvor XXX er strSearch. "forklaring_XXX" anvedes til senere opslag.
+                str = str.substring(0, posStart) + TstrReplace + str.substring(posEnd);     // Indsæt ændringerne i str...
+
+                // Det dobbelte boholderi: her foretages præcis det samme operation på kopien af str der rummer store og små bogstaver...
+                TstrReplace = '<a class="forklaring'+' forklaring_'+strSearch+'">'+strMixedCase.substring(posStart, posEnd)+'</a>';
+                strMixedCase = strMixedCase.substring(0, posStart) + TstrReplace + strMixedCase.substring(posEnd);
+            }
+            posStart = str.indexOf(strSearch, posStart+TstrReplace.length); // Positionen af den næste forkomst af strSearch findes...
+
+            console.log('wiki - wordWrapper - count: ' + count  + ', strSearch: "' + strSearch + '", insideTag: ' + insideTag(str, posStart, strSearch) + ', str: ' + str);
+            ++count;
+        }
+        console.log('wiki - wordWrapper - strSearch: ' + strSearch + ', str 2: ' + str);
+        // console.log('wiki - wordWrapper - count: '+count+', strMx: ' + strMixedCase);
+
+        return strMixedCase;  // Resultatet af det "dobbelte boholderi" returneres.
+    }
+
+
+    // BESKRIVELSE:
+    // Denne funktion finder positionen af det nærmest forekomende char i charArr. charArr er et array over tegn som fungere som "break-points" - dvs de ikke må overskrides ift de 4 tegn i "ekstra strengen".
+    // charArr kan udviddes efter behov, hvis man feks i fremtiden har andre tegn (f.eks "&" i alle HTML special chars) som ikke må medtages i "ekstra strengen".
+    function returnClosestChar(str, charArr, posStart, strSearch) {
+        var distArr = []; var pos;
+        distArr.push(str.length);  // Første element ligges ind, som er længden af str.
+        for (var n in charArr) {
+            pos = str.indexOf(charArr[n], posStart+strSearch.length);  // Positionen af hver char i charArr EFTER position posStart+strSearch.length - dvs efter det pågældende ord der søges på... 
+            pos = (pos!==-1)? pos : 1000000;  // Hvis char findes, så beholder pos sin værdi, ellers gøres tallet meget stort (1000000) - ved senere sortering bliver de store tal sorteret langt ned i arrayet.
+            distArr.push(pos);  // Positionen af hver char ligges ind i distArr.
+        } 
+        distArr.sort(function(a, b){return a-b});  // distArr sorteres med de mindste værdier først.
+        console.log('returnClosestChar - distArr: ' + distArr );
+
+        return distArr[0]; // Den mindste værdi, som er det først element, returneres.
+    }
+
+
+    // BESKRIVELSE:
+    // Denne funktion tjekker om "strSearch" befinder inden i et tag, f.eks <a id="strSearch">strSearch</a>.
+    function insideTag(str, pos, strSearch) {
+        if ((str.lastIndexOf('<', pos) > str.lastIndexOf('>', pos)) && (str.indexOf('<', pos) > str.indexOf('>', pos))) {
+            return true;
+        }
+        return false;
+    }
+}
+
+
+
+
+
+
