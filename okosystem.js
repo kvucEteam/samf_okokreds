@@ -685,7 +685,7 @@ function tekst_forklaring(tekstcontainer, dataArray) {
             }
         }
 
-        microhint($(this), "<b class='clicked_word'>" + clicked_word + "</b><br/>" + forklaring);
+        microhint($(this), "<h4 class='clicked_word'>" + clicked_word + "</h4>" + forklaring);
 
         window.onscroll = function(e) {
             $(".microhint").fadeOut(200, function() { $(this).remove() });
