@@ -53,8 +53,9 @@ $(document).ready(function() {
 
 
 
-    // $("#explanationwrapper").html(explanation(jsonData.userInterface.explanation));  // Udkommenteret af THAN d. 06/12-2017
-    $('.instr_container').html(instruction(jsonData.userInterface.instruktion));
+    // $("#explanationwrapper").html(explanation(jsonData.userInterface.explanation));      // Udkommenteret af THAN d. 06/12-2017
+    // $('.instr_container').html(instruction(jsonData.userInterface.instruktion));         // Udkommenteret af THAN d. 02/01-2018
+    $('.instr_container').html(instruction_noLines(jsonData.userInterface.instruktion));    // Tilføjet af THAN d. 02/01-2018.
     $('.fane').click(toggleView);
 
     //poseQuestion(runder[state]);
