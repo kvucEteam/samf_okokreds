@@ -406,7 +406,7 @@
         "forkerte_svar": ["De vil øge de offentlige investeringer i infrastruktur fx togdrift, broer, sygehuse for at skabe offentligt finansieret produktion og dermed øge efterspørgslen i samfundet.", "De vil øge skatterne for at få finansieret underskuddet på de offentlige finanser. De tænker, at det vil stabilisere økonomien og gøre statskassen klar til at investere i uddannelse og forskning, når højkonjunkturen kommer, og der er behov for kvalificeret arbejdskraft."],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
-        "feedback": "Hvis en klassisk borgerligt ledet regering vil stimulere efterspørgslen i samfundet, vil de gøre det ved at mindske de offentlige udgifter. Det vil gøre det til husholdningernes valg, hvordan de vil anvende efterspørgslen og ikke øge statens rolle.",
+        "feedback": "vis en klassisk borgerligt ledet regering vil stimulere efterspørgslen i samfundet, vil de gøre det ved at mindske de offentlige indtægter fx ved at lave skattelettelser. Det vil gøre det til husholdningernes valg, hvordan de vil anvende efterspørgslen og ikke øge statens rolle.",
         "feedback_false": ["Det ville være en klassisk socialdemokratisk måde at stimulere efterspørgslen på.", "De færreste regeringer vil føre direkte kontraktiv finanspolitik under en lavkonjunktur. Det ville mindske efterspørgslen, forbruget, produktionen og beskæftigelsen yderligere."]
     },{
         "NOTE": "#################################################################################################",
@@ -416,13 +416,13 @@
         "forkerte_svar": ["De vil give skattelettelser for at mindske efterspørgslen efter arbejdskraft og dermed dæmpe tendenser til flaskehalse og lønstigninger.", "De vil investere i omskoling, efteruddannelse og uddannelse for at give arbejdskraften de kvalifikationer, der efterspørges."],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
-        "feedback": "De vil forsøge at modvirke tendenser til flaskehalse på arbejdsmarkedet ved at opkvalificere arbejdskraften.",
+        "feedback": "De vil forsøge at modvirke tendenser til flaskehalse på arbejdsmarkedet ved at stramme kravene til de arbejdsløse.",
         "feedback_false": ["Det er dobbelt forkert. Dels er dette forslag finanspolitik, og dels ville det virke omvendt. Skattelettelser under en højkonjunktur ville yderligere øge efterspørgslen og øge tendenser til lønstigninger og inflation.", "Det er et klassisk socialdemokratisk indgreb under en højkonjunktur."]
     },{
         "caseText": "Det er højkonjunktur globalt og i Danmark. Produktionen og forbruget er højt, og både eksport og import er stigende. Arbejdsløsheden er lav og i flere erhverv er der begyndende flaskehalse med problemer med at skaffe kvalificeret arbejdskraft. Lønninger og priser er stigende, og specielt priserne på boliger er meget høje.",
         "spm": "Hvilket <b>strukturpolitisk</b> indgreb vil en klassisk <span class='roedFloej label label-default'>socialdemokratisk</span> ledet regering foreslå?",
         "svar": ["De vil investere i omskoling, efteruddannelse og uddannelse for at give arbejdskraften de kvalifikationer, der efterspørges."],
-        "forkerte_svar": ["De vil forsøge at modvirke tendenser til flaskehalse på arbejdsmarkedet ved at investere i omskoling, efteruddannelse og uddannelse for at give arbejdskraften de kvalifikationer der efterspørges.", "De vil øge det offentlige forbrug for at øge efterspørgslen efter arbejdskraft og dermed dæmpe tendenser til flaskehalse og lønstigninger."],
+        "forkerte_svar": ["De vil fx forkorte dagpengeperioden, stramme krav til kontanthjælp og øge transportfradraget for at få arbejdsløse til at søge de ledige jobs. Det vil også kunne dæmpe tendenser til lønstigninger.", "De vil øge det offentlige forbrug for at øge efterspørgslen efter arbejdskraft og dermed dæmpe tendenser til flaskehalse og lønstigninger."],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
         "feedback": "De vil forsøge at modvirke tendenser til flaskehalse på arbejdsmarkedet ved at opkvalificere arbejdskraften. Det vil også kunne dæmpe tendenser til lønstigninger.",
